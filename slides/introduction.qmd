@@ -1,0 +1,840 @@
+---
+title: "A practical introduction to R"
+subtitle: "Getting started"
+author: Luis D. Verde Arregoitia
+format:
+  revealjs:
+    theme: course_styles.scss
+    transition: fade
+    progress: true
+    preview-links: true
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+editor: source
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    retina: 3
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  fig-width: 5
+  fig-height: 6
+---
+
+```{r fa packages setup}
+#| echo: false
+library(fontawesome)
+```
+
+## 
+
+::: columns
+::: {.column width="40%"}
+![](imgs/luisbb.jpg){width="50%"}\
+[`r fontawesome::fa(name = "twitter")` \@LuisDVerde](https://twitter.com/LuisDVerde)\
+[`r fontawesome::fa(name = "github")` \@LuisDVA](https://github.com/luisdva)\
+[`r fontawesome::fa(name = "link")` liomys.mx](https://liomys.mx)\
+[`r fontawesome::fa(name = "paper-plane")` luis\@liomys.mx](mailto:luis@liomys.mx)
+:::
+
+::: {.column width="60%"}
+
+-   Mammalogy, macroecology, conservation
+-   Biogeography, using R as a GIS
+-   Data Science with R
+-   Certified Instructor - Posit(RStudio) & The Carpentries  
+-   R user since 2011\
+-   R 'blogger' since 2015
+:::
+:::
+
+## Today
+
+* Project workflow and structure\
+* Naming things\
+* Paths\
+* Objects\
+
+##
+
+![](imgs/rake.jpg){fig-align="center"}
+
+
+## What is `r fontawesome::fa(name = "r-project")`?
+
+✍️Software
+
+. . .
+
+Dialect of S?\
+Statistical package?\
+RStudio?\
+Scripting language?\
+Graphical device?
+
+## `r fontawesome::fa(name = "r-project")`?
+
+::: columns
+::: {.column width="50%"}
+✍️🧑‍🎓Pros
+:::
+
+::: {.column width="50%"}
+✍️🧑‍🎓Cons
+:::
+:::
+
+## This course
+
+
+- Local installs
+- RStudio
+- `tidyverse` dialect
+- Pipes
+- Online course materials 
+
+## My setup
+
+-   R v4.3.2
+
+-   RStudio 2023.06.1 "Mountain Hydrangea"
+
+-   Default look
+
+-   Linux Mint 20.3
+
+## `r fontawesome::fa(name = "r-project")` is not RStudio
+
+**IDE** - Integrated Development Environment
+
+Tools to make programming easier
+
+- Syntax-aware text editor
+
+- Shortcuts and tools to manage and execute code
+
+- Panes and windows to organize code, R console, help, etc.
+
+## Alternatives
+
+ - RStudio\
+- Emacs + ESS (https://ess.r-project.org)\
+- vim + Nvim-R: ([Turn Vim Into an IDE for R](https://medium.com/free-code-camp/turning-vim-into-an-r-ide-cd9602e8c217))\
+- Visual Studio + [RTVS](https://docs.microsoft.com/en-us/visualstudio/rtvs)
+- Any [text](https://web.archive.org/web/20151108031733/http://www.sciviews.org/_rgui/projects/Editors.html) editor (sending code to a running instance)
+
+## 
+
+![R. Geert van den Berg [SPSS Tutorials] ](https://spss-tutorials.com/img/spss-data-editor-data-view.png)
+
+## Scripts and source code
+
+::: columns
+::: {.column width="40%"}
+![](imgs/pancks.png)
+:::
+
+::: {.column width="60%"}
+
+- Reproduce and modify steps in a sequence
+
+- Find mistakes
+
+- Document a process
+
+- Examine other people's code
+:::
+:::
+
+## 📦 Packages
+\
+\
+When installing R we install:
+
+`base`: R's core functions
+\
+some examples:
+`list()`\
+`log()`\
+`cat()` `rm()` etc...
+
+## 📦 Packages
+
+Other components of base R:\
+`utils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4`
+
+'recommended' packages (installed but not loaded every time we open R)
+
+`boot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, rpart, survival, MASS, spatial, nnet, Matrix`
+
+## 📦 Additional Packages
+
+-   \>19,000 on [CRAN](https://cran.r-project.org/) (The Comprehensive R Archive Network)
+
+-   many more on GitHub, GitLab, Bitbucket, Bioconductor, etc.
+
+Install in R with:
+
+`install.packages()` for CRAN packages\
+`📦 remotes` for most other sources
+
+## R and RStudio guided tour {background-color="#a4c5ff"}
+
+-   Run R
+
+-   Run RStudio
+
+-   Install any missing course packages:
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("readxl")
+install.packages("fs")
+install.packages("here")
+```
+
+
+# Before we start
+
+## File systems
+
+::: columns
+::: {.column width="33%"}
+![](imgs/filenotfound.png) Monica Chin (2021)\
+[File not Found](https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z)
+:::
+
+::: {.column width="33%"}
+![](imgs/filesfolders.png) Jody Macgregor (2021)\
+[PC Gamer](https://www.pcgamer.com/students-dont-know-what-files-and-folders-are-professors-say/)
+:::
+
+::: {.column width="33%"}
+![](imgs/fsmeme.png)
+:::
+:::
+
+##  {background-image="imgs/escritorioadri.png"}
+
+## Folders, paths, and names
+
+::: columns
+::: {.column width="33%"}
+![](imgs/file-system.jpg)
+:::
+
+::: {.column width="66%"}
+
+Store files in specific locations, with useful and intentional names
+
+- Short informative names
+
+- Easy to sort and compatible with partial matching
+
+- Be mindful of spaces and special characters
+
+:::
+:::
+
+## Names
+
+::: columns
+::: {.column width="40%"}
+### OK
+
+`max_temp` </br>\
+</br> `min_price_usd`\
+`monthly_temp`
+:::
+
+::: {.column width="60%"}
+### fix
+
+`'maximum temperature in 2014 in Belize'`\
+`max`\
+`temp`\
+`'Minimum Price ($) USD'`\
+`'Temperature/Month (°F)'`\
+</br>
+:::
+:::
+
+::::{.rightref}
+:::{.refbox}
+Jenny Bryan (2015)\
+[Naming Things](https://speakerdeck.com/jennybc/how-to-name-files)
+:::
+::::
+
+## Names
+
+::: columns
+::: {.column width="60%"}
+### OK
+
+`01_invoice-march2023.pdf`\
+`02_invoice-july2023.pdf`\
+`ms_ferns_20210412.docx`
+:::
+
+::: {.column width="40%"}
+### fix
+
+`download462copy.pdf`\
+`julypurchases.pdf`\
+`draft.docx`\
+:::
+:::
+
+Valid names in R may only include lettesr, numbers, dashes, and underscores. Names may not start with a number
+
+
+## Letter case
+
+</br>
+
+**camelCase** - after fist word identify different words with uppercase, no spaces
+
+**snake_case** - all lowercase, underscores separate words
+
+**slug-case** - all lowercase, dashes separate words  
+
+---
+
+</br></br>
+**Title Case** - Capitalize words except articles, use spaces
+
+**Sentence case** - Capitalize first word, use spaces
+</br>
+</br>
+
+We can transform text strings between different letter cases using the 📦 `snakecase` package
+
+## Examples
+
+</br>
+reptileDataNew  
+</br>
+reptile_data_new  
+</br>
+reptile-data-new  
+</br> 
+reptile.data.new  
+</br>
+REPTILE_DATA_NEW
+
+## Project organization
+
+*Project*: A folder on your computer that holds all the files relevant to that particular piece of work.
+
+### Separate:
+
+
+📁 Data (or code to get data from a remote resource)\
+📁 Analysis and/or visualization scripts\
+📁 Outputs (graphs, reports, intermediate data files, etc.)\
+  
+::::{.rightref}
+:::{.refbox}
+::: columns
+::: {.column width="50%"}
+Jenny Bryan (2017)\
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+:::
+
+::: {.column width="50%"}
+Maëlle Salmon (2021)\
+[Draw me a project](https://masalmon.eu/2021/06/30/r-projects/)
+:::
+:::
+:::
+::::
+
+
+
+## RStudio Projects
+
+::: columns
+::: {.column width="35%"}
+![](imgs/rprojects.png)
+:::
+
+::: {.column width="65%"}
+-   dedicated R process
+
+-   file browser pointed at Project directory
+
+    -   convenient 'go-to-project directory' button
+
+-   working directory set to Project directory
+
+    -   paths become relative to project directory
+:::
+:::
+
+## Practice{background-color="#a4c5ff"}
+
+Create an RStudio project for this course
+
+</br>
+
+- somewhere easy to access (e.g., Desktop) 
+- "intro-R-2024" or similar as a name  
+
+> Saving projects one OneDrive may cause issues
+
+## 
+
+![](imgs/ubereats.png){fig-align="center" width="70%"}
+
+## 📦 `fs`
+
+Work with the file system (cross-platform)
+
+`fs` functions always return 'tidy' paths
+
+#### Tidy paths
+
+-   Always use '**`/`**' to delimit directories\
+-   Never have multiple or trailing '**`/`**'
+
+
+Create folders\
+Move, copy, or rename files\
+
+## Practice{background-color="#a4c5ff"}
+
+-   Set up folders in the project directory
+    -   data
+    -   out
+    -   R
+
+### Installed packages are loaded with `library()`
+
+```{r}
+#| eval: false
+#| echo: true
+library(fs)
+```
+
+## Creating new folders
+
+```{r}
+#| eval: false
+dir_create("R")
+dir_create("data")
+dir_create("out")
+dir_ls()
+```
+
+> This can also be done from the RStudio file browser, the terminal, or the OS file browser
+
+## Save source, not workspace
+
+::: columns
+::: {.column width="30%"}
+<img src="imgs/pancks.png"/>
+:::
+
+::: {.column width="70%"}
+- Save important objects or figures explicitly to file 
+
+- avoid `rm(list = ls())`, **attached objects and packages persist**
+
+- Set up 'blank slate' and restart R session often
+
+::::{.rightref}
+:::{.refbox}
+Jenny Bryan & Jim Hester (2020)\
+[What they forgot to teach you about R](https://rstats.wtf/save-source.html)\
+Jenny Bryan (2018)\
+[Zen And The aRt Of Workflow Maintenance](https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance)
+:::
+::::
+
+:::
+:::
+
+## Blank slate
+
+::: columns
+::: {.column width="60%"}
+- do not save the workspace to an .Rdata file  
+
+- at launch, do not reload the workspace from an .Rdata file.
+:::
+
+::: {.column width="40%"}
+
+![](imgs/clnslt.jpg)
+
+:::
+:::
+
+
+
+## Restarting R
+
+### `Ctrl+Shift+F10`
+(Windows & Linux)
+
+### `Command+Shift+F10`    
+(Mac)
+
+
+## 📦 {here} and relative paths
+
+`F:\path\that\no one\else\has\my-project\analysis\script1.R`
+
+Work relative to your project root using `here()`
+
+- figures out the top-level of your current project
+  
+- helps build portable file paths  
+
+- returns absolute paths (starting with `/`, `<drive letter>:\` or `\\`)
+
+
+::::{.rightref}
+:::{.refbox}
+[Ode to the here package (2018)](https://github.com/jennybc/here_here)
+:::
+::::
+
+## 
+
+with the project root at `my-project`
+
+```{r}
+#| eval: false
+#| echo: true
+
+here("analysis","script1.R")
+```
+would build:  
+  
+`F:\path\that\no one\else\has\my-project\analysis\script1.R`
+
+---
+
+
+**`here()`** does not set the working directory, it simply builds a path to the **top level** of your project file every time you use it  
+
+</br>
+
+**`here()`** is meant to figure out the top-level of a project (i.e. Where is the `.Rproj` file?) and build paths relative to this location
+
+::: {style="text-align: right"}
+Jen Richmond  
+[How to use the here package](http://jenrichmond.rbind.io/post/how-to-use-the-here-package/)
+:::
+
+## File import (tabular data)
+
+-   With the "*Import Dataset*" button
+-   With a `read` function
+
+![[R for Epidemiology](www.r4epi.com) - Cannell & Livingstone ](https://www.r4epi.com/img/03_part_data_transfer/04_importing_binary_files/files.png)
+
+
+## File import
+
+### We need:
+
+- a function that reads files from disk (or the web)
+- file path
+- name of the object to create from the file
+- additional arguments to control the import process
+
+##
+
+::: {.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+my_table <- read.csv(file = "my_folder/my-file.csv",
+                     header = TRUE) 
+
+```
+:::
+
+`my_table` - object being created in R  
+`read.csv()` - function to read delimited text files  
+`file = "my_folder/my-file.csv"` - file path  
+`header = TRUE`  - additional argument (specify if first row contains the variable names)
+
+
+## `readr` and `readxl`
+
+Additional packages to import rectangular data from text files and spreadsheets
+
+-   Fewer import errors
+
+-   Flexible and fast
+
+-   Tools to clean values inside columns
+
+## Practice {background-color="#a4c5ff"}
+
+Import a table from file
+
+
+## Spreadsheets
+
+- ~ 1000,000,000 users worldwide
+- `xlsx`, `xls`, `ods` formats and web-based (e.g. Google sheets)
+
+::: columns
+::: {.column width="50%"}
+![[Loans in 1593](https://librarysearch.temple.edu/catalog/991029783589703811)](imgs/rome.jpg){width="40%"}
+:::
+
+::: {.column width="50%"}
+![[VisiCalc](https://en.wikipedia.org/wiki/VisiCalc)](imgs/Visicalc.png){width="70%"}
+:::
+:::
+
+
+## Practice {background-color="#a4c5ff"}
+
+with `readxl`:  
+
+Import the sheets from the `petshop.xlsx` file 
+
+### Useful arguments
+
+- `path`
+- `sheet` 
+- `skip`
+
+# Data Structures
+
+## R programming principles
+
+<br/>
+
+Everything that exists is an *object*
+<br/>
+
+Everything that happens is a *function* call
+(*functions are objects*)
+<br/>
+
+Functions (generally) live in packages
+
+## Objects
+
+-   Tables with rows and columns
+
+-   Models
+
+-   Lists
+
+-   Graphics
+
+> All objects have classes and attributes and there are many ways to create them
+
+## 
+
+::: columns
+::: {.column width="50%"}
+
+### Vectors
+
+![](imgs/vector.png)
+
+### Lists
+
+![](imgs/listhad.png)
+:::
+
+::: {.column width="50%"}
+
+### Tables
+
+![](imgs/dataframe.png)
+:::
+:::
+
+
+## Vectors
+
+Numbers
+
+:::{.big-code}
+```{r}
+c(1,2,3,4)
+```
+:::
+</br>
+
+:::{.big-code}
+```{r}
+c(22.1,0.006,4.1)
+```
+:::
+
+## Vectors
+
+Character
+
+:::{.big-code}
+```{r}
+c("dog","cat","rat","B")
+```
+:::
+
+## Vectors
+
+Logical (true/false)
+
+:::{.big-code}
+```{r}
+c(TRUE,FALSE,FALSE,FALSE,TRUE)
+```
+:::
+---
+
+![](imgs/logical.jpg)
+
+---
+
+![](imgs/logicalNA.jpg)
+
+## Creating objects
+
+:::{.big-code}
+```{r}
+x <- c(1, 2, 3)
+```
+:::
+
+The function `c()` concatenates elements
+
+:::{.med-code}
+```{r}
+x <- c(1,2,3)
+y <- c("a","G","h")
+```
+:::
+
+:::{.med-code}
+```{r}
+x
+y
+```
+:::
+
+
+## Objects have classes
+
+:::{.big-code}
+```{r}
+#| echo: true
+#| eval: true
+class(x)
+class(y)
+```
+:::
+
+
+## Vectors can only contain objects of the same class
+
+:::{.big-code}
+```{r}
+c(1,"a",2)
+```
+:::
+
+_Note the automatic type conversion_
+
+## Numeric vectors
+
+![](imgs/numeric.jpg)
+
+## Factors
+
+::: columns
+::: {.column width="40%"}
+![](imgs/factor.jpg)
+:::
+
+::: {.column width="60%"}
+- Categorical data
+
+- The labels for each value are known as levels
+
+- Create with `factor()`
+:::
+:::
+
+## Factors
+
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+factor(c("dog","cat","bird","none",
+         "dog","none","dog","dog",
+         "cat","bird","dog"))
+```
+:::
+
+## Two or more vectors of the same length...
+
+</br>
+
+::: columns
+::: {.column width="40%"}
+![](imgs/dataframe.jpg)
+:::
+
+::: {.column width="60%"}
+### Data frame!
+
+- Tabular object with rows and columns
+
+- Columns may be of different classes
+
+- Each column/variable has a name
+
+:::
+:::
+
+## Data frames
+
+
+Created importing files or with `data.frame()`
+
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+my_table <- 
+data.frame(id=c("frog","fish","otter","worm"),
+           ind_g=c(12,15,13,10),
+           present=c(TRUE,TRUE,FALSE,TRUE))
+
+```
+:::
+
+-   each vector is a column
+-   column names unquoted
+-   same length for all vectors
+
+## 
+:::{.big-code}
+```{r}
+#| eval: true
+#| echo: true
+my_table
+```
+:::
+
+# Questions and discussion

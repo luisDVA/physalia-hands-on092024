@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Practical intro to R"
+  sidebar:
+    background: primary
+    pinned: true
+    align: center
+    style: docked
+    contents: 
+      - href: index.qmd
+        text: Home
+      - href: materials.qmd
+        text: Course materials
+  page-footer:
+    left: "Created with [Quarto](https://quarto.org/)."
+    right: "Luis D. Verde Arregoitia - 2024"
+
+format:
+  html:
+    theme: darkly
+    fontsize: 1.3em
+    toc: true
+
+execute:
+  freeze: auto
+

@@ -1,0 +1,13 @@
+---
+title: "A practical introduction to R"
+toc: false
+---
+
+## Physalia Courses  
+
+### Online, 8-11 January 2024
+
+This site contains all course materials and presentations.
+
+## Instructor:
+Dr. Luis D. Verde Arregoitia

@@ -1,0 +1,989 @@
+[
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Course materials",
+    "section": "",
+    "text": "Download all course files (datasets and scripts) used in examples and class exercises:\n️Download Files"
+  },
+  {
+    "objectID": "materials.html#data",
+    "href": "materials.html#data",
+    "title": "Course materials",
+    "section": "",
+    "text": "Download all course files (datasets and scripts) used in examples and class exercises:\n️Download Files"
+  },
+  {
+    "objectID": "materials.html#presentations",
+    "href": "materials.html#presentations",
+    "title": "Course materials",
+    "section": "Presentations",
+    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\n\nTuesday\nData preparation\n\n\nWednesday\nData Visualization\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents"
+  },
+  {
+    "objectID": "slides/preparation.html#pipes",
+    "href": "slides/preparation.html#pipes",
+    "title": "Data preparation",
+    "section": "Pipes",
+    "text": "Pipes\nTo perform multiple operations in sequence:\n\n\nNested code (results evaluated from the inside out)\nIntermediate objects (assign objects with intermediate results and pass on to the next function in a sequence)\nPipes (structure sequential operations left-to-right)"
+  },
+  {
+    "objectID": "slides/preparation.html#nested-code",
+    "href": "slides/preparation.html#nested-code",
+    "title": "Data preparation",
+    "section": "Nested code",
+    "text": "Nested code\n\n\n\nscores &lt;- c(7,8,8,10,6,9,5,9,8)\n\nround(mean(scores), digits = 2)\n\n[1] 7.78"
+  },
+  {
+    "objectID": "slides/preparation.html#intermediate-objects",
+    "href": "slides/preparation.html#intermediate-objects",
+    "title": "Data preparation",
+    "section": "Intermediate objects",
+    "text": "Intermediate objects\n :::{.med-code}\n\nmn_scrs &lt;- mean(scores)\n\nrd_mn_scrs &lt;- round(mn_scrs, digits = 2)\n\nrd_mn_scrs\n\n[1] 7.78\n\n\n:::"
+  },
+  {
+    "objectID": "slides/preparation.html#pipes-1",
+    "href": "slides/preparation.html#pipes-1",
+    "title": "Data preparation",
+    "section": "Pipes",
+    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;%\nfrom 📦 magrittr\n|&gt; in R v &gt;= 4.1.0\n\nRight Hand Side\n(RHS)\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
+  },
+  {
+    "objectID": "slides/preparation.html#pipes-2",
+    "href": "slides/preparation.html#pipes-2",
+    "title": "Data preparation",
+    "section": "Pipes",
+    "text": "Pipes\n\nMinimize the need for intermediate objects and nested code\nMake code readable\nEasy to add or remove steps\n\n\nInsert with ctrl + shift + M\n\n\nAdolfo Álvarez (2021)\nThe (updated) history of the pipe operator in R"
+  },
+  {
+    "objectID": "slides/preparation.html#section",
+    "href": "slides/preparation.html#section",
+    "title": "Data preparation",
+    "section": "",
+    "text": "library(magrittr)\nscores %&gt;% \n  mean() %&gt;% \n  round(digits=2)\n\n[1] 7.78\n\n\n\n\n\nscores %&gt;% \n  mean %&gt;% \n  round(digits=2)\n\n[1] 7.78"
+  },
+  {
+    "objectID": "slides/preparation.html#tidyverse",
+    "href": "slides/preparation.html#tidyverse",
+    "title": "Data preparation",
+    "section": "tidyverse",
+    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
+  },
+  {
+    "objectID": "slides/preparation.html#tidyverse-1",
+    "href": "slides/preparation.html#tidyverse-1",
+    "title": "Data preparation",
+    "section": "tidyverse",
+    "text": "tidyverse\n\nEncompasses the repeated tasks at the heart of every data science project: data import, tidying, manipulation, visualization, and programming\nIntentionally designed to ease the learning process and make it easier for users to learn new functions as they engage with additional pieces of the larger ecosystem\n\n\n\nÇetinkaya-Rundel et al. (2021)\nAn educator’s perspective of the tidyverse"
+  },
+  {
+    "objectID": "slides/preparation.html#tibbles",
+    "href": "slides/preparation.html#tibbles",
+    "title": "Data preparation",
+    "section": "tibbles",
+    "text": "tibbles\nA modern implementation of data.frames\nImplemented across the tidyverse through 📦 tibble\n\n\ntibble(\n  x = c(\"a\", \"b\", \"c\"),\n  y = c(1, 2, 3)\n)\n\n# A tibble: 3 × 2\n  x         y\n  &lt;chr&gt; &lt;dbl&gt;\n1 a         1\n2 b         2\n3 c         3\n\n\n\n\nShared rectangular data object for all tidyverse packages"
+  },
+  {
+    "objectID": "slides/preparation.html#tidyverse-functions",
+    "href": "slides/preparation.html#tidyverse-functions",
+    "title": "Data preparation",
+    "section": "tidyverse functions",
+    "text": "tidyverse functions\n\n\ndata.frame in ➡️ data.frame out\ntibble in ➡️ tibble out\ncreate a new object ➡️ tibble out"
+  },
+  {
+    "objectID": "slides/preparation.html#creating-tibbles",
+    "href": "slides/preparation.html#creating-tibbles",
+    "title": "Data preparation",
+    "section": "Creating tibbles",
+    "text": "Creating tibbles\n\nDefault function outputs\nCoerce other objects with as_tibble()\nBuild from scratch with tibble()"
+  },
+  {
+    "objectID": "slides/preparation.html#tibbles-1",
+    "href": "slides/preparation.html#tibbles-1",
+    "title": "Data preparation",
+    "section": "tibbles",
+    "text": "tibbles\nTo avoid ambiguity:\n\n\nNo row names\nVariable names untouched\nCharacter columns not treated as factors\nComplete variable names needed for subsetting with $"
+  },
+  {
+    "objectID": "slides/preparation.html#indexing-and-subsetting-with",
+    "href": "slides/preparation.html#indexing-and-subsetting-with",
+    "title": "Data preparation",
+    "section": "Indexing and subsetting with $",
+    "text": "Indexing and subsetting with $\n\n\nmy_df &lt;- data.frame(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_df$let\n\n[1] \"A\" \"B\" \"C\"\n\nmy_tib &lt;- tibble(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_tib$let\n\nNULL\n\nmy_tib$letters \n\n[1] \"A\" \"B\" \"C\""
+  },
+  {
+    "objectID": "slides/preparation.html#tibble-printing",
+    "href": "slides/preparation.html#tibble-printing",
+    "title": "Data preparation",
+    "section": "tibble printing",
+    "text": "tibble printing\nFor brevity, tibbles printed on the console show:\n\n\nFirst 10 rows\nHow many rows and columns are not shown\nAs many columns as can fit on the console width\nVariable types\nRounding and highlighting for numeric variables"
+  },
+  {
+    "objectID": "slides/preparation.html#whats-wrong-with-these-data",
+    "href": "slides/preparation.html#whats-wrong-with-these-data",
+    "title": "Data preparation",
+    "section": "What’s wrong with these data?",
+    "text": "What’s wrong with these data?"
+  },
+  {
+    "objectID": "slides/preparation.html#a-more-usable-format",
+    "href": "slides/preparation.html#a-more-usable-format",
+    "title": "Data preparation",
+    "section": "A more usable format",
+    "text": "A more usable format\n\ntibble::tribble(\n            ~Name,     ~Role, ~Year,    ~Travel.Type, ~Trip.Purpose, ~Cost, ~Country,\n  \"Jane Michaels\",      \"PI\", 2019L,      \"National\",  \"Field Work\", 1000L,     \"UK\",\n  \"Jane Michaels\",      \"PI\", 2019L,      \"National\",  \"Field Work\", 2000L,     \"UK\",\n  \"Jane Michaels\",      \"PI\", 2019L,      \"National\",  \"Conference\", 1000L,     \"UK\",\n  \"Jane Michaels\",      \"PI\", 2019L,      \"National\",    \"Workshop\", 1000L,     \"UK\",\n  \"Jane Michaels\",      \"PI\", 2019L, \"International\",  \"Conference\", 3000L,    \"USA\",\n         \"Raul J\", \"Student\", 2019L,      \"National\",  \"Field Work\",    0L,     \"UK\"\n  )\n\n# A tibble: 6 × 7\n  Name          Role     Year Travel.Type   Trip.Purpose  Cost Country\n  &lt;chr&gt;         &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;  \n1 Jane Michaels PI       2019 National      Field Work    1000 UK     \n2 Jane Michaels PI       2019 National      Field Work    2000 UK     \n3 Jane Michaels PI       2019 National      Conference    1000 UK     \n4 Jane Michaels PI       2019 National      Workshop      1000 UK     \n5 Jane Michaels PI       2019 International Conference    3000 USA    \n6 Raul J        Student  2019 National      Field Work       0 UK"
+  },
+  {
+    "objectID": "slides/preparation.html#well-organized-data",
+    "href": "slides/preparation.html#well-organized-data",
+    "title": "Data preparation",
+    "section": "Well-organized data",
+    "text": "Well-organized data\n\nEasier to import and manipulate\nLess prone to (non-replicable) errors\n\nomission\nalteration\nduplication\n\n\nGood data organization helps us when we produce data, and also to identify and solve problems in existing data"
+  },
+  {
+    "objectID": "slides/preparation.html#data-organization-best-practices",
+    "href": "slides/preparation.html#data-organization-best-practices",
+    "title": "Data preparation",
+    "section": "Data Organization best practices",
+    "text": "Data Organization best practices\n\nConsistency in names, layouts, abbreviations, units, etc.\nGood names\nRectangular layouts\n\n\n\n\n\nOpenscapes (2020)\nTidy data illustrated\n\nBroman and Woo (2018)\nOrganizing data in spreadsheets\n\nVerde Arregoita et al. (2018)\nGood practices for sharing analysis-ready data…"
+  },
+  {
+    "objectID": "slides/preparation.html#consistency",
+    "href": "slides/preparation.html#consistency",
+    "title": "Data preparation",
+    "section": "Consistency",
+    "text": "Consistency\n\nFind the inconsistencies"
+  },
+  {
+    "objectID": "slides/preparation.html#data-rectangles",
+    "href": "slides/preparation.html#data-rectangles",
+    "title": "Data preparation",
+    "section": "Data rectangles",
+    "text": "Data rectangles\n\n\n\n\nObjects with rows and columns, in which:\n\nEach row has the same number of columns\nEach column has the same number of rows\n\nVectors and factors of the same length = all columns must have the same ‘height’\nEqual-height columns give a rectangular shape to the data frame"
+  },
+  {
+    "objectID": "slides/preparation.html#section-1",
+    "href": "slides/preparation.html#section-1",
+    "title": "Data preparation",
+    "section": "",
+    "text": "LHS |&gt; RHS(argument = 12)\nbecomes\nRHS(LHS, argument = 12)"
+  },
+  {
+    "objectID": "slides/preparation.html#ready-for-immediate-use",
+    "href": "slides/preparation.html#ready-for-immediate-use",
+    "title": "Data preparation",
+    "section": "Ready for immediate use?",
+    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share"
+  },
+  {
+    "objectID": "slides/preparation.html#not-ready",
+    "href": "slides/preparation.html#not-ready",
+    "title": "Data preparation",
+    "section": "Not ready?",
+    "text": "Not ready?\n\nRestructure for easier and more effective handling"
+  },
+  {
+    "objectID": "slides/preparation.html#datos-ordenados-tidy-data",
+    "href": "slides/preparation.html#datos-ordenados-tidy-data",
+    "title": "Data preparation",
+    "section": "Datos ordenados (tidy data)",
+    "text": "Datos ordenados (tidy data)\nAn accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for maximum usability.\n\n\n\nWickham (2014)\nTidy Data - Journal of Statistical Software"
+  },
+  {
+    "objectID": "slides/preparation.html#tidy-data",
+    "href": "slides/preparation.html#tidy-data",
+    "title": "Data preparation",
+    "section": "tidy data",
+    "text": "tidy data\nAn accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for maximum usability.\n\n\n\nWickham (2014)\nTidy Data - Journal of Statistical Software"
+  },
+  {
+    "objectID": "slides/preparation.html#why-tidy",
+    "href": "slides/preparation.html#why-tidy",
+    "title": "Data preparation",
+    "section": "Why tidy?",
+    "text": "Why tidy?\nEasy to reshape into other structures after cleaning or transforming"
+  },
+  {
+    "objectID": "slides/preparation.html#why-tidy-1",
+    "href": "slides/preparation.html#why-tidy-1",
+    "title": "Data preparation",
+    "section": "Why tidy?",
+    "text": "Why tidy?\nRow-wise operations\nEach value in an observation will be paired with other values that appear in the same row"
+  },
+  {
+    "objectID": "slides/preparation.html#section-5",
+    "href": "slides/preparation.html#section-5",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Variables feed directly into model specifications and plotting parameters."
+  },
+  {
+    "objectID": "slides/preparation.html#why-not",
+    "href": "slides/preparation.html#why-not",
+    "title": "Data preparation",
+    "section": "Why not",
+    "text": "Why not\n\nTidy data is more repetitive, often takes up more space than other more condensed representations\nNot ideal for data entry, or for tables that will be embedded in a text document"
+  },
+  {
+    "objectID": "slides/preparation.html#grouping-information-goes-in-its-own-variable.",
+    "href": "slides/preparation.html#grouping-information-goes-in-its-own-variable.",
+    "title": "Data preparation",
+    "section": "Grouping information goes in its own variable.",
+    "text": "Grouping information goes in its own variable.\nUse indicator variables instead of encoding information into an existing value."
+  },
+  {
+    "objectID": "slides/preparation.html#na-and-empty-values",
+    "href": "slides/preparation.html#na-and-empty-values",
+    "title": "Data preparation",
+    "section": "NA and Empty Values",
+    "text": "NA and Empty Values\nNot recorded, not applicable, lost in transcription, etc.\n Missing data are still data \nIn R we use NA, a special logical constant that denotes missing values"
+  },
+  {
+    "objectID": "slides/preparation.html#section-6",
+    "href": "slides/preparation.html#section-6",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Code NA values consistently (if done consistently, blank cells are OK)\nAvoid ambiguity\n\n\nAre data known to be missing, or was a value intentionally left blank?\n\n\nAvoid empty cells as padding to align values, or for aesthetic or layout purposes.\nAvoid NA values in column headers"
+  },
+  {
+    "objectID": "slides/preparation.html#make-reasonable-headers-column-names",
+    "href": "slides/preparation.html#make-reasonable-headers-column-names",
+    "title": "Data preparation",
+    "section": "Make reasonable headers (column names)",
+    "text": "Make reasonable headers (column names)\nuninformative names with inconsistent naming schemes\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min_Score\n      AVERAGE.SCORE\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
+  },
+  {
+    "objectID": "slides/preparation.html#section-7",
+    "href": "slides/preparation.html#section-7",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Much better\n\n\n\n\n\n\n  \n    \n    \n      university\n      coast\n      division\n      min_score\n      avg_score\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199"
+  },
+  {
+    "objectID": "slides/preparation.html#names-broken-across-rows",
+    "href": "slides/preparation.html#names-broken-across-rows",
+    "title": "Data preparation",
+    "section": "Names broken across rows",
+    "text": "Names broken across rows\n\n\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min\n      AVERAGE\n    \n  \n  \n    NA\nNA\nNA\nScore\nSCORE\n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.89\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nVariable names appear in &gt;1 rows\nHeader fragments mixed with data\nSeparators become implicit\nNAs introduced"
+  },
+  {
+    "objectID": "slides/preparation.html#data-can-be-intuitive-easy-to-read-and-machine-readable-if-shared-adequately",
+    "href": "slides/preparation.html#data-can-be-intuitive-easy-to-read-and-machine-readable-if-shared-adequately",
+    "title": "Data preparation",
+    "section": "Data can be intuitive, easy to read AND machine-readable if shared adequately",
+    "text": "Data can be intuitive, easy to read AND machine-readable if shared adequately\n↘ Reduce the need for complex/proprietary software or advanced programming skills for inclusion in future analyses.\n↘ Minimize the amount of interpretation that others (or future you) will need to make to use the data."
+  },
+  {
+    "objectID": "slides/preparation.html#file-formats",
+    "href": "slides/preparation.html#file-formats",
+    "title": "Data preparation",
+    "section": "File formats",
+    "text": "File formats\n\nThe simpler the better (prefer delimited text files such as CSVs)\nShare data-only files, keep calculations and results elsewhere"
+  },
+  {
+    "objectID": "slides/preparation.html#section-8",
+    "href": "slides/preparation.html#section-8",
+    "title": "Data preparation",
+    "section": "",
+    "text": "PDFs are not a suitable file format"
+  },
+  {
+    "objectID": "slides/preparation.html#functions-and-packages-to-prepare-transform-and-reshape-data",
+    "href": "slides/preparation.html#functions-and-packages-to-prepare-transform-and-reshape-data",
+    "title": "Data preparation",
+    "section": "Functions and packages to prepare, transform, and reshape data",
+    "text": "Functions and packages to prepare, transform, and reshape data\n\n\n📦 dplyr\n📦 tidyr\n\nFlexible and powerful\n\nFailsafes against accidental misuse\nConcise code\nShared grammar and data structures\nTasks split up across functions and packages\npipe-friendly"
+  },
+  {
+    "objectID": "slides/preparation.html#handy-dplyr-functions",
+    "href": "slides/preparation.html#handy-dplyr-functions",
+    "title": "Data preparation",
+    "section": "Handy 📦 dplyr functions",
+    "text": "Handy 📦 dplyr functions\n\nIndividual functions for the most common operations\nEach function does one only thing, but does it well\nIntuitive, user-friendly functions for common data manipulation tasks:\n\nSubset columns\nSubset rows\nCreate or modify columns"
+  },
+  {
+    "objectID": "slides/preparation.html#select",
+    "href": "slides/preparation.html#select",
+    "title": "Data preparation",
+    "section": "select()",
+    "text": "select()\n\n\nSubset variables\n\nby name\n\nby position\n\nby type\n\n\n\n\n\nmcountries %&gt;% \n  select(cntry,\n         threatened) %&gt;% \n  head(4)\n\n# A tibble: 4 × 2\n  cntry     threatened\n  &lt;chr&gt;          &lt;int&gt;\n1 Indonesia        191\n2 Brasil            80\n3 China             73\n4 Mexico            96"
+  },
+  {
+    "objectID": "slides/preparation.html#mutate",
+    "href": "slides/preparation.html#mutate",
+    "title": "Data preparation",
+    "section": "mutate()",
+    "text": "mutate()\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\n\nWe can control where the new column will appear with .before and .after"
+  },
+  {
+    "objectID": "slides/preparation.html#filter",
+    "href": "slides/preparation.html#filter",
+    "title": "Data preparation",
+    "section": "filter()",
+    "text": "filter()\nSubset rows\nKeep only the rows that meet a condition\n\n\nmcountries %&gt;% \n  select(cntry, species, threatened) %&gt;% \n  filter(threatened &gt; 75)\n\n# A tibble: 4 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 Mexico        523         96\n4 India         412         93"
+  },
+  {
+    "objectID": "slides/preparation.html#rename",
+    "href": "slides/preparation.html#rename",
+    "title": "Data preparation",
+    "section": "rename()",
+    "text": "rename()\nModify column names\nNew name first then target column\n\n\nmcountries %&gt;% \n  rename(pais=cntry,\n         especies=species,\n         amenazadas=threatened) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  pais      especies amenazadas region \n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Indonesia      670        191 Asia   \n2 Brasil         648         80 America\n3 China          551         73 Asia"
+  },
+  {
+    "objectID": "slides/preparation.html#practice---package-datasets-1",
+    "href": "slides/preparation.html#practice---package-datasets-1",
+    "title": "Data preparation",
+    "section": "Practice - Package datasets (1)",
+    "text": "Practice - Package datasets (1)\n\ndata() loads or lists available datasets in our installed packages \ndata() with no arguments shows every dataset currently available"
+  },
+  {
+    "objectID": "slides/preparation.html#practice---package-datasets-2",
+    "href": "slides/preparation.html#practice---package-datasets-2",
+    "title": "Data preparation",
+    "section": "Practice - Package datasets (2)",
+    "text": "Practice - Package datasets (2)\nWe can also specify which package we want to examine for bundled data:\ndata(package=\"ggplot2\")\ndata(package=\"datasets\")\ndata(package=\"tidyr\")"
+  },
+  {
+    "objectID": "slides/preparation.html#practice---package-datasets-3",
+    "href": "slides/preparation.html#practice---package-datasets-3",
+    "title": "Data preparation",
+    "section": "Practice - Package datasets (3)",
+    "text": "Practice - Package datasets (3)\n We can use data() to load a particular dataset from a package (quoted or unquoted both work)\n\nLoad the relevant package first!\n\n\n\nlibrary(ggplot2)\ndata(economics)"
+  },
+  {
+    "objectID": "slides/preparation.html#practice---data-manipulation",
+    "href": "slides/preparation.html#practice---data-manipulation",
+    "title": "Data preparation",
+    "section": "Practice - data manipulation",
+    "text": "Practice - data manipulation\n\nLoad the penguins dataset from the palmerpenguins package\nCreate a subset of data with only species, island, and flipper_length_mm\nHow many individuals have flippers &gt; 195 mm in length?\nCreate a new columns with the flipper length in inches, place it before the column with the length in mm"
+  },
+  {
+    "objectID": "slides/preparation.html#operating-on-multiple-columns",
+    "href": "slides/preparation.html#operating-on-multiple-columns",
+    "title": "Data preparation",
+    "section": "Operating on multiple columns",
+    "text": "Operating on multiple columns\nacross()\nfilter or mutate multiple columns simultaneously\n\nBy position (not recommended), name, or type\nCompound selections of columns\n(e.g. factor columns that contain “month” in their name)"
+  },
+  {
+    "objectID": "slides/preparation.html#across-arguments",
+    "href": "slides/preparation.html#across-arguments",
+    "title": "Data preparation",
+    "section": "across() arguments:",
+    "text": "across() arguments:\n.cols Columns to transform\n.fns Function to apply to each of the selected columns\n\nExpects a function, so function name and arguments can be passed separately (new preference is for anonymous functions, which we will cover later)"
+  },
+  {
+    "objectID": "slides/preparation.html#useful-column-selection-helpers",
+    "href": "slides/preparation.html#useful-column-selection-helpers",
+    "title": "Data preparation",
+    "section": "Useful column selection helpers",
+    "text": "Useful column selection helpers\nTo specify sets of columns, there are a number of useful helper functions that we can use alongside or instead of the across function.\n\n\n\n[dplyr selection features and helpers]"
+  },
+  {
+    "objectID": "slides/preparation.html#everything",
+    "href": "slides/preparation.html#everything",
+    "title": "Data preparation",
+    "section": "everything()",
+    "text": "everything()\nMatches all variables\n\n\nmcountries %&gt;% \n  mutate(across(everything(), as.character)) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  cntry     species threatened region \n  &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;  \n1 Indonesia 670     191        Asia   \n2 Brasil    648     80         America\n3 China     551     73         Asia"
+  },
+  {
+    "objectID": "slides/preparation.html#section-9",
+    "href": "slides/preparation.html#section-9",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Megadiverse countriesData\n\n\n\n\n\n\n\n\n  \n    \n    \n      cntry\n      species\n      threatened\n      region\n    \n  \n  \n    Indonesia\n670\n191\nAsia\n    Brasil\n648\n80\nAmerica\n    China\n551\n73\nAsia\n    Mexico\n523\n96\nAmerica\n    Peru\n467\n53\nAmerica\n    Congo\n430\n15\nAfrica\n    India\n412\n93\nAsia\n    Kenya\n376\n30\nAfrica\n    Argentina\n374\n38\nAmerica\n    Ecuador\n372\n47\nAmerica\n    Venezuela\n363\n35\nAmerica\n    Tanzania\n359\n41\nAfrica\n  \n  \n  \n\n\n\n\n\n\n\nmcountries &lt;- \ntibble::tribble(\n      ~cntry,   ~species, ~threatened,   ~region,\n  \"Indonesia\",      670L,        191L,    \"Asia\",\n     \"Brasil\",      648L,         80L, \"America\",\n      \"China\",      551L,         73L,    \"Asia\",\n     \"Mexico\",      523L,         96L, \"America\",\n       \"Peru\",      467L,         53L, \"America\",\n      \"Congo\",      430L,         15L,  \"Africa\",\n      \"India\",      412L,         93L,    \"Asia\",\n      \"Kenya\",      376L,         30L,  \"Africa\",\n  \"Argentina\",      374L,         38L, \"America\",\n    \"Ecuador\",      372L,         47L, \"America\",\n  \"Venezuela\",      363L,         35L, \"America\",\n   \"Tanzania\",      359L,         41L,  \"Africa\"\n  )"
+  },
+  {
+    "objectID": "slides/preparation.html#where",
+    "href": "slides/preparation.html#where",
+    "title": "Data preparation",
+    "section": "where()",
+    "text": "where()\nSelects variables for which a predicate function returns TRUE\n\ne.g. subset or transform all numeric variables, determined by is.numeric()\n\n\nmcountries %&gt;% \n  mutate(across(where(is.numeric), log2)) %&gt;% slice(1:3)\n\n# A tibble: 3 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n1 Indonesia    9.39       7.58 Asia   \n2 Brasil       9.34       6.32 America\n3 China        9.11       6.19 Asia"
+  },
+  {
+    "objectID": "slides/preparation.html#matches",
+    "href": "slides/preparation.html#matches",
+    "title": "Data preparation",
+    "section": "matches()",
+    "text": "matches()\nMatch variable names with a regular expression\n\ne.g. drop variables with the pattern ‘cn.r’ in their name\n\n\nmcountries %&gt;% \n  mutate(across(matches(\"cn.r\"), toupper)) %&gt;% head\n\n# A tibble: 6 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 INDONESIA     670        191 Asia   \n2 BRASIL        648         80 America\n3 CHINA         551         73 Asia   \n4 MEXICO        523         96 America\n5 PERU          467         53 America\n6 CONGO         430         15 Africa"
+  },
+  {
+    "objectID": "slides/preparation.html#section-10",
+    "href": "slides/preparation.html#section-10",
+    "title": "Data preparation",
+    "section": "!",
+    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
+  },
+  {
+    "objectID": "slides/preparation.html#section-11",
+    "href": "slides/preparation.html#section-11",
+    "title": "Data preparation",
+    "section": ":",
+    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+  },
+  {
+    "objectID": "slides/preparation.html#no-helpers-multiple-variables",
+    "href": "slides/preparation.html#no-helpers-multiple-variables",
+    "title": "Data preparation",
+    "section": "No helpers, multiple variables",
+    "text": "No helpers, multiple variables\nSquare root (sqrt()) of species and threatened\n\nmcountries %&gt;%  \n  mutate(across(c(species, threatened), sqrt)) %&gt;% \n  head()\n\n# A tibble: 6 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n1 Indonesia    25.9      13.8  Asia   \n2 Brasil       25.5       8.94 America\n3 China        23.5       8.54 Asia   \n4 Mexico       22.9       9.80 America\n5 Peru         21.6       7.28 America\n6 Congo        20.7       3.87 Africa"
+  },
+  {
+    "objectID": "slides/preparation.html#square-root-sqrt-of-all-numeric-variables",
+    "href": "slides/preparation.html#square-root-sqrt-of-all-numeric-variables",
+    "title": "Data preparation",
+    "section": "Square root (sqrt()) of all numeric variables",
+    "text": "Square root (sqrt()) of all numeric variables\n\n\nmcountries %&gt;% \n  mutate(across(where(is.numeric), sqrt)) %&gt;% \n  head()\n\n# A tibble: 6 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n1 Indonesia    25.9      13.8  Asia   \n2 Brasil       25.5       8.94 America\n3 China        23.5       8.54 Asia   \n4 Mexico       22.9       9.80 America\n5 Peru         21.6       7.28 America\n6 Congo        20.7       3.87 Africa"
+  },
+  {
+    "objectID": "slides/preparation.html#we-can-also-use-selection-helpers-to-keepdiscard-variables",
+    "href": "slides/preparation.html#we-can-also-use-selection-helpers-to-keepdiscard-variables",
+    "title": "Data preparation",
+    "section": "We can also use selection helpers to keep/discard variables",
+    "text": "We can also use selection helpers to keep/discard variables\nKeep only columns of type numeric\n\n\nmcountries %&gt;% \n  select(where(is.numeric)) %&gt;% \n  head()\n\n# A tibble: 6 × 2\n  species threatened\n    &lt;int&gt;      &lt;int&gt;\n1     670        191\n2     648         80\n3     551         73\n4     523         96\n5     467         53\n6     430         15"
+  },
+  {
+    "objectID": "slides/preparation.html#section-12",
+    "href": "slides/preparation.html#section-12",
+    "title": "Data preparation",
+    "section": "-",
+    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+  },
+  {
+    "objectID": "slides/preparation.html#reshaping-data-with-tidyr",
+    "href": "slides/preparation.html#reshaping-data-with-tidyr",
+    "title": "Data preparation",
+    "section": "Reshaping data with 📦 tidyr",
+    "text": "Reshaping data with 📦 tidyr\n wide to long: pivot_longer()\n\n\npivot_longer(data, cols, names_to, values_to)\n\n\n long to wide: pivot_wider()\n\n\npivot_longer(data, cols, names_from, values_from)"
+  },
+  {
+    "objectID": "slides/preparation.html#section-13",
+    "href": "slides/preparation.html#section-13",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
+  },
+  {
+    "objectID": "slides/preparation.html#wide-to-long",
+    "href": "slides/preparation.html#wide-to-long",
+    "title": "Data preparation",
+    "section": "Wide to long",
+    "text": "Wide to long\n\ndining_long &lt;- dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\ncols Which columns have data in their names\nnames_to Name for the new column to be created from cols\nvalues_to Name of the column to be created from the contents of the cells in cols"
+  },
+  {
+    "objectID": "slides/preparation.html#section-14",
+    "href": "slides/preparation.html#section-14",
+    "title": "Data preparation",
+    "section": "",
+    "text": "dining optionsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      area_type\n      district\n      coffee_shops\n      fast_food\n      fish_chips\n    \n  \n  \n    Residential\nSouth\n2\n3\n1\n    Commercial\nNorth\n12\n6\n4\n    Suburban\nSouth\n2\n4\n3\n    Rural\nEast\n0\n2\n0\n  \n  \n  \n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
+  },
+  {
+    "objectID": "slides/preparation.html#section-15",
+    "href": "slides/preparation.html#section-15",
+    "title": "Data preparation",
+    "section": "",
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
+  },
+  {
+    "objectID": "slides/preparation.html#long-to-wide",
+    "href": "slides/preparation.html#long-to-wide",
+    "title": "Data preparation",
+    "section": "Long to wide",
+    "text": "Long to wide\n\ndining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\nnames_from Which columns’ values will be used for new column names\nvalues_from Which column has the cell values for the new output columns"
+  },
+  {
+    "objectID": "slides/preparation.html#section-16",
+    "href": "slides/preparation.html#section-16",
+    "title": "Data preparation",
+    "section": "",
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
+  },
+  {
+    "objectID": "slides/preparation.html#practice---pivoting",
+    "href": "slides/preparation.html#practice---pivoting",
+    "title": "Data preparation",
+    "section": "Practice - Pivoting",
+    "text": "Practice - Pivoting\n\nLoad the “gene_expression.csv” file This table contains simulated gene expression values (arbitrary units) for five different fish measured at six time points and sampled from two tissues.\nPivot the data (wide to long and back to wide)"
+  },
+  {
+    "objectID": "slides/preparation.html#section-17",
+    "href": "slides/preparation.html#section-17",
+    "title": "Data preparation",
+    "section": "",
+    "text": "dining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\n# A tibble: 4 × 5\n  area_type   district coffee_shops fast_food fish_chips\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;     &lt;int&gt;      &lt;int&gt;\n1 Residential South               2         3          1\n2 Commercial  North              12         6          4\n3 Suburban    South               2         4          3\n4 Rural       East                0         2          0"
+  },
+  {
+    "objectID": "slides/preparation.html#dplyrcoalesce",
+    "href": "slides/preparation.html#dplyrcoalesce",
+    "title": "Data preparation",
+    "section": "dplyr::coalesce()",
+    "text": "dplyr::coalesce()\n\nFind and return the first non-NA value at each position for a set of vectors\ncolumns in rectangular data are also vectors\nReturns a single vector with the non-NA values that appear first"
+  },
+  {
+    "objectID": "slides/preparation.html#section-18",
+    "href": "slides/preparation.html#section-18",
+    "title": "Data preparation",
+    "section": "",
+    "text": "coalesce() - combine data, keeping values from one column and filling any missing data with values from other columns\nfill() - fill adjacent values. Helps us avoid unnecessary NA values and ambiguity. Similar logic to filling adjacent values in spreadsheets"
+  },
+  {
+    "objectID": "slides/preparation.html#section-19",
+    "href": "slides/preparation.html#section-19",
+    "title": "Data preparation",
+    "section": "",
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\nNumeric vectors of the same length - some have missing values.\n\n\ncoalesce(x, y, z)\n\n[1] 1 2 3 4 5\n\n\n\n\nThe order of the arguments matters"
+  },
+  {
+    "objectID": "slides/preparation.html#section-20",
+    "href": "slides/preparation.html#section-20",
+    "title": "Data preparation",
+    "section": "",
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\n\n\ncoalesce(z,x,y)\n\n[1] 1 4 3 5 3"
+  },
+  {
+    "objectID": "slides/preparation.html#section-21",
+    "href": "slides/preparation.html#section-21",
+    "title": "Data preparation",
+    "section": "",
+    "text": "hotelsData setup\n\n\n\n\n\n\n\n\n  \n    \n    \n      location\n      guest\n      critic\n      old\n    \n  \n  \n    Lisbon\nNA\n4.9\n2.6\n    Porto\n2.2\nNA\n4.3\n    Moura\n4.5\n5.0\n3.4\n    Chaves\nNA\n2.7\n3.5\n    Coimbra\n2.5\nNA\n2.3\n  \n  \n  \n\n\n\n\n\n\n\nhotels &lt;- \ntibble::tribble(\n        ~location,        ~guest,        ~critic,        ~old,\n         \"Lisbon\",            NA,            4.9,         2.6,\n          \"Porto\",           2.2,             NA,         4.3,\n          \"Moura\",           4.5,              5,         3.4,\n         \"Chaves\",            NA,            2.7,         3.5,\n        \"Coimbra\",           2.5,             NA,         2.3\n  )"
+  },
+  {
+    "objectID": "slides/preparation.html#tidyrfill",
+    "href": "slides/preparation.html#tidyrfill",
+    "title": "Data preparation",
+    "section": "tidyr::fill()",
+    "text": "tidyr::fill()\n\n\n\n\n\n\n\n\n  \n    \n    \n      mammals\n      biomass\n    \n  \n  \n    cattle\n21\n    NA\n5\n    NA\n7\n    NA\n23\n    NA\n74\n    wild\n23\n    NA\n65\n    NA\n12\n    NA\n5\n  \n  \n  \n\n\n\n\n\n\nFill missing values in a column (top to bottom by default)\nContiguous/adjacent values assumed to be the same\nValues only appear when they change along a column\nStops at the next non-missing value"
+  },
+  {
+    "objectID": "slides/preparation.html#section-22",
+    "href": "slides/preparation.html#section-22",
+    "title": "Data preparation",
+    "section": "",
+    "text": "hotels %&gt;% \n  mutate(new_rating = coalesce(guest, critic, old))\n\n# A tibble: 5 × 5\n  location guest critic   old new_rating\n  &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n1 Lisbon    NA      4.9   2.6        4.9\n2 Porto      2.2   NA     4.3        2.2\n3 Moura      4.5    5     3.4        4.5\n4 Chaves    NA      2.7   3.5        2.7\n5 Coimbra    2.5   NA     2.3        2.5"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "This site contains all course materials and presentations."
+  },
+  {
+    "objectID": "index.html#physalia-courses",
+    "href": "index.html#physalia-courses",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "This site contains all course materials and presentations."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "A practical introduction to R",
+    "section": "Instructor:",
+    "text": "Instructor:\nDr. Luis D. Verde Arregoitia"
+  },
+  {
+    "objectID": "slides/introduction.html#section",
+    "href": "slides/introduction.html#section",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "@LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
+  },
+  {
+    "objectID": "slides/introduction.html#today",
+    "href": "slides/introduction.html#today",
+    "title": "A practical introduction to R",
+    "section": "Today",
+    "text": "Today\n\nProject workflow and structure\n\nNaming things\n\nPaths\n\nObjects"
+  },
+  {
+    "objectID": "slides/introduction.html#what-is",
+    "href": "slides/introduction.html#what-is",
+    "title": "A practical introduction to R",
+    "section": "What is ?",
+    "text": "What is ?\n✍️Software\n\nDialect of S?\nStatistical package?\nRStudio?\nScripting language?\nGraphical device?"
+  },
+  {
+    "objectID": "slides/introduction.html#section-2",
+    "href": "slides/introduction.html#section-2",
+    "title": "A practical introduction to R",
+    "section": "?",
+    "text": "?\n\n\n✍️🧑‍🎓Pros\n\n✍️🧑‍🎓Cons"
+  },
+  {
+    "objectID": "slides/introduction.html#this-course",
+    "href": "slides/introduction.html#this-course",
+    "title": "A practical introduction to R",
+    "section": "This course",
+    "text": "This course\n\nLocal installs\nRStudio\ntidyverse dialect\nPipes\nOnline course materials"
+  },
+  {
+    "objectID": "slides/introduction.html#my-setup",
+    "href": "slides/introduction.html#my-setup",
+    "title": "A practical introduction to R",
+    "section": "My setup",
+    "text": "My setup\n\nR v4.3.2\nRStudio 2023.06.1 “Mountain Hydrangea”\nDefault look\nLinux Mint 20.3"
+  },
+  {
+    "objectID": "slides/introduction.html#is-not-rstudio",
+    "href": "slides/introduction.html#is-not-rstudio",
+    "title": "A practical introduction to R",
+    "section": " is not RStudio",
+    "text": "is not RStudio\nIDE - Integrated Development Environment\nTools to make programming easier\n\nSyntax-aware text editor\nShortcuts and tools to manage and execute code\nPanes and windows to organize code, R console, help, etc."
+  },
+  {
+    "objectID": "slides/introduction.html#alternatives",
+    "href": "slides/introduction.html#alternatives",
+    "title": "A practical introduction to R",
+    "section": "Alternatives",
+    "text": "Alternatives\n\nRStudio\n\nEmacs + ESS (https://ess.r-project.org)\n\nvim + Nvim-R: (Turn Vim Into an IDE for R)\n\nVisual Studio + RTVS\nAny text editor (sending code to a running instance)"
+  },
+  {
+    "objectID": "slides/introduction.html#section-3",
+    "href": "slides/introduction.html#section-3",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "R. Geert van den Berg [SPSS Tutorials]"
+  },
+  {
+    "objectID": "slides/introduction.html#scripts-and-source-code",
+    "href": "slides/introduction.html#scripts-and-source-code",
+    "title": "A practical introduction to R",
+    "section": "Scripts and source code",
+    "text": "Scripts and source code\n\n\n\n\nReproduce and modify steps in a sequence\nFind mistakes\nDocument a process\nExame other people’s code"
+  },
+  {
+    "objectID": "slides/introduction.html#packages",
+    "href": "slides/introduction.html#packages",
+    "title": "A practical introduction to R",
+    "section": "📦 Packages",
+    "text": "📦 Packages\n\n\nWhen installing R we install:\nbase: R’s core functions\n\nlist()\nlog()\ncat() rm() etc…"
+  },
+  {
+    "objectID": "slides/introduction.html#packages-1",
+    "href": "slides/introduction.html#packages-1",
+    "title": "A practical introduction to R",
+    "section": "📦 Packages",
+    "text": "📦 Packages\nOther componentss of base R:\nutils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4\n‘recommended’ packages (installed but not loaded every time we open R)\nboot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, rpart, survival, MASS, spatial, nnet, Matrix"
+  },
+  {
+    "objectID": "slides/introduction.html#additional-packages",
+    "href": "slides/introduction.html#additional-packages",
+    "title": "A practical introduction to R",
+    "section": "📦 Additional Packages",
+    "text": "📦 Additional Packages\n\n&gt;19,000 on CRAN (The Comprehensive R Archive Network)\nmany more on GitHub, GitLab, Bitbucket, Bioconductor, etc.\n\nInstalan in R with:\ninstall.packages() for CRAN pkgs\n📦 remotes for most other sources"
+  },
+  {
+    "objectID": "slides/introduction.html#r-and-rstudio-guided-tour",
+    "href": "slides/introduction.html#r-and-rstudio-guided-tour",
+    "title": "A practical introduction to R",
+    "section": "R and RStudio guided tour",
+    "text": "R and RStudio guided tour\n\nRun R\nRun RStudio\nInstall any missing course packages:\n\n\ninstall.packages(\"readxl\")\ninstall.packages(\"fs\")\ninstall.packages(\"here\")"
+  },
+  {
+    "objectID": "slides/introduction.html#file-systems",
+    "href": "slides/introduction.html#file-systems",
+    "title": "A practical introduction to R",
+    "section": "File systems",
+    "text": "File systems\n\n\n Monica Chin (2021)\nFile not Found\n\n Jody Macgregor (2021)\nPC Gamer"
+  },
+  {
+    "objectID": "slides/introduction.html#folders-paths-and-names",
+    "href": "slides/introduction.html#folders-paths-and-names",
+    "title": "A practical introduction to R",
+    "section": "Folders, paths, and names",
+    "text": "Folders, paths, and names\n\n\n\n\nStore files in specific locations, with useful and intentional names\n\nShort informative names\nEasy to sort and compatible with partial matching\nBe mindful of spaces and special characters"
+  },
+  {
+    "objectID": "slides/introduction.html#names",
+    "href": "slides/introduction.html#names",
+    "title": "A practical introduction to R",
+    "section": "Names",
+    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nRoom for improvement\nmaximum temperature in 2014 in Belize\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
+  },
+  {
+    "objectID": "slides/introduction.html#names-1",
+    "href": "slides/introduction.html#names-1",
+    "title": "A practical introduction to R",
+    "section": "Names",
+    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nNot too adequate\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx\n\n\n\nValid names in R may only include letter, numbers, dashes, and underscores. Names may not start with a number"
+  },
+  {
+    "objectID": "slides/introduction.html#letter-cases",
+    "href": "slides/introduction.html#letter-cases",
+    "title": "A practical introduction to R",
+    "section": "Letter cases",
+    "text": "Letter cases\n\ncamelCase - after fist word identify different words with uppercase, no spaces\nsnake_case - all lowercase, underscores separate words\nslug-case - all lowercase, dashes separate words"
+  },
+  {
+    "objectID": "slides/introduction.html#examples",
+    "href": "slides/introduction.html#examples",
+    "title": "A practical introduction to R",
+    "section": "Examples",
+    "text": "Examples\n reptileDataNew\n reptile_data_new\n reptile-data-new\n reptile.data.new\n REPTILE_DATA_NEW"
+  },
+  {
+    "objectID": "slides/introduction.html#project-organization",
+    "href": "slides/introduction.html#project-organization",
+    "title": "A practical introduction to R",
+    "section": "Project organization",
+    "text": "Project organization\nProject\nA folder on your computer that holds all the files relevant to that particular piece of work.\nSeparar:\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
+  },
+  {
+    "objectID": "slides/introduction.html#rstudio-projects",
+    "href": "slides/introduction.html#rstudio-projects",
+    "title": "A practical introduction to R",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory button’\n\nworking directory set to Project directory\n\npaths become relative to project directory"
+  },
+  {
+    "objectID": "slides/introduction.html#practice",
+    "href": "slides/introduction.html#practice",
+    "title": "A practical introduction to R",
+    "section": "Practice",
+    "text": "Practice\nCreate an RStudio project for this course\n\n\nsomewhere easy to access (e.g., Desktop)\n“intro-R-2024” or similar as a name\n\n\nSaving projects one OneDrive may cause issues"
+  },
+  {
+    "objectID": "slides/introduction.html#fs",
+    "href": "slides/introduction.html#fs",
+    "title": "A practical introduction to R",
+    "section": "📦 fs",
+    "text": "📦 fs\nWork with the file system (cross-platform)\nfs functions always return ‘tidy’ paths\nTidy paths\n\nAlways use ‘/’ to delimit directories\n\nNever have multiple or trailing ‘/’\n\nCreate folders\nMove, copy, or rename files"
+  },
+  {
+    "objectID": "slides/introduction.html#practice-1",
+    "href": "slides/introduction.html#practice-1",
+    "title": "A practical introduction to R",
+    "section": "Practice",
+    "text": "Practice\n\nSet up folders in the project directory\n\ndata\nout\nR\n\n\nInstalled packages are loaded with library()\n\nlibrary(fs)"
+  },
+  {
+    "objectID": "slides/introduction.html#creating-new-folders",
+    "href": "slides/introduction.html#creating-new-folders",
+    "title": "A practical introduction to R",
+    "section": "Creating new folders",
+    "text": "Creating new folders\n\ndir_create(\"R\")\ndir_create(\"data\")\ndir_create(\"out\")\ndir_ls()\n\n\nThis can also be done from the RStudio file browser, the terminal, or the OS file browser"
+  },
+  {
+    "objectID": "slides/introduction.html#save-source-not-workspace",
+    "href": "slides/introduction.html#save-source-not-workspace",
+    "title": "A practical introduction to R",
+    "section": "Save source, not workspace",
+    "text": "Save source, not workspace\n\n\n\n\n\nSave important objects or figures explicitly to file\navoid rm(list = ls()), attached objects and packages persist\nSet up ‘blank slate’ and restart R session often\n\n\n\nJenny Bryan & Jim Hester (2020)\nWhat they forgot to teach you about R\nJenny Bryan (2018)\nZen And The aRt Of Workflow Maintenance"
+  },
+  {
+    "objectID": "slides/introduction.html#blank-slate",
+    "href": "slides/introduction.html#blank-slate",
+    "title": "A practical introduction to R",
+    "section": "Blank slate",
+    "text": "Blank slate\n\n\n\ndo not save the workspace to an .Rdata file\nat launch, do not reload the workspace from an .Rdata file."
+  },
+  {
+    "objectID": "slides/introduction.html#restarting-r",
+    "href": "slides/introduction.html#restarting-r",
+    "title": "A practical introduction to R",
+    "section": "Restarting R",
+    "text": "Restarting R\nCtrl+Shift+F10\n(Windows & Linux)\nCommand+Shift+F10\n(Mac)"
+  },
+  {
+    "objectID": "slides/introduction.html#here-and-relative-paths",
+    "href": "slides/introduction.html#here-and-relative-paths",
+    "title": "A practical introduction to R",
+    "section": "📦 {here} and relative paths",
+    "text": "📦 {here} and relative paths\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R\nWork relative to your project root using here()\n\nfigures out the top-level of your current project\nhelps build portable file paths\nreturns absolute paths (starting with /, &lt;drive letter&gt;:\\ or \\\\)\n\n\n\nOde to the here package (2018)"
+  },
+  {
+    "objectID": "slides/introduction.html#section-6",
+    "href": "slides/introduction.html#section-6",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "with the project root at my-project\n\nhere(\"analysis\",\"script1.R\")\n\nwould build:\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R"
+  },
+  {
+    "objectID": "slides/introduction.html#file-import-tabular-data",
+    "href": "slides/introduction.html#file-import-tabular-data",
+    "title": "A practical introduction to R",
+    "section": "File import (tabular data)",
+    "text": "File import (tabular data)\n\nWith the “Import Dataset” button\nWith a read function\n\n\nR for Epidemiology - Cannell & Livingstone"
+  },
+  {
+    "objectID": "slides/introduction.html#file-import",
+    "href": "slides/introduction.html#file-import",
+    "title": "A practical introduction to R",
+    "section": "File import",
+    "text": "File import\nWe need:\n\na function that reads files from disk (or the web)\nfile path\nname of the object to create from the file\nadditional arguments to control the import process"
+  },
+  {
+    "objectID": "slides/introduction.html#section-7",
+    "href": "slides/introduction.html#section-7",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "my_table &lt;- read.csv(file = \"my_folder/my-file.csv\",\n                     header = TRUE) \n\nmy_table - object being created in R\nread.csv() - fn to read delimited text files\nfile = \"my_folder/my-file.csv\" - file path\nheader = TRUE - additional argument (specify if first row is headers)"
+  },
+  {
+    "objectID": "slides/introduction.html#readr-and-readxl",
+    "href": "slides/introduction.html#readr-and-readxl",
+    "title": "A practical introduction to R",
+    "section": "readr and readxl",
+    "text": "readr and readxl\nAdditional packages to import rectangular data from text files and spreadsheets\n\nFewer import errors\nFlexible and fast\nTools to clean values inside columns"
+  },
+  {
+    "objectID": "slides/introduction.html#practice-2",
+    "href": "slides/introduction.html#practice-2",
+    "title": "A practical introduction to R",
+    "section": "Practice",
+    "text": "Practice\nImport a table from file"
+  },
+  {
+    "objectID": "slides/introduction.html#spreadsheets",
+    "href": "slides/introduction.html#spreadsheets",
+    "title": "A practical introduction to R",
+    "section": "Spreadsheets",
+    "text": "Spreadsheets\n\n~ 1000,000,000 users worldwide\nxlsx, xls, ods formats and web-based (e.g. Google sheets)\n\n\n\n\n\n\nLoans in 1593\n\n\n\n\n\n\nVisiCalc\n\n\n\n\n\nAll accesible with R"
+  },
+  {
+    "objectID": "slides/introduction.html#practice-3",
+    "href": "slides/introduction.html#practice-3",
+    "title": "A practical introduction to R",
+    "section": "Practice",
+    "text": "Practice\nwith readxl:\nImport the sheets from the petshop.xlsx file\nUseful arguments\n\npath\nsheet\nskip"
+  },
+  {
+    "objectID": "slides/introduction.html#r-programming-principles",
+    "href": "slides/introduction.html#r-programming-principles",
+    "title": "A practical introduction to R",
+    "section": "R programming principles",
+    "text": "R programming principles\n\nEverything that exists is an object \nEverything that happens is a function call (functions are objects) \nFunctions (generally) live in packages"
+  },
+  {
+    "objectID": "slides/introduction.html#objects",
+    "href": "slides/introduction.html#objects",
+    "title": "A practical introduction to R",
+    "section": "Objects",
+    "text": "Objects\n\nTables with rows and columns\nModels\nLists\nGraphics\n\n\nAll objects have classes and attributes and there are many ways to create them"
+  },
+  {
+    "objectID": "slides/introduction.html#section-8",
+    "href": "slides/introduction.html#section-8",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "Vectors\n\nLists\n\n\nTables"
+  },
+  {
+    "objectID": "slides/introduction.html#vectors-1",
+    "href": "slides/introduction.html#vectors-1",
+    "title": "A practical introduction to R",
+    "section": "Vectors",
+    "text": "Vectors\nNumbers\n\n\nc(1,2,3,4)\n\n[1] 1 2 3 4\n\n\n\n\n\n\nc(22.1,0.006,4.1)\n\n[1] 22.100  0.006  4.100"
+  },
+  {
+    "objectID": "slides/introduction.html#vectors-2",
+    "href": "slides/introduction.html#vectors-2",
+    "title": "A practical introduction to R",
+    "section": "Vectors",
+    "text": "Vectors\nCharacter\n\n\nc(\"dog\",\"cat\",\"rat\",\"B\")\n\n[1] \"dog\" \"cat\" \"rat\" \"B\""
+  },
+  {
+    "objectID": "slides/introduction.html#vectors-3",
+    "href": "slides/introduction.html#vectors-3",
+    "title": "A practical introduction to R",
+    "section": "Vectors",
+    "text": "Vectors\nLogical (true/false)\n\n\nc(TRUE,FALSE,FALSE,FALSE,TRUE)\n\n[1]  TRUE FALSE FALSE FALSE  TRUE"
+  },
+  {
+    "objectID": "slides/introduction.html#creating-objects",
+    "href": "slides/introduction.html#creating-objects",
+    "title": "A practical introduction to R",
+    "section": "Creating objects",
+    "text": "Creating objects\n\n\nx &lt;- c(1, 2, 3)\n\n\nThe function c() concatenates elements\n\n\nx &lt;- c(1,2,3)\ny &lt;- c(\"a\",\"G\",\"h\")\n\n\n\n\nx\n\n[1] 1 2 3\n\ny\n\n[1] \"a\" \"G\" \"h\""
+  },
+  {
+    "objectID": "slides/introduction.html#objects-have-classes",
+    "href": "slides/introduction.html#objects-have-classes",
+    "title": "A practical introduction to R",
+    "section": "Objects have classes",
+    "text": "Objects have classes\n\n\nclass(x)\n\n[1] \"numeric\"\n\nclass(y)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "slides/introduction.html#vectors-can-only-have-objects-of-the-same-class",
+    "href": "slides/introduction.html#vectors-can-only-have-objects-of-the-same-class",
+    "title": "A practical introduction to R",
+    "section": "Vectors can only have objects of the same class",
+    "text": "Vectors can only have objects of the same class\n\n\nc(1,\"a\",2)\n\n[1] \"1\" \"a\" \"2\"\n\n\n\nNote the automatic type conversion"
+  },
+  {
+    "objectID": "slides/introduction.html#numeric-vectors",
+    "href": "slides/introduction.html#numeric-vectors",
+    "title": "A practical introduction to R",
+    "section": "Numeric vectors",
+    "text": "Numeric vectors"
+  },
+  {
+    "objectID": "slides/introduction.html#factors",
+    "href": "slides/introduction.html#factors",
+    "title": "A practical introduction to R",
+    "section": "Factors",
+    "text": "Factors\n\n\n\n\n\nCategorical data\nThe labels for each value are known as levels\nCreate with factor()"
+  },
+  {
+    "objectID": "slides/introduction.html#factors-1",
+    "href": "slides/introduction.html#factors-1",
+    "title": "A practical introduction to R",
+    "section": "Factors",
+    "text": "Factors\n\n\nfactor(c(\"dog\",\"cat\",\"bird\",\"none\",\n         \"dog\",\"none\",\"dog\",\"dog\",\n         \"cat\",\"bird\",\"dog\"))\n\n [1] dog  cat  bird none dog  none dog  dog  cat  bird dog \nLevels: bird cat dog none"
+  },
+  {
+    "objectID": "slides/introduction.html#two-or-more-vectors-of-the-same-length",
+    "href": "slides/introduction.html#two-or-more-vectors-of-the-same-length",
+    "title": "A practical introduction to R",
+    "section": "Two or more vectors of the same length…",
+    "text": "Two or more vectors of the same length…\n\n\n\n\n\nData frame!\n\nTabular object with rows and columns\nColumns may be of different classes\nEach column/variable has a name"
+  },
+  {
+    "objectID": "slides/introduction.html#data-frames",
+    "href": "slides/introduction.html#data-frames",
+    "title": "A practical introduction to R",
+    "section": "Data frames",
+    "text": "Data frames\nCreated importing files or with data.frame()\n\n\nmy_table &lt;- \ndata.frame(id=c(\"frog\",\"fish\",\"otter\",\"worm\"),\n           ind_g=c(12,15,13,10),\n           present=c(TRUE,TRUE,FALSE,TRUE))\n\n\n\neach vector is a column\ncolumn names unquoted\nsame length for all vectors"
+  },
+  {
+    "objectID": "slides/introduction.html#section-9",
+    "href": "slides/introduction.html#section-9",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "my_table\n\n     id ind_g present\n1  frog    12    TRUE\n2  fish    15    TRUE\n3 otter    13   FALSE\n4  worm    10    TRUE"
+  },
+  {
+    "objectID": "slides/preparation.html#section-2",
+    "href": "slides/preparation.html#section-2",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Davis Vaughan (2018)\nTidying Excel cash flow spreadsheets"
+  },
+  {
+    "objectID": "slides/preparation.html#tidy-data-1",
+    "href": "slides/preparation.html#tidy-data-1",
+    "title": "Data preparation",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nArranged in a 2D data matrix with rows and columns\nRows correspond to observations\nColumns correspond to variables\nOne value per cell\n\n\nWickham (2014)\nTidy Data - Journal of Statistical Software"
+  },
+  {
+    "objectID": "slides/preparation.html#grouping-information-goes-in-its-own-variable",
+    "href": "slides/preparation.html#grouping-information-goes-in-its-own-variable",
+    "title": "Data preparation",
+    "section": "Grouping information goes in its own variable",
+    "text": "Grouping information goes in its own variable\nUse indicator variables instead of encoding information into an existing value."
+  },
+  {
+    "objectID": "slides/preparation.html#much-better",
+    "href": "slides/preparation.html#much-better",
+    "title": "Data preparation",
+    "section": "Much better",
+    "text": "Much better\n\n\n\n\n\n\n  \n    \n    \n      university\n      coast\n      division\n      min_score\n      avg_score\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199"
+  },
+  {
+    "objectID": "slides/preparation.html#section-23",
+    "href": "slides/preparation.html#section-23",
+    "title": "Data preparation",
+    "section": "",
+    "text": "mammal_carbon\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 &lt;NA&gt;          5\n3 &lt;NA&gt;          7\n4 &lt;NA&gt;         23\n5 &lt;NA&gt;         74\n6 wild         23\n7 &lt;NA&gt;         65\n8 &lt;NA&gt;         12\n9 &lt;NA&gt;          5\n\n\n\n\nmammal_carbon %&gt;% \n  fill(mammals)\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 cattle        5\n3 cattle        7\n4 cattle       23\n5 cattle       74\n6 wild         23\n7 wild         65\n8 wild         12\n9 wild          5"
+  }
+]

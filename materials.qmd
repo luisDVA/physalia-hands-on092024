@@ -1,0 +1,32 @@
+---
+title: "Course materials"
+toc-title: Contents
+---
+
+## Data
+
+Download all course files (datasets and scripts) used in examples and class exercises:
+
+[️[Download Files](examples/coursefiles.zip)]{style="font-size: 1.6rem; background-color: #b46294; padding: 3px; border-radius: 6px; text-align: center;"}
+
+## Presentations
+
+These web-based HTML slide decks have an interactive table of contents (button on bottom left corner)
+
+### Monday
+
+[Introduction](slides/introduction.qmd)
+
+### Tuesday
+
+[Data preparation](slides/preparation.qmd)
+
+### Wednesday
+
+[Data Visualization](slides/visualization.qmd)
+
+### Thursday
+
+[Programming and reproducibility](slides/programming.qmd)
+
+[Quarto Documents](slides/quarto.qmd)
