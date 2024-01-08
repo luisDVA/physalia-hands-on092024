@@ -121,7 +121,7 @@ Tools to make programming easier
 
 ## Alternatives
 
- - RStudio\
+- RStudio (by posit, formerly RStudio PBC)\
 - Emacs + ESS (https://ess.r-project.org)\
 - vim + Nvim-R: ([Turn Vim Into an IDE for R](https://medium.com/free-code-camp/turning-vim-into-an-r-ide-cd9602e8c217))\
 - Visual Studio + [RTVS](https://docs.microsoft.com/en-us/visualstudio/rtvs)
@@ -291,7 +291,7 @@ Jenny Bryan (2015)\
 :::
 :::
 
-Valid names in R may only include lettesr, numbers, dashes, and underscores. Names may not start with a number
+Valid names in R may only include letters, numbers, dashes, and underscores. Names may not start with a number
 
 
 ## Letter case
@@ -330,7 +330,7 @@ REPTILE_DATA_NEW
 
 ## Project organization
 
-*Project*: A folder on your computer that holds all the files relevant to that particular piece of work.
+*Project*: A folder on your computer that holds all the files relevant to that particular piece of work
 
 ### Separate:
 
@@ -510,12 +510,14 @@ Work relative to your project root using `here()`
 
 with the project root at `my-project`
 
+:::{.med-code}
 ```{r}
 #| eval: false
 #| echo: true
 
 here("analysis","script1.R")
 ```
+:::
 would build:  
   
 `F:\path\that\no one\else\has\my-project\analysis\script1.R`
@@ -613,7 +615,7 @@ Import the sheets from the `petshop.xlsx` file
 - `sheet` 
 - `skip`
 
-# Data Structures
+# Data structures
 
 ## R programming principles
 

@@ -495,7 +495,7 @@ Graphical device?</p>
 <section id="alternatives" class="slide level2">
 <h2>Alternatives</h2>
 <ul>
-<li>RStudio<br>
+<li>RStudio (by posit, formerly RStudio PBC)<br>
 </li>
 <li>Emacs + ESS (https://ess.r-project.org)<br>
 </li>
@@ -515,10 +515,12 @@ Graphical device?</p>
 <div class="column" style="width:40%;">
 <p><img data-src="imgs/pancks.png"></p>
 </div><div class="column" style="width:60%;">
-<p>Reproduce and modify steps in a sequence</p>
-<p>Find mistakes</p>
-<p>Document a process</p>
-<p>Exame other people’s code</p>
+<ul>
+<li><p>Reproduce and modify steps in a sequence</p></li>
+<li><p>Find mistakes</p></li>
+<li><p>Document a process</p></li>
+<li><p>Examine other people’s code</p></li>
+</ul>
 </div>
 </div>
 </section>
@@ -528,14 +530,13 @@ Graphical device?</p>
 <br>
 When installing R we install:</p>
 <p><code>base</code>: R’s core functions<br>
-<br>
-<code>list()</code><br>
+some examples: <code>list()</code><br>
 <code>log()</code><br>
 <code>cat()</code> <code>rm()</code> etc…</p>
 </section>
 <section id="packages-1" class="slide level2">
 <h2>📦 Packages</h2>
-<p>Other componentss of base R:<br>
+<p>Other components of base R:<br>
 <code>utils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4</code></p>
 <p>‘recommended’ packages (installed but not loaded every time we open R)</p>
 <p><code>boot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, rpart, survival, MASS, spatial, nnet, Matrix</code></p>
@@ -546,8 +547,8 @@ When installing R we install:</p>
 <li><p>&gt;19,000 on <a href="https://cran.r-project.org/">CRAN</a> (The Comprehensive R Archive Network)</p></li>
 <li><p>many more on GitHub, GitLab, Bitbucket, Bioconductor, etc.</p></li>
 </ul>
-<p>Instalan in R with:</p>
-<p><code>install.packages()</code> for CRAN pkgs<br>
+<p>Install in R with:</p>
+<p><code>install.packages()</code> for CRAN packages<br>
 <code>📦 remotes</code> for most other sources</p>
 </section>
 <section id="r-and-rstudio-guided-tour" class="slide level2" data-background-color="#a4c5ff">
@@ -609,8 +610,8 @@ When installing R we install:</p>
 <br> <code>min_price_usd</code><br>
 <code>monthly_temp</code></p>
 </div><div class="column" style="width:60%;">
-<h3 id="room-for-improvement">Room for improvement</h3>
-<p><code>maximum temperature in 2014 in Belize</code><br>
+<h3 id="fix">fix</h3>
+<p><code>'maximum temperature in 2014 in Belize'</code><br>
 <code>max</code><br>
 <code>temp</code><br>
 <code>'Minimum Price ($) USD'</code><br>
@@ -634,17 +635,17 @@ When installing R we install:</p>
 <code>02_invoice-july2023.pdf</code><br>
 <code>ms_ferns_20210412.docx</code></p>
 </div><div class="column" style="width:40%;">
-<h3 id="not-too-adequate">Not too adequate</h3>
+<h3 id="fix-1">fix</h3>
 <p><code>download462copy.pdf</code><br>
 <code>julypurchases.pdf</code><br>
 <code>draft.docx</code><br>
 </p>
 </div>
 </div>
-<p>Valid names in R may only include letter, numbers, dashes, and underscores. Names may not start with a number</p>
+<p>Valid names in R may only include letters, numbers, dashes, and underscores. Names may not start with a number</p>
 </section>
-<section id="letter-cases" class="slide level2">
-<h2>Letter cases</h2>
+<section id="letter-case" class="slide level2">
+<h2>Letter case</h2>
 <p><br></p>
 <p><strong>camelCase</strong> - after fist word identify different words with uppercase, no spaces</p>
 <p><strong>snake_case</strong> - all lowercase, underscores separate words</p>
@@ -654,7 +655,7 @@ When installing R we install:</p>
 
 <p><br><br> <strong>Title Case</strong> - Capitalize words except articles, use spaces</p>
 <p><strong>Sentence case</strong> - Capitalize first word, use spaces <br> <br></p>
-<p>We can go between different letter cases using the 📦 <code>snakecase</code> package</p>
+<p>We can transform text strings between different letter cases using the 📦 <code>snakecase</code> package</p>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
@@ -666,10 +667,8 @@ When installing R we install:</p>
 </section>
 <section id="project-organization" class="slide level2">
 <h2>Project organization</h2>
-<h3 id="project">Project</h3>
-<p>A folder on your computer that holds all the files relevant to that particular piece of work.</p>
-<h3 id="separar">Separar:</h3>
-<p>Separate:</p>
+<p><em>Project</em>: A folder on your computer that holds all the files relevant to that particular piece of work</p>
+<h3 id="separate">Separate:</h3>
 <p>📁 Data (or code to get data from a remote resource)<br>
 📁 Analysis and/or visualization scripts<br>
 📁 Outputs (graphs, reports, intermediate data files, etc.)<br>
@@ -698,7 +697,7 @@ When installing R we install:</p>
 <li><p>dedicated R process</p></li>
 <li><p>file browser pointed at Project directory</p>
 <ul>
-<li>convenient ‘go-to-project directory button’</li>
+<li>convenient ‘go-to-project directory’ button</li>
 </ul></li>
 <li><p>working directory set to Project directory</p>
 <ul>
@@ -728,7 +727,7 @@ When installing R we install:</p>
 <h2>📦 <code>fs</code></h2>
 <p>Work with the file system (cross-platform)</p>
 <p><code>fs</code> functions always return ‘tidy’ paths</p>
-<h3 id="tidy-paths">Tidy paths</h3>
+<h4 id="tidy-paths">Tidy paths</h4>
 <ul>
 <li>Always use ‘<strong><code>/</code></strong>’ to delimit directories<br>
 </li>
@@ -825,8 +824,10 @@ Jenny Bryan (2018)<br>
 <section id="section-6" class="slide level2">
 <h2></h2>
 <p>with the project root at <code>my-project</code></p>
+<div class="med-code">
 <div class="cell" data-hash="introduction_cache/revealjs/unnamed-chunk-4_3a233e580cc43b0cdb1781ba52d34ce7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">here</span>(<span class="st">"analysis"</span>,<span class="st">"script1.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>would build:</p>
 <p><code>F:\path\that\no one\else\has\my-project\analysis\script1.R</code></p>
@@ -861,14 +862,16 @@ Jenny Bryan (2018)<br>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
+<div class="med-code">
 <div class="cell" data-hash="introduction_cache/revealjs/unnamed-chunk-5_771d0de8abd29ab93794eb4013a81b45">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>my_table <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"my_folder/my-file.csv"</span>,</span>
 <span id="cb5-2"><a href="#cb5-2"></a>                     <span class="at">header =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p><code>my_table</code> - object being created in R<br>
-<code>read.csv()</code> - fn to read delimited text files<br>
+<code>read.csv()</code> - function to read delimited text files<br>
 <code>file = "my_folder/my-file.csv"</code> - file path<br>
-<code>header = TRUE</code> - additional argument (specify if first row is headers)</p>
+<code>header = TRUE</code> - additional argument (specify if first row contains the variable names)</p>
 </section>
 <section id="readr-and-readxl" class="slide level2">
 <h2><code>readr</code> and <code>readxl</code></h2>
@@ -906,9 +909,6 @@ Jenny Bryan (2018)<br>
 </div>
 </div>
 </div>
-<blockquote>
-<p>All accesible with R</p>
-</blockquote>
 </section>
 <section id="practice-3" class="slide level2" data-background-color="#a4c5ff">
 <h2>Practice</h2>
@@ -923,7 +923,7 @@ Jenny Bryan (2018)<br>
 </section></section>
 <section>
 <section id="data-structures" class="title-slide slide level1 center">
-<h1>Data Structures</h1>
+<h1>Data structures</h1>
 
 </section>
 <section id="r-programming-principles" class="slide level2">
@@ -1054,8 +1054,8 @@ Jenny Bryan (2018)<br>
 </div>
 </div>
 </section>
-<section id="vectors-can-only-have-objects-of-the-same-class" class="slide level2">
-<h2>Vectors can only have objects of the same class</h2>
+<section id="vectors-can-only-contain-objects-of-the-same-class" class="slide level2">
+<h2>Vectors can only contain objects of the same class</h2>
 <div class="big-code">
 <div class="cell" data-hash="introduction_cache/revealjs/unnamed-chunk-14_70f270189b548475bdfb9bcecfc94a68">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">"a"</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1064,7 +1064,7 @@ Jenny Bryan (2018)<br>
 </div>
 </div>
 </div>
-<p>Note the automatic type conversion</p>
+<p><em>Note the automatic type conversion</em></p>
 </section>
 <section id="numeric-vectors" class="slide level2">
 <h2>Numeric vectors</h2>

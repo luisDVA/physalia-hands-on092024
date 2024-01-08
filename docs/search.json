@@ -578,7 +578,7 @@
     "href": "index.html#instructor",
     "title": "A practical introduction to R",
     "section": "Instructor:",
-    "text": "Instructor:\nDr. Luis D. Verde Arregoitia"
+    "text": "Instructor:\nDr. Luis D. Verde Arregoitia\n\nCourse program"
   },
   {
     "objectID": "slides/introduction.html#section",
@@ -634,7 +634,7 @@
     "href": "slides/introduction.html#alternatives",
     "title": "A practical introduction to R",
     "section": "Alternatives",
-    "text": "Alternatives\n\nRStudio\n\nEmacs + ESS (https://ess.r-project.org)\n\nvim + Nvim-R: (Turn Vim Into an IDE for R)\n\nVisual Studio + RTVS\nAny text editor (sending code to a running instance)"
+    "text": "Alternatives\n\nRStudio (by posit, formerly RStudio PBC)\n\nEmacs + ESS (https://ess.r-project.org)\n\nvim + Nvim-R: (Turn Vim Into an IDE for R)\n\nVisual Studio + RTVS\nAny text editor (sending code to a running instance)"
   },
   {
     "objectID": "slides/introduction.html#section-3",
@@ -648,28 +648,28 @@
     "href": "slides/introduction.html#scripts-and-source-code",
     "title": "A practical introduction to R",
     "section": "Scripts and source code",
-    "text": "Scripts and source code\n\n\n\n\nReproduce and modify steps in a sequence\nFind mistakes\nDocument a process\nExame other people’s code"
+    "text": "Scripts and source code\n\n\n\n\n\nReproduce and modify steps in a sequence\nFind mistakes\nDocument a process\nExamine other people’s code"
   },
   {
     "objectID": "slides/introduction.html#packages",
     "href": "slides/introduction.html#packages",
     "title": "A practical introduction to R",
     "section": "📦 Packages",
-    "text": "📦 Packages\n\n\nWhen installing R we install:\nbase: R’s core functions\n\nlist()\nlog()\ncat() rm() etc…"
+    "text": "📦 Packages\n\n\nWhen installing R we install:\nbase: R’s core functions\nsome examples: list()\nlog()\ncat() rm() etc…"
   },
   {
     "objectID": "slides/introduction.html#packages-1",
     "href": "slides/introduction.html#packages-1",
     "title": "A practical introduction to R",
     "section": "📦 Packages",
-    "text": "📦 Packages\nOther componentss of base R:\nutils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4\n‘recommended’ packages (installed but not loaded every time we open R)\nboot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, rpart, survival, MASS, spatial, nnet, Matrix"
+    "text": "📦 Packages\nOther components of base R:\nutils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4\n‘recommended’ packages (installed but not loaded every time we open R)\nboot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, rpart, survival, MASS, spatial, nnet, Matrix"
   },
   {
     "objectID": "slides/introduction.html#additional-packages",
     "href": "slides/introduction.html#additional-packages",
     "title": "A practical introduction to R",
     "section": "📦 Additional Packages",
-    "text": "📦 Additional Packages\n\n&gt;19,000 on CRAN (The Comprehensive R Archive Network)\nmany more on GitHub, GitLab, Bitbucket, Bioconductor, etc.\n\nInstalan in R with:\ninstall.packages() for CRAN pkgs\n📦 remotes for most other sources"
+    "text": "📦 Additional Packages\n\n&gt;19,000 on CRAN (The Comprehensive R Archive Network)\nmany more on GitHub, GitLab, Bitbucket, Bioconductor, etc.\n\nInstall in R with:\ninstall.packages() for CRAN packages\n📦 remotes for most other sources"
   },
   {
     "objectID": "slides/introduction.html#r-and-rstudio-guided-tour",
@@ -697,14 +697,14 @@
     "href": "slides/introduction.html#names",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nRoom for improvement\nmaximum temperature in 2014 in Belize\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
+    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nfix\n'maximum temperature in 2014 in Belize'\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
   },
   {
     "objectID": "slides/introduction.html#names-1",
     "href": "slides/introduction.html#names-1",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nNot too adequate\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx\n\n\n\nValid names in R may only include letter, numbers, dashes, and underscores. Names may not start with a number"
+    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nfix\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx\n\n\n\nValid names in R may only include letters, numbers, dashes, and underscores. Names may not start with a number"
   },
   {
     "objectID": "slides/introduction.html#letter-cases",
@@ -725,14 +725,14 @@
     "href": "slides/introduction.html#project-organization",
     "title": "A practical introduction to R",
     "section": "Project organization",
-    "text": "Project organization\nProject\nA folder on your computer that holds all the files relevant to that particular piece of work.\nSeparar:\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
+    "text": "Project organization\nProject: A folder on your computer that holds all the files relevant to that particular piece of work\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
   },
   {
     "objectID": "slides/introduction.html#rstudio-projects",
     "href": "slides/introduction.html#rstudio-projects",
     "title": "A practical introduction to R",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory button’\n\nworking directory set to Project directory\n\npaths become relative to project directory"
+    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory’ button\n\nworking directory set to Project directory\n\npaths become relative to project directory"
   },
   {
     "objectID": "slides/introduction.html#practice",
@@ -795,7 +795,7 @@
     "href": "slides/introduction.html#section-6",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "with the project root at my-project\n\nhere(\"analysis\",\"script1.R\")\n\nwould build:\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R"
+    "text": "with the project root at my-project\n\n\nhere(\"analysis\",\"script1.R\")\n\n\nwould build:\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R"
   },
   {
     "objectID": "slides/introduction.html#file-import-tabular-data",
@@ -816,7 +816,7 @@
     "href": "slides/introduction.html#section-7",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "my_table &lt;- read.csv(file = \"my_folder/my-file.csv\",\n                     header = TRUE) \n\nmy_table - object being created in R\nread.csv() - fn to read delimited text files\nfile = \"my_folder/my-file.csv\" - file path\nheader = TRUE - additional argument (specify if first row is headers)"
+    "text": "my_table &lt;- read.csv(file = \"my_folder/my-file.csv\",\n                     header = TRUE) \n\n\nmy_table - object being created in R\nread.csv() - function to read delimited text files\nfile = \"my_folder/my-file.csv\" - file path\nheader = TRUE - additional argument (specify if first row contains the variable names)"
   },
   {
     "objectID": "slides/introduction.html#readr-and-readxl",
@@ -837,7 +837,7 @@
     "href": "slides/introduction.html#spreadsheets",
     "title": "A practical introduction to R",
     "section": "Spreadsheets",
-    "text": "Spreadsheets\n\n~ 1000,000,000 users worldwide\nxlsx, xls, ods formats and web-based (e.g. Google sheets)\n\n\n\n\n\n\nLoans in 1593\n\n\n\n\n\n\nVisiCalc\n\n\n\n\n\nAll accesible with R"
+    "text": "Spreadsheets\n\n~ 1000,000,000 users worldwide\nxlsx, xls, ods formats and web-based (e.g. Google sheets)\n\n\n\n\n\n\nLoans in 1593\n\n\n\n\n\n\nVisiCalc"
   },
   {
     "objectID": "slides/introduction.html#practice-3",
@@ -985,5 +985,26 @@
     "title": "Data preparation",
     "section": "",
     "text": "mammal_carbon\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 &lt;NA&gt;          5\n3 &lt;NA&gt;          7\n4 &lt;NA&gt;         23\n5 &lt;NA&gt;         74\n6 wild         23\n7 &lt;NA&gt;         65\n8 &lt;NA&gt;         12\n9 &lt;NA&gt;          5\n\n\n\n\nmammal_carbon %&gt;% \n  fill(mammals)\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 cattle        5\n3 cattle        7\n4 cattle       23\n5 cattle       74\n6 wild         23\n7 wild         65\n8 wild         12\n9 wild          5"
+  },
+  {
+    "objectID": "slides/introduction.html",
+    "href": "slides/introduction.html",
+    "title": "A practical introduction to R",
+    "section": "",
+    "text": "@LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
+  },
+  {
+    "objectID": "slides/introduction.html#letter-case",
+    "href": "slides/introduction.html#letter-case",
+    "title": "A practical introduction to R",
+    "section": "Letter case",
+    "text": "Letter case\n\ncamelCase - after fist word identify different words with uppercase, no spaces\nsnake_case - all lowercase, underscores separate words\nslug-case - all lowercase, dashes separate words"
+  },
+  {
+    "objectID": "slides/introduction.html#vectors-can-only-contain-objects-of-the-same-class",
+    "href": "slides/introduction.html#vectors-can-only-contain-objects-of-the-same-class",
+    "title": "A practical introduction to R",
+    "section": "Vectors can only contain objects of the same class",
+    "text": "Vectors can only contain objects of the same class\n\n\nc(1,\"a\",2)\n\n[1] \"1\" \"a\" \"2\"\n\n\n\nNote the automatic type conversion"
   }
 ]

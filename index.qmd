@@ -11,3 +11,5 @@ This site contains all course materials and presentations.
 
 ## Instructor:
 Dr. Luis D. Verde Arregoitia
+
+### Course [program](https://www.physalia-courses.org/courses-workshops/r-tidyverse/)
