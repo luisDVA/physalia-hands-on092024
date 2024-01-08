@@ -39,7 +39,7 @@
     "href": "slides/preparation.html#intermediate-objects",
     "title": "Data preparation",
     "section": "Intermediate objects",
-    "text": "Intermediate objects\n :::{.med-code}\n\nmn_scrs &lt;- mean(scores)\n\nrd_mn_scrs &lt;- round(mn_scrs, digits = 2)\n\nrd_mn_scrs\n\n[1] 7.78\n\n\n:::"
+    "text": "Intermediate objects\n\n\n\nmn_scrs &lt;- mean(scores)\n\nrd_mn_scrs &lt;- round(mn_scrs, digits = 2)\n\nrd_mn_scrs\n\n[1] 7.78"
   },
   {
     "objectID": "slides/preparation.html#pipes-1",
@@ -81,7 +81,7 @@
     "href": "slides/preparation.html#tibbles",
     "title": "Data preparation",
     "section": "tibbles",
-    "text": "tibbles\nA modern implementation of data.frames\nImplemented across the tidyverse through 📦 tibble\n\n\ntibble(\n  x = c(\"a\", \"b\", \"c\"),\n  y = c(1, 2, 3)\n)\n\n# A tibble: 3 × 2\n  x         y\n  &lt;chr&gt; &lt;dbl&gt;\n1 a         1\n2 b         2\n3 c         3\n\n\n\n\nShared rectangular data object for all tidyverse packages"
+    "text": "tibbles\nA modern implementation of data.frames\nImplemented across the tidyverse through 📦 tibble\n\n\ntibble(\n  x = c(\"a\", \"b\", \"c\"),\n  y = c(1, 2, 3)\n)\n\n# A tibble: 3 × 2\n  x         y\n  &lt;chr&gt; &lt;dbl&gt;\n1 a         1\n2 b         2\n3 c         3"
   },
   {
     "objectID": "slides/preparation.html#tidyverse-functions",
@@ -172,7 +172,7 @@
     "href": "slides/preparation.html#ready-for-immediate-use",
     "title": "Data preparation",
     "section": "Ready for immediate use?",
-    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share"
+    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share\n\n\nR4DS 2nd ed"
   },
   {
     "objectID": "slides/preparation.html#not-ready",
@@ -242,21 +242,21 @@
     "href": "slides/preparation.html#section-6",
     "title": "Data preparation",
     "section": "",
-    "text": "Code NA values consistently (if done consistently, blank cells are OK)\nAvoid ambiguity\n\n\nAre data known to be missing, or was a value intentionally left blank?\n\n\nAvoid empty cells as padding to align values, or for aesthetic or layout purposes.\nAvoid NA values in column headers"
+    "text": "Variables feed directly into model specifications and plotting parameters."
   },
   {
     "objectID": "slides/preparation.html#make-reasonable-headers-column-names",
     "href": "slides/preparation.html#make-reasonable-headers-column-names",
     "title": "Data preparation",
     "section": "Make reasonable headers (column names)",
-    "text": "Make reasonable headers (column names)\nuninformative names with inconsistent naming schemes\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min_Score\n      AVERAGE.SCORE\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
+    "text": "Make reasonable headers (column names)\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min_Score\n      AVERAGE.SCORE\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
   },
   {
     "objectID": "slides/preparation.html#section-7",
     "href": "slides/preparation.html#section-7",
     "title": "Data preparation",
     "section": "",
-    "text": "Much better\n\n\n\n\n\n\n  \n    \n    \n      university\n      coast\n      division\n      min_score\n      avg_score\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199"
+    "text": "Code NA values consistently (if done consistently, blank cells are OK)\nAvoid ambiguity\n\n\nAre data known to be missing, or was a value intentionally left blank?\n\n\nAvoid empty cells as padding to align values, or for aesthetic or layout purposes.\nAvoid NA values in column headers"
   },
   {
     "objectID": "slides/preparation.html#names-broken-across-rows",
@@ -375,7 +375,7 @@
     "href": "slides/preparation.html#useful-column-selection-helpers",
     "title": "Data preparation",
     "section": "Useful column selection helpers",
-    "text": "Useful column selection helpers\nTo specify sets of columns, there are a number of useful helper functions that we can use alongside or instead of the across function.\n\n\n\n[dplyr selection features and helpers]"
+    "text": "Useful column selection helpers\nTo specify sets of columns, there are a number of useful helper functions that we can use alongside or instead of the across function.\n\n\n\ndplyr selection features and helpers"
   },
   {
     "objectID": "slides/preparation.html#everything",
@@ -389,7 +389,7 @@
     "href": "slides/preparation.html#section-9",
     "title": "Data preparation",
     "section": "",
-    "text": "Megadiverse countriesData\n\n\n\n\n\n\n\n\n  \n    \n    \n      cntry\n      species\n      threatened\n      region\n    \n  \n  \n    Indonesia\n670\n191\nAsia\n    Brasil\n648\n80\nAmerica\n    China\n551\n73\nAsia\n    Mexico\n523\n96\nAmerica\n    Peru\n467\n53\nAmerica\n    Congo\n430\n15\nAfrica\n    India\n412\n93\nAsia\n    Kenya\n376\n30\nAfrica\n    Argentina\n374\n38\nAmerica\n    Ecuador\n372\n47\nAmerica\n    Venezuela\n363\n35\nAmerica\n    Tanzania\n359\n41\nAfrica\n  \n  \n  \n\n\n\n\n\n\n\nmcountries &lt;- \ntibble::tribble(\n      ~cntry,   ~species, ~threatened,   ~region,\n  \"Indonesia\",      670L,        191L,    \"Asia\",\n     \"Brasil\",      648L,         80L, \"America\",\n      \"China\",      551L,         73L,    \"Asia\",\n     \"Mexico\",      523L,         96L, \"America\",\n       \"Peru\",      467L,         53L, \"America\",\n      \"Congo\",      430L,         15L,  \"Africa\",\n      \"India\",      412L,         93L,    \"Asia\",\n      \"Kenya\",      376L,         30L,  \"Africa\",\n  \"Argentina\",      374L,         38L, \"America\",\n    \"Ecuador\",      372L,         47L, \"America\",\n  \"Venezuela\",      363L,         35L, \"America\",\n   \"Tanzania\",      359L,         41L,  \"Africa\"\n  )"
+    "text": "PDFs are not a suitable file format"
   },
   {
     "objectID": "slides/preparation.html#where",
@@ -409,15 +409,15 @@
     "objectID": "slides/preparation.html#section-10",
     "href": "slides/preparation.html#section-10",
     "title": "Data preparation",
-    "section": "!",
-    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
+    "section": "",
+    "text": "Megadiverse countriesData\n\n\n\n\n\n\n\n\n  \n    \n    \n      cntry\n      species\n      threatened\n      region\n    \n  \n  \n    Indonesia\n670\n191\nAsia\n    Brasil\n648\n80\nAmerica\n    China\n551\n73\nAsia\n    Mexico\n523\n96\nAmerica\n    Peru\n467\n53\nAmerica\n    Congo\n430\n15\nAfrica\n    India\n412\n93\nAsia\n    Kenya\n376\n30\nAfrica\n    Argentina\n374\n38\nAmerica\n    Ecuador\n372\n47\nAmerica\n    Venezuela\n363\n35\nAmerica\n    Tanzania\n359\n41\nAfrica\n  \n  \n  \n\n\n\n\n\n\n\nmcountries &lt;- \ntibble::tribble(\n      ~cntry,   ~species, ~threatened,   ~region,\n  \"Indonesia\",      670L,        191L,    \"Asia\",\n     \"Brasil\",      648L,         80L, \"America\",\n      \"China\",      551L,         73L,    \"Asia\",\n     \"Mexico\",      523L,         96L, \"America\",\n       \"Peru\",      467L,         53L, \"America\",\n      \"Congo\",      430L,         15L,  \"Africa\",\n      \"India\",      412L,         93L,    \"Asia\",\n      \"Kenya\",      376L,         30L,  \"Africa\",\n  \"Argentina\",      374L,         38L, \"America\",\n    \"Ecuador\",      372L,         47L, \"America\",\n  \"Venezuela\",      363L,         35L, \"America\",\n   \"Tanzania\",      359L,         41L,  \"Africa\"\n  )"
   },
   {
     "objectID": "slides/preparation.html#section-11",
     "href": "slides/preparation.html#section-11",
     "title": "Data preparation",
-    "section": ":",
-    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+    "section": "!",
+    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
   },
   {
     "objectID": "slides/preparation.html#no-helpers-multiple-variables",
@@ -444,8 +444,8 @@
     "objectID": "slides/preparation.html#section-12",
     "href": "slides/preparation.html#section-12",
     "title": "Data preparation",
-    "section": "-",
-    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+    "section": ":",
+    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
   },
   {
     "objectID": "slides/preparation.html#reshaping-data-with-tidyr",
@@ -458,8 +458,8 @@
     "objectID": "slides/preparation.html#section-13",
     "href": "slides/preparation.html#section-13",
     "title": "Data preparation",
-    "section": "",
-    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
+    "section": "-",
+    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head(3)\n\n# A tibble: 3 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73"
   },
   {
     "objectID": "slides/preparation.html#wide-to-long",
@@ -473,14 +473,14 @@
     "href": "slides/preparation.html#section-14",
     "title": "Data preparation",
     "section": "",
-    "text": "dining optionsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      area_type\n      district\n      coffee_shops\n      fast_food\n      fish_chips\n    \n  \n  \n    Residential\nSouth\n2\n3\n1\n    Commercial\nNorth\n12\n6\n4\n    Suburban\nSouth\n2\n4\n3\n    Rural\nEast\n0\n2\n0\n  \n  \n  \n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
+    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
   },
   {
     "objectID": "slides/preparation.html#section-15",
     "href": "slides/preparation.html#section-15",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
+    "text": "dining optionsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      area_type\n      district\n      coffee_shops\n      fast_food\n      fish_chips\n    \n  \n  \n    Residential\nSouth\n2\n3\n1\n    Commercial\nNorth\n12\n6\n4\n    Suburban\nSouth\n2\n4\n3\n    Rural\nEast\n0\n2\n0\n  \n  \n  \n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
   },
   {
     "objectID": "slides/preparation.html#long-to-wide",
@@ -494,7 +494,7 @@
     "href": "slides/preparation.html#section-16",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
   },
   {
     "objectID": "slides/preparation.html#practice---pivoting",
@@ -508,7 +508,7 @@
     "href": "slides/preparation.html#section-17",
     "title": "Data preparation",
     "section": "",
-    "text": "dining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\n# A tibble: 4 × 5\n  area_type   district coffee_shops fast_food fish_chips\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;     &lt;int&gt;      &lt;int&gt;\n1 Residential South               2         3          1\n2 Commercial  North              12         6          4\n3 Suburban    South               2         4          3\n4 Rural       East                0         2          0"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
   },
   {
     "objectID": "slides/preparation.html#dplyrcoalesce",
@@ -522,28 +522,28 @@
     "href": "slides/preparation.html#section-18",
     "title": "Data preparation",
     "section": "",
-    "text": "coalesce() - combine data, keeping values from one column and filling any missing data with values from other columns\nfill() - fill adjacent values. Helps us avoid unnecessary NA values and ambiguity. Similar logic to filling adjacent values in spreadsheets"
+    "text": "dining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\n# A tibble: 4 × 5\n  area_type   district coffee_shops fast_food fish_chips\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;     &lt;int&gt;      &lt;int&gt;\n1 Residential South               2         3          1\n2 Commercial  North              12         6          4\n3 Suburban    South               2         4          3\n4 Rural       East                0         2          0"
   },
   {
     "objectID": "slides/preparation.html#section-19",
     "href": "slides/preparation.html#section-19",
     "title": "Data preparation",
     "section": "",
-    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\nNumeric vectors of the same length - some have missing values.\n\n\ncoalesce(x, y, z)\n\n[1] 1 2 3 4 5\n\n\n\n\nThe order of the arguments matters"
+    "text": "coalesce() - combine data, keeping values from one column and filling any missing data with values from other columns\nfill() - fill adjacent values. Helps us avoid unnecessary NA values and ambiguity. Similar logic to filling adjacent values in spreadsheets"
   },
   {
     "objectID": "slides/preparation.html#section-20",
     "href": "slides/preparation.html#section-20",
     "title": "Data preparation",
     "section": "",
-    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\n\n\ncoalesce(z,x,y)\n\n[1] 1 4 3 5 3"
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\nNumeric vectors of the same length - some have missing values.\n\n\ncoalesce(x, y, z)\n\n[1] 1 2 3 4 5\n\n\n\n\nThe order of the arguments matters"
   },
   {
     "objectID": "slides/preparation.html#section-21",
     "href": "slides/preparation.html#section-21",
     "title": "Data preparation",
     "section": "",
-    "text": "hotelsData setup\n\n\n\n\n\n\n\n\n  \n    \n    \n      location\n      guest\n      critic\n      old\n    \n  \n  \n    Lisbon\nNA\n4.9\n2.6\n    Porto\n2.2\nNA\n4.3\n    Moura\n4.5\n5.0\n3.4\n    Chaves\nNA\n2.7\n3.5\n    Coimbra\n2.5\nNA\n2.3\n  \n  \n  \n\n\n\n\n\n\n\nhotels &lt;- \ntibble::tribble(\n        ~location,        ~guest,        ~critic,        ~old,\n         \"Lisbon\",            NA,            4.9,         2.6,\n          \"Porto\",           2.2,             NA,         4.3,\n          \"Moura\",           4.5,              5,         3.4,\n         \"Chaves\",            NA,            2.7,         3.5,\n        \"Coimbra\",           2.5,             NA,         2.3\n  )"
+    "text": "x &lt;- c(1, 2, NA, NA, 5)\ny &lt;- c(NA, NA, 3, 4, 5)\nz &lt;- c(1, 4, 3, 5, 3)\n\n\n\n\ncoalesce(z,x,y)\n\n[1] 1 4 3 5 3"
   },
   {
     "objectID": "slides/preparation.html#tidyrfill",
@@ -557,7 +557,7 @@
     "href": "slides/preparation.html#section-22",
     "title": "Data preparation",
     "section": "",
-    "text": "hotels %&gt;% \n  mutate(new_rating = coalesce(guest, critic, old))\n\n# A tibble: 5 × 5\n  location guest critic   old new_rating\n  &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n1 Lisbon    NA      4.9   2.6        4.9\n2 Porto      2.2   NA     4.3        2.2\n3 Moura      4.5    5     3.4        4.5\n4 Chaves    NA      2.7   3.5        2.7\n5 Coimbra    2.5   NA     2.3        2.5"
+    "text": "hotelsData setup\n\n\n\n\n\n\n\n\n  \n    \n    \n      location\n      guest\n      critic\n      old\n    \n  \n  \n    Lisbon\nNA\n4.9\n2.6\n    Porto\n2.2\nNA\n4.3\n    Moura\n4.5\n5.0\n3.4\n    Chaves\nNA\n2.7\n3.5\n    Coimbra\n2.5\nNA\n2.3\n  \n  \n  \n\n\n\n\n\n\n\nhotels &lt;- \ntibble::tribble(\n        ~location,        ~guest,        ~critic,        ~old,\n         \"Lisbon\",            NA,            4.9,         2.6,\n          \"Porto\",           2.2,             NA,         4.3,\n          \"Moura\",           4.5,              5,         3.4,\n         \"Chaves\",            NA,            2.7,         3.5,\n        \"Coimbra\",           2.5,             NA,         2.3\n  )"
   },
   {
     "objectID": "index.html",
@@ -956,7 +956,7 @@
     "href": "slides/preparation.html#section-2",
     "title": "Data preparation",
     "section": "",
-    "text": "Davis Vaughan (2018)\nTidying Excel cash flow spreadsheets"
+    "text": "tibbles are the shared rectangular data object for all tidyverse packages. However:\n\n\ndata.frame in ➡️ data.frame out\ntibble in ➡️ tibble out\ncreate a new object ➡️ tibble out"
   },
   {
     "objectID": "slides/preparation.html#tidy-data-1",
@@ -984,7 +984,7 @@
     "href": "slides/preparation.html#section-23",
     "title": "Data preparation",
     "section": "",
-    "text": "mammal_carbon\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 &lt;NA&gt;          5\n3 &lt;NA&gt;          7\n4 &lt;NA&gt;         23\n5 &lt;NA&gt;         74\n6 wild         23\n7 &lt;NA&gt;         65\n8 &lt;NA&gt;         12\n9 &lt;NA&gt;          5\n\n\n\n\nmammal_carbon %&gt;% \n  fill(mammals)\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 cattle        5\n3 cattle        7\n4 cattle       23\n5 cattle       74\n6 wild         23\n7 wild         65\n8 wild         12\n9 wild          5"
+    "text": "hotels %&gt;% \n  mutate(new_rating = coalesce(guest, critic, old))\n\n# A tibble: 5 × 5\n  location guest critic   old new_rating\n  &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;\n1 Lisbon    NA      4.9   2.6        4.9\n2 Porto      2.2   NA     4.3        2.2\n3 Moura      4.5    5     3.4        4.5\n4 Chaves    NA      2.7   3.5        2.7\n5 Coimbra    2.5   NA     2.3        2.5"
   },
   {
     "objectID": "slides/introduction.html",
@@ -1006,5 +1006,19 @@
     "title": "A practical introduction to R",
     "section": "Vectors can only contain objects of the same class",
     "text": "Vectors can only contain objects of the same class\n\n\nc(1,\"a\",2)\n\n[1] \"1\" \"a\" \"2\"\n\n\n\nNote the automatic type conversion"
+  },
+  {
+    "objectID": "slides/preparation.html#section-3",
+    "href": "slides/preparation.html#section-3",
+    "title": "Data preparation",
+    "section": "",
+    "text": "Davis Vaughan (2018)\nTidying Excel cash flow spreadsheets"
+  },
+  {
+    "objectID": "slides/preparation.html#section-24",
+    "href": "slides/preparation.html#section-24",
+    "title": "Data preparation",
+    "section": "",
+    "text": "mammal_carbon\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 &lt;NA&gt;          5\n3 &lt;NA&gt;          7\n4 &lt;NA&gt;         23\n5 &lt;NA&gt;         74\n6 wild         23\n7 &lt;NA&gt;         65\n8 &lt;NA&gt;         12\n9 &lt;NA&gt;          5\n\n\n\n\nmammal_carbon %&gt;% \n  fill(mammals)\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 cattle        5\n3 cattle        7\n4 cattle       23\n5 cattle       74\n6 wild         23\n7 wild         65\n8 wild         12\n9 wild          5"
   }
 ]

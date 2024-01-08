@@ -443,7 +443,8 @@ Luis D. Verde Arregoitia
 </section>
 <section id="intermediate-objects" class="slide level2">
 <h2>Intermediate objects</h2>
-<p><br> :::{.med-code}</p>
+<p><br></p>
+<div class="med-code">
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-2_2403bae96240a7886d33b62fe7cd81b0">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>mn_scrs <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
@@ -454,7 +455,7 @@ Luis D. Verde Arregoitia
 <pre><code>[1] 7.78</code></pre>
 </div>
 </div>
-<p>:::</p>
+</div>
 </section>
 <section id="pipes-1" class="slide level2">
 <h2>Pipes</h2>
@@ -579,12 +580,10 @@ An educator’s perspective of the tidyverse</p>
 </div>
 </div>
 </div>
-<div class="fragment">
-<p>Shared rectangular data object for all <code>tidyverse</code> packages</p>
-</div>
 </section>
-<section id="tidyverse-functions" class="slide level2">
-<h2><code>tidyverse</code> functions</h2>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>tibbles are the shared rectangular data object for all <code>tidyverse</code> packages. However:</p>
 <div>
 <ul>
 <li class="fragment"><p><code>data.frame</code> in ➡️ <code>data.frame</code> out</p></li>
@@ -741,12 +740,12 @@ An educator’s perspective of the tidyverse</p>
 </div>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="imgs/cashflow.png" style="width:59.0%"></p>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:65%;">
+<p><img data-src="imgs/cashflow.png" style="width:74.0%"></p>
+</div><div class="column" style="width:35%;">
 <p>Davis Vaughan (2018)<br>
 <a href="https://blog.davisvaughan.com/2018/02/16/tidying-excel-cash-flow-spreadsheets-in-r/">Tidying Excel cash flow spreadsheets</a></p>
 </div>
@@ -763,7 +762,7 @@ An educator’s perspective of the tidyverse</p>
 <li>Subset, group, transform, sort, visualize, model, share</li>
 </ul>
 
-<img data-src="imgs/r4dscomm.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="imgs/r4dscomm.png" class="r-stretch quarto-figure-center"><p class="caption">R4DS 2nd ed</p></section>
 <section id="not-ready" class="slide level2">
 <h2>Not ready?</h2>
 <ul>
@@ -794,11 +793,11 @@ An educator’s perspective of the tidyverse</p>
 <a href="https://www.jstatsoft.org/article/view/v059i10/">Tidy Data</a> - Journal of Statistical Software</p>
 </div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 
 <img data-src="imgs/varscols.png" style="width:90.0%" class="r-stretch"></section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 
 <img data-src="imgs/tidydata.png" class="r-stretch"></section>
@@ -813,7 +812,7 @@ An educator’s perspective of the tidyverse</p>
 <p>Each value in an observation will be paired with other values that appear in the same row</p>
 
 <img data-src="imgs/discounts.png" class="r-stretch"></section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -846,7 +845,7 @@ An educator’s perspective of the tidyverse</p>
 <p><br> <span style="font-size: 1.5em; text-align: center">Missing data are still data</span> <br></p>
 <p>In R we use <span style="color:red; font-family: Liberation Mono; font-weight: bold">NA</span>, a special logical constant that denotes missing values</p>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <ul>
 <li><p>Code <span style="color:red; font-family: Liberation Mono; font-weight: bold">NA</span> values consistently (if done consistently, blank cells are OK)</p></li>
@@ -860,13 +859,13 @@ An educator’s perspective of the tidyverse</p>
 <li><p>Avoid <span style="color:red"><code>NA</code></span> values in column headers</p></li>
 </ul>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 
 <img data-src="imgs/NAblank.png" class="r-stretch"></section>
 <section id="make-reasonable-headers-column-names" class="slide level2">
 <h2>Make reasonable headers (column names)</h2>
-<p>uninformative names with inconsistent naming schemes</p>
+<h4 id="uninformative-names-with-inconsistent-naming-schemes">Uninformative names with inconsistent naming schemes</h4>
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-8_501de45e6412c2f9cf64076951c06947">
 <div class="cell-output-display">
 
@@ -2340,7 +2339,7 @@ An educator’s perspective of the tidyverse</p>
 <li><p>Share data-only files, keep calculations and results elsewhere</p></li>
 </ul>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p>PDFs are not a suitable file format</p>
 
@@ -2381,7 +2380,7 @@ An educator’s perspective of the tidyverse</p>
 </ul></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Megadiverse countries</a></li><li><a href="#tabset-1-2">Data</a></li></ul>
@@ -3116,7 +3115,7 @@ An educator’s perspective of the tidyverse</p>
 <p><br></p>
 <div class="rightref">
 <div class="refbox">
-<p>[<a href="https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html">dplyr selection features and helpers</a>]</p>
+<p><a href="https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html">dplyr selection features and helpers</a></p>
 </div>
 </div>
 </section>
@@ -3139,7 +3138,7 @@ An educator’s perspective of the tidyverse</p>
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2><code>!</code></h2>
 <p>Take the complement of a set of variables (negate a selection)</p>
 <div class="med-code">
@@ -3201,7 +3200,7 @@ An educator’s perspective of the tidyverse</p>
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2><code>:</code></h2>
 <p>Select a range of consecutive variables</p>
 <div class="med-code">
@@ -3222,24 +3221,21 @@ An educator’s perspective of the tidyverse</p>
 </div>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2><code>-</code></h2>
 <p>Exclude variables</p>
 <p>(return all elements except the one preceded by the subtraction operator)</p>
 <div class="med-code">
-<div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-24_497d1a358afbf1bfcea2a6b912eab048">
+<div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-24_fe82455ac8ff1ccab86acc1356115240">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>mcountries <span class="sc">%&gt;%</span> </span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>region) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>region) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
+<pre><code># A tibble: 3 × 3
   cntry     species threatened
   &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;
 1 Indonesia     670        191
 2 Brasil        648         80
-3 China         551         73
-4 Mexico        523         96
-5 Peru          467         53
-6 Congo         430         15</code></pre>
+3 China         551         73</code></pre>
 </div>
 </div>
 </div>
@@ -3312,7 +3308,7 @@ An educator’s perspective of the tidyverse</p>
 <h1>Pivoting data</h1>
 
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -3344,7 +3340,7 @@ Maps well to plot axes and aesthetics</p>
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">dining options</a></li><li><a href="#tabset-2-2">Data</a></li></ul>
@@ -3863,7 +3859,7 @@ Maps well to plot axes and aesthetics</p>
 <p><strong><code>names_to</code></strong> Name for the new column to be created from <code>cols</code></p>
 <p><strong><code>values_to</code></strong> Name of the column to be created from the contents of the cells in <strong><code>cols</code></strong></p>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-34_cb47c85728ecc4b79626b3b1d488d564">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>dining <span class="sc">%&gt;%</span></span>
@@ -3873,7 +3869,7 @@ Maps well to plot axes and aesthetics</p>
 <span id="cb53-5"><a href="#cb53-5"></a>    <span class="at">values_to =</span> <span class="st">"n_restaurants"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-35_5d15acfd284b8fec619a0138830c96cb">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>dining <span class="sc">%&gt;%</span></span>
@@ -3910,7 +3906,7 @@ Maps well to plot axes and aesthetics</p>
 <p><strong><code>names_from</code></strong> Which columns’ values will be used for new <em>column names</em></p>
 <p><strong><code>values_from</code></strong> Which column has the <em>cell values</em> for the new output columns</p>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="med-code">
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-37_dab39f81b78db14ec0125da9b48578f9">
@@ -3941,7 +3937,7 @@ Maps well to plot axes and aesthetics</p>
 <h1>Other useful functions</h1>
 
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <p><strong><code>coalesce()</code></strong> - combine data, keeping values from one column and filling any missing data with values from other columns</p>
 <p><strong><code>fill()</code></strong> - fill adjacent values. Helps us avoid unnecessary <code>NA</code> values and ambiguity. Similar logic to filling adjacent values in spreadsheets</p>
@@ -3954,7 +3950,7 @@ Maps well to plot axes and aesthetics</p>
 <li><p>Returns a single vector with the non-NA values that appear first</p></li>
 </ul>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <div class="med-code">
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-38_be6c8f145532184329db2934b175ddf9">
@@ -3976,7 +3972,7 @@ Maps well to plot axes and aesthetics</p>
 <p>The order of the arguments matters</p>
 </blockquote>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <div class="big-code">
 <div class="cell" data-hash="preparation_cache/revealjs/unnamed-chunk-40_b0b61a74a8a3790d65f0a9efd5df146d">
@@ -3994,7 +3990,7 @@ Maps well to plot axes and aesthetics</p>
 </div>
 </div>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">hotels</a></li><li><a href="#tabset-3-2">Data setup</a></li></ul>
@@ -4498,7 +4494,7 @@ Maps well to plot axes and aesthetics</p>
 </div>
 </div>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <p><br></p>
 <div class="med-code">
@@ -5009,7 +5005,7 @@ Maps well to plot axes and aesthetics</p>
 </div>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
