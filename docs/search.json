@@ -18,7 +18,7 @@
     "href": "materials.html#presentations",
     "title": "Course materials",
     "section": "Presentations",
-    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\n\nTuesday\nData preparation\n\n\nWednesday\nData Visualization\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents"
+    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\nExample spreadsheet for import: petshops.xlsx\n\n\n\nTuesday\nData preparation\n\nExample table for Data Preparation exercise fish gene expression csv file\n\n\n\nWednesday\nData Visualization\n\nPlotting scripts compressed file\n\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents"
   },
   {
     "objectID": "slides/preparation.html#pipes",
@@ -1020,5 +1020,313 @@
     "title": "Data preparation",
     "section": "",
     "text": "mammal_carbon\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 &lt;NA&gt;          5\n3 &lt;NA&gt;          7\n4 &lt;NA&gt;         23\n5 &lt;NA&gt;         74\n6 wild         23\n7 &lt;NA&gt;         65\n8 &lt;NA&gt;         12\n9 &lt;NA&gt;          5\n\n\n\n\nmammal_carbon %&gt;% \n  fill(mammals)\n\n# A tibble: 9 × 2\n  mammals biomass\n  &lt;chr&gt;     &lt;dbl&gt;\n1 cattle       21\n2 cattle        5\n3 cattle        7\n4 cattle       23\n5 cattle       74\n6 wild         23\n7 wild         65\n8 wild         12\n9 wild          5"
+  },
+  {
+    "objectID": "slides/visualization.html#today",
+    "href": "slides/visualization.html#today",
+    "title": "Data visualization",
+    "section": "Today",
+    "text": "Today\n\nGraphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
+  },
+  {
+    "objectID": "slides/visualization.html#packages-for-today",
+    "href": "slides/visualization.html#packages-for-today",
+    "title": "Data visualization",
+    "section": "Packages for today",
+    "text": "Packages for today\n\n\ninstall.packages(\"ggplot2\")\ninstall.packages(\"ggthemes\") \ninstall.packages(\"ragg\")\ninstall.packages(\"patchwork\")\ninstall.packages(\"forcats\")"
+  },
+  {
+    "objectID": "slides/visualization.html#graphics-in-r",
+    "href": "slides/visualization.html#graphics-in-r",
+    "title": "Data visualization",
+    "section": "Graphics in R",
+    "text": "Graphics in R\nSince its initial release, R has had the ability to produce customizable publication-quality graphics.\n\nBase R plots\nLattice plots (lattice package)\nggplot2\nwrapper packages (highcharter, echarts4r)\n\n\n4. Graphics with base R  An Introduction to R\nAlex Douglas et al. (2023)"
+  },
+  {
+    "objectID": "slides/visualization.html#section",
+    "href": "slides/visualization.html#section",
+    "title": "Data visualization",
+    "section": "",
+    "text": "The Grammar of Graphics\nWilkinson (1999, 2005)\nA Layered Grammar of Graphics\nHadley Wickham (2007)"
+  },
+  {
+    "objectID": "slides/visualization.html#section-1",
+    "href": "slides/visualization.html#section-1",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Grammar: how words and their component parts combine to form sentences\n\n\nWith a grammar we don’t need to memorize individual sentences to communicate in a language\nIf we learn a grammar for graphics, we can describe and build a wide range of statistical graphics from scratch"
+  },
+  {
+    "objectID": "slides/visualization.html#layered-graphics",
+    "href": "slides/visualization.html#layered-graphics",
+    "title": "Data visualization",
+    "section": "Layered graphics",
+    "text": "Layered graphics"
+  },
+  {
+    "objectID": "slides/visualization.html#section-2",
+    "href": "slides/visualization.html#section-2",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Building a ggplot\n\ndata - object with the data we wish to visualize\n\naes (mapping) - definition of how variables in the dataset are mapped to visual properties (aesthetics) of the plot\n\ngeom - geometrical object that represents data"
+  },
+  {
+    "objectID": "slides/visualization.html#section-3",
+    "href": "slides/visualization.html#section-3",
+    "title": "Data visualization",
+    "section": "",
+    "text": "ggplot(data, aes(x,y)) +\n  geom_point()\n\n\n  ggplot() creates the plot\naes() links variables in the data with visual properties of the plot\ngeom_* defines a layer with a visual representation of the data"
+  },
+  {
+    "objectID": "slides/visualization.html#section-5",
+    "href": "slides/visualization.html#section-5",
+    "title": "Data visualization",
+    "section": "",
+    "text": "ggplot(data = lizards,     \n  aes(x = length,y = mass))+\n  geom_point()"
+  },
+  {
+    "objectID": "slides/visualization.html#section-6",
+    "href": "slides/visualization.html#section-6",
+    "title": "Data visualization",
+    "section": "",
+    "text": "ggplot2 has built-in defaults for shapes and colors"
+  },
+  {
+    "objectID": "slides/visualization.html#section-7",
+    "href": "slides/visualization.html#section-7",
+    "title": "Data visualization",
+    "section": "",
+    "text": "ggplot2 has built-in defaults for shapes and colors"
+  },
+  {
+    "objectID": "slides/visualization.html#non-default-colors-and-shapes",
+    "href": "slides/visualization.html#non-default-colors-and-shapes",
+    "title": "Data visualization",
+    "section": "Non-default colors and shapes",
+    "text": "Non-default colors and shapes\nManual control with vectors (fills, colors, shapes) for the values argument of scale_*_* functions\n\n\nggplot(penguins,\n     aes(x=bill_length_mm,\n         y=flipper_length_mm,\n        shape=species,color=species))+\n geom_point()+\n scale_color_manual(values=\n              c('pink','blue',\"red\"))+\n scale_shape_manual(values=\n              c(20,21,22))"
+  },
+  {
+    "objectID": "slides/visualization.html#colors",
+    "href": "slides/visualization.html#colors",
+    "title": "Data visualization",
+    "section": "Colors",
+    "text": "Colors\nHTML names"
+  },
+  {
+    "objectID": "slides/visualization.html#colors-1",
+    "href": "slides/visualization.html#colors-1",
+    "title": "Data visualization",
+    "section": "Colors",
+    "text": "Colors\nHex codes\n\nFree Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)"
+  },
+  {
+    "objectID": "slides/visualization.html#color-palettes",
+    "href": "slides/visualization.html#color-palettes",
+    "title": "Data visualization",
+    "section": "Color palettes",
+    "text": "Color palettes\n\n\n\nSpecify a named palette\n\nDefine with a vector\n\n\n\n\n\n\n\n\n\n🔗 Example gallery for paletteer\n🔗 Pokepalettes"
+  },
+  {
+    "objectID": "slides/visualization.html#legend-titles",
+    "href": "slides/visualization.html#legend-titles",
+    "title": "Data visualization",
+    "section": "Legend titles",
+    "text": "Legend titles\nThe name arguments modifies the title for legends created automatically for each mapping\n\n\naes(x,y, color = var1, shape = var2)+\n    scale_color_manual(values=c('red','blue'), \n                       name= 'Variable One')+\n  scale_shape_manual(values=c(20,21),\n                       name = 'Variable Two')"
+  },
+  {
+    "objectID": "slides/visualization.html#quantitative-variables-color",
+    "href": "slides/visualization.html#quantitative-variables-color",
+    "title": "Data visualization",
+    "section": "Quantitative variables + color:",
+    "text": "Quantitative variables + color:\n\nDefault color ramp or named gradient\nDefine gradient with scale_x_gradient\n\n\n\nggplot(penguins,\n  aes(x=bill_length_mm,\n      y=flipper_length_mm,\n      fill=body_mass_g))+\n  geom_point(size=4,\n             color=\"white\",\n             pch=21)"
+  },
+  {
+    "objectID": "slides/visualization.html#hands-on-customization",
+    "href": "slides/visualization.html#hands-on-customization",
+    "title": "Data visualization",
+    "section": "Hands-on: Customization",
+    "text": "Hands-on: Customization\nModifying graphical parameters\n\n02_customizing.R"
+  },
+  {
+    "objectID": "slides/visualization.html#themes",
+    "href": "slides/visualization.html#themes",
+    "title": "Data visualization",
+    "section": "Themes",
+    "text": "Themes\nControl multiple visual parameters without altering the underlying data\n\n8 themes available with ggplot2\n\npackages with additional themes: ggthemes, artyfarty, hrbrthemes`\n\ncreate our own"
+  },
+  {
+    "objectID": "slides/visualization.html#color-ramps",
+    "href": "slides/visualization.html#color-ramps",
+    "title": "Data visualization",
+    "section": "Color ramps",
+    "text": "Color ramps\n\nMore accurate visual perception of central value and increments of the underlying variables\n\n\n\n🔗 Fabio Crameri - Scientific Color Maps"
+  },
+  {
+    "objectID": "slides/visualization.html#perceptually-uniform-color-ramps",
+    "href": "slides/visualization.html#perceptually-uniform-color-ramps",
+    "title": "Data visualization",
+    "section": "Perceptually uniform color ramps",
+    "text": "Perceptually uniform color ramps\n\n\n \n\nviridis\n\ninstalled with ggplot2\ncall with scale_x_viridis()\n\nscico\n\nprovided by scico package\ndivergent & sequential"
+  },
+  {
+    "objectID": "slides/visualization.html#hands-on-color-ramps",
+    "href": "slides/visualization.html#hands-on-color-ramps",
+    "title": "Data visualization",
+    "section": "Hands-on: Color ramps",
+    "text": "Hands-on: Color ramps\nColors and continuous variables\n\n03_ramps.R"
+  },
+  {
+    "objectID": "slides/visualization.html#exporting-graphics",
+    "href": "slides/visualization.html#exporting-graphics",
+    "title": "Data visualization",
+    "section": "Exporting graphics",
+    "text": "Exporting graphics\nOur options\n\n‘Export’ button in RStudio\nGraphical devices\nggsave() (ensure ragg is installed for nicer images)\nFormats: png, jpg, pdf, etc."
+  },
+  {
+    "objectID": "slides/visualization.html#export-with-graphical-device",
+    "href": "slides/visualization.html#export-with-graphical-device",
+    "title": "Data visualization",
+    "section": "Export with graphical device",
+    "text": "Export with graphical device\n\n\n\n\n\n\n\n\n\nWe can asign plots to workspace objects\n\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\npng(filename = \"myplot.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    res = 200)\nmy_plot\ndev.off()"
+  },
+  {
+    "objectID": "slides/visualization.html#agg-devices",
+    "href": "slides/visualization.html#agg-devices",
+    "title": "Data visualization",
+    "section": "agg devices",
+    "text": "agg devices\n\nFast and crisp\nProvided with ragg\n\n\n\nagg_png(filename = \"myraggplot.png\",\n    width = 10, height = 10,\n    units =\"cm\",\n    res = 200)\nmy_plot\ndev.off()"
+  },
+  {
+    "objectID": "slides/visualization.html#ggsave",
+    "href": "slides/visualization.html#ggsave",
+    "title": "Data visualization",
+    "section": "ggsave()",
+    "text": "ggsave()\n\nWill use ragg if it is installed\n\n\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
+  },
+  {
+    "objectID": "slides/visualization.html#looks-off",
+    "href": "slides/visualization.html#looks-off",
+    "title": "Data visualization",
+    "section": "Looks off?",
+    "text": "Looks off?\n\nscale argument for ggsave() and scaling in ragg devices will adjust points and text with a scaling factor"
+  },
+  {
+    "objectID": "slides/visualization.html#facetting",
+    "href": "slides/visualization.html#facetting",
+    "title": "Data visualization",
+    "section": "Facetting",
+    "text": "Facetting"
+  },
+  {
+    "objectID": "slides/visualization.html#facet-functions",
+    "href": "slides/visualization.html#facet-functions",
+    "title": "Data visualization",
+    "section": "Facet functions",
+    "text": "Facet functions\nfacet_wrap() splits by one variable and wraps the resulting subplots\nfacet_grid() splits by combinations of variables"
+  },
+  {
+    "objectID": "slides/visualization.html#hands-on-facets",
+    "href": "slides/visualization.html#hands-on-facets",
+    "title": "Data visualization",
+    "section": "Hands-on: Facets",
+    "text": "Hands-on: Facets\nstarbucks coffee shop data from openintro\n\n04_facets.R"
+  },
+  {
+    "objectID": "slides/visualization.html#factors-and-plots",
+    "href": "slides/visualization.html#factors-and-plots",
+    "title": "Data visualization",
+    "section": "Factors and plots",
+    "text": "Factors and plots\nValues for categorical variables will be ordered alphabetically unless specified otherwise\n\nggplot(starbucks,aes(fat,protein))+\n  geom_point()+facet_wrap(\"type\")"
+  },
+  {
+    "objectID": "slides/visualization.html#hands-on-reordering-factor-levels",
+    "href": "slides/visualization.html#hands-on-reordering-factor-levels",
+    "title": "Data visualization",
+    "section": "Hands-on: Reordering factor levels",
+    "text": "Hands-on: Reordering factor levels\nbabies_crawl crawling age data from openintro\n\n05_reorder.R\n\n\n\n\n\n\n\n\n\n\nCrawling age (weeks) in relation to temperature and birth month. From Benson (1993)."
+  },
+  {
+    "objectID": "slides/visualization.html#composing-plots-with-patchwork",
+    "href": "slides/visualization.html#composing-plots-with-patchwork",
+    "title": "Data visualization",
+    "section": "Composing plots with patchwork",
+    "text": "Composing plots with patchwork\n\n\n\n\n\n+ to combine plots\n| side by side\n/ above/below\n\n\n\nSimple algebra for arranging and nesting elements\n\nplot_layout() controls composition\nplot_annotation() tag elements or add labels to composite plot"
+  },
+  {
+    "objectID": "slides/visualization.html#section-10",
+    "href": "slides/visualization.html#section-10",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Three plots:\n\ncal_sodium_plt+rest_sodium_plt+\n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()"
+  },
+  {
+    "objectID": "slides/visualization.html#section-11",
+    "href": "slides/visualization.html#section-11",
+    "title": "Data visualization",
+    "section": "",
+    "text": "cal_sodium_plt+rest_sodium_plt+sleepy+\n  plot_layout(ncol=1)"
+  },
+  {
+    "objectID": "slides/visualization.html#section-12",
+    "href": "slides/visualization.html#section-12",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Nested but note the |\n\n\n(cal_sodium_plt/rest_sodium_plt)|sleepy"
+  },
+  {
+    "objectID": "slides/visualization.html#annotations",
+    "href": "slides/visualization.html#annotations",
+    "title": "Data visualization",
+    "section": "Annotations",
+    "text": "Annotations\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy+\n  plot_annotation(title=\"Three element figure\",\n                  subtitle = \"Made with patchwork\",\n                  tag_levels = \"A\")\n\n\ntag_levels generates alphabetical or numeric sequences to identify plot elements"
+  },
+  {
+    "objectID": "slides/visualization.html#formatting-text",
+    "href": "slides/visualization.html#formatting-text",
+    "title": "Data visualization",
+    "section": "Formatting text",
+    "text": "Formatting text\nWe can use markdown syntax to format text in different elements of our plots. Enable formatting with element_markdown() from the ggtext package.\nggtext documentation"
+  },
+  {
+    "objectID": "slides/visualization.html#section-4",
+    "href": "slides/visualization.html#section-4",
+    "title": "Data visualization",
+    "section": "",
+    "text": "lizardsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      length\n      mass\n      stage\n    \n  \n  \n    9\n20\nadult\n    8\n13\njuvenile\n    7\n15\njuvenile\n    13\n18\nadult\n    11\n21\nadult\n    6\n14\njuvenile\n  \n  \n  \n\n\n\n\n\n\n\nlizards &lt;- \ntibble::tribble(\n  ~length, ~mass,     ~stage,\n       9L,   20L,    \"adult\",\n       8L,   13L, \"juvenile\",\n       7L,   15L, \"juvenile\",\n      13L,   18L,    \"adult\",\n      11L,   21L,    \"adult\",\n       6L,   14L, \"juvenile\"\n  )"
+  },
+  {
+    "objectID": "slides/visualization.html#exporting",
+    "href": "slides/visualization.html#exporting",
+    "title": "Data visualization",
+    "section": "Exporting",
+    "text": "Exporting\n\n\n\n\n\n\n\n\n\nWe can asign plots to workspace objects\n\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
+  },
+  {
+    "objectID": "slides/visualization.html#section-9",
+    "href": "slides/visualization.html#section-9",
+    "title": "Data visualization",
+    "section": "",
+    "text": "library(openintro)\ndata(\"fastfood\")\nggplot(fastfood,aes(calories,sodium))+\n     geom_point()+\nggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")"
+  },
+  {
+    "objectID": "slides/visualization.html#factor-levels",
+    "href": "slides/visualization.html#factor-levels",
+    "title": "Data visualization",
+    "section": "Factor levels",
+    "text": "Factor levels\nWe can specify the order of factor levels manually using the levels argument\n\n\nFor more flexible manipulation of categorical factor data: forcats\n\n\n\n\n\nreorder according to values in another variable\nsupress alphabetical order\nreverse level order\nlump levels\nmuch more"
+  },
+  {
+    "objectID": "slides/visualization.html#nesting",
+    "href": "slides/visualization.html#nesting",
+    "title": "Data visualization",
+    "section": "Nesting:",
+    "text": "Nesting:\n\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy"
+  },
+  {
+    "objectID": "slides/visualization.html#section-13",
+    "href": "slides/visualization.html#section-13",
+    "title": "Data visualization",
+    "section": "",
+    "text": "library(ggtext)\n\nfastfood %&gt;% mutate(Fats=sat_fat&gt;15) %&gt;% \n  ggplot(aes(total_fat,sat_fat,color=Fats))+\ngeom_point()+\n  scale_color_discrete(labels=c(\"**Greasy** junk\" ,\"Low fat\"))+\n  theme(legend.text = element_markdown())"
   }
 ]

@@ -1,0 +1,741 @@
+---
+title: "Data visualization"
+author: Luis D. Verde Arregoitia
+format:
+  revealjs:
+    theme: course_styles.scss
+    chalkboard: true
+    transition: fade
+    progress: true
+    multiplex: false
+    preview-links: true
+    hide-inactive-cursor: true
+    highlight-style: pygments
+    pause: true
+editor: source
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    retina: 3
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+---
+
+## Today
+
+* Graphics in R
+* Introduction to `ggplot2`   
+* Visual display of information  
+* Customization (axes, colors, fonts, legends, etc.)  
+* Exporting high-res figures
+* Composition and complex graphs
+
+
+```{r setup}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(here)
+library(gt)
+library(ggthemes)
+library(patchwork)
+library(ggtext)
+```
+
+
+## Packages for today
+
+
+:::{.big-code}
+```{r}
+#| eval: false
+#| echo: true
+
+install.packages("ggplot2")
+install.packages("ggthemes") 
+install.packages("ragg")
+install.packages("patchwork")
+install.packages("forcats")
+```
+:::
+
+## Graphics in R
+
+Since its initial release, R has had the ability to produce customizable 
+publication-quality graphics.
+
+- Base R plots 
+- Lattice plots (`lattice` package)
+- `ggplot2`
+- wrapper packages (`highcharter`, `echarts4r`)
+
+::: {style="text-align: right"}
+[4. Graphics with base R](https://intro2r.com/graphics_base_r.html])\  
+An Introduction to R\
+Alex Douglas et al. (2023)
+:::
+
+
+# `ggplot2`
+
+## 
+
+:::{style="text-align:center"}
+[The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0)  
+Wilkinson (1999, 2005)  
+
+[A Layered Grammar of Graphics](ttps://doi.org/10.1198/jcgs.2009.07098)  
+Hadley Wickham (2007)
+:::
+
+::: {layout-nrow=1}
+![](imgs/ggwilk.jpg)
+![](imgs/layered.png){width="20%"}
+![](imgs/hadley.png){width="20%"}
+![](imgs/ggplot2.png){width="20%"}
+
+:::
+
+##
+
+**Grammar**: how words and their component parts combine to form sentences
+
+<br/>
+
+- With a grammar we don't need to memorize individual sentences to communicate in a language
+
+- If we learn a grammar for graphics, we can describe and build a wide range of statistical graphics from scratch
+
+
+# Plot gallery
+
+Compiled by Cédric Scherer
+
+:::{style="text-align:center"}  
+[Graphic design with ggplot2 - 2022](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/)
+:::
+
+
+## Layered graphics
+
+![](imgs/grammar.png){fig-align="center"}
+
+## {background-image="imgs/blocks.jpg"}
+
+### Building a ggplot
+
+<br/>
+
+`data` - object with the data we wish to visualize 
+
+<br/>
+
+`aes` (mapping) - definition of how variables in the dataset are mapped to visual properties (aesthetics) of the plot
+
+<br/>
+
+`geom` - geometrical object that represents data
+
+##
+
+::: {.big-code}
+```{r}
+#| eval: false
+#| echo: true
+ggplot(data, aes(x,y)) +
+  geom_point()
+```
+:::
+
+</br>
+</br>
+`ggplot()` creates the plot  
+
+`aes()` links variables in the data with visual properties of the plot
+
+`geom_*` defines a layer with a visual representation of the data
+
+##
+
+::: panel-tabset
+
+### lizards
+
+```{r}
+#| eval: true
+#| echo: false
+tibble::tribble(
+  ~length, ~mass,     ~stage,
+      9L,   20L,  "adult",
+      8L,   13L, "juvenile",
+      7L,   15L, "juvenile",
+     13L,   18L,  "adult",
+     11L,   21L,  "adult",
+      6L,   14L, "juvenile"
+  ) %>% gt() %>% 
+    tab_style(
+    cell_text(size = '33px'),
+    locations = list(cells_body(),
+                     cells_column_labels(everything()),
+                     cells_title())) %>% 
+  tab_options(table.background.color="#f4f4f9")
+```
+
+### Data
+
+```{r}
+#| eval: false
+#| echo: true
+
+lizards <- 
+tibble::tribble(
+  ~length, ~mass,     ~stage,
+       9L,   20L,    "adult",
+       8L,   13L, "juvenile",
+       7L,   15L, "juvenile",
+      13L,   18L,    "adult",
+      11L,   21L,    "adult",
+       6L,   14L, "juvenile"
+  )
+
+```
+:::
+
+----------------
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+ 
+tibble::tribble(
+  ~length, ~mass,     ~stage,
+       9L,   20L,    "adult",
+       8L,   13L, "juvenile",
+       7L,   15L, "juvenile",
+      13L,   18L,    "adult",
+      11L,   21L,    "adult",
+       6L,   14L, "juvenile"
+  ) %>% gt() %>% tab_style(
+    cell_text(size = '34px'),
+    locations = list(cells_body(),
+                     cells_column_labels(everything()),
+                     cells_title())) %>% 
+  tab_options(table.background.color="#f4f4f9")
+
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+ 
+tibble::tribble(
+   ~x,  ~y,     ~shape,
+   9L, 20L,   "circle",
+   8L, 13L, "triangle",
+   7L, 15L, "triangle",
+  13L, 18L,   "circle",
+  11L, 21L,   "circle",
+   6L, 14L, "triangle"
+  ) %>% gt() %>% tab_style(
+    cell_text(size = '34px'),
+    locations = list(cells_body(),
+                     cells_column_labels(everything()),
+                     cells_title())) %>% 
+  tab_options(table.background.color="#f4f4f9")
+
+```
+:::
+:::
+
+##
+
+```{r}
+#| echo: false
+#| eval: true
+
+lizards <- 
+tibble::tribble(
+  ~length, ~mass,     ~stage,
+       9L,   20L,    "adult",
+       8L,   13L, "juvenile",
+       7L,   15L, "juvenile",
+      13L,   18L,    "adult",
+      11L,   21L,    "adult",
+       6L,   14L, "juvenile"
+  )
+```
+
+
+```{r}
+ggplot(data = lizards,     
+  aes(x = length,y = mass))+
+  geom_point()
+```
+
+# Hands-on  {background-color="#a4c5ff"}
+
+- Open the file  `01_first-plots.R`
+- Follow along
+
+# Customization
+
+We can modify everything that we see in a plot  
+
+::: columns
+::: {.column width="30%"}
+`labs`  
+`fill`  
+`color`  
+`size`  
+`themes`  
+`scale_fill_*`  
+`scale_shape_*`  
+`scale_color_*`  
+:::
+
+::: {.column width="70%"}
+labels for axes, titles, etc.  
+fill colors     
+border colors    
+object sizes  
+preset looks 
+  
+  
+manual control over mappings (color, fill, shape)
+:::
+:::
+
+##
+
+`ggplot2` has built-in defaults for shapes and colors 
+
+
+::: {layout-nrow=1}
+![](imgs/defshapes.png)
+![](imgs/defcols.jpg){width="40%"}
+:::
+
+
+## Non-default colors and shapes
+
+Manual control with vectors (fills, colors, shapes) for the `values` argument of `scale_*_*` functions
+
+
+:::{.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(penguins,
+     aes(x=bill_length_mm,
+         y=flipper_length_mm,
+        shape=species,color=species))+
+ geom_point()+
+ scale_color_manual(values=
+              c('pink','blue',"red"))+
+ scale_shape_manual(values=
+              c(20,21,22))
+
+```
+:::
+
+## Colors
+
+HTML names
+
+::: {layout-nrow=1}
+![](https://kktg.net/sgr/wp-content/uploads/colors2.png){width="44%"}
+![](https://kktg.net/sgr/wp-content/uploads/colors4.png){width="44%"}
+:::
+
+## Colors
+
+Hex codes
+
+![](imgs/hexpals.png){fig-align="center"}
+
+Free Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)
+
+
+## Color palettes
+
+::: columns
+::: {.column width="50%"}
+- Specify a named palette  
+- Define with a vector
+:::
+
+::: {.column width="50%"}
+![](imgs/ejemplocool.png){fig-align="center"}
+:::
+:::
+
+🔗 Example gallery for [`paletteer`](https://pmassicotte.github.io/paletteer_gallery/)  
+
+🔗 [Pokepalettes](https://pokepalettes.com/)
+
+## Legend titles
+
+The `name` arguments modifies the title for legends created automatically for each mapping  
+
+:::{.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+aes(x,y, color = var1, shape = var2)+
+	scale_color_manual(values=c('red','blue'), 
+	                   name= 'Variable One')+
+  scale_shape_manual(values=c(20,21),
+	                   name = 'Variable Two')
+	
+
+```
+
+:::
+
+## *Quantitative* variables + color:  
+
+- Default color ramp or named gradient
+- Define gradient with `scale_x_gradient` 
+
+```{r}
+#| eval: true
+#| echo: false
+library(palmerpenguins)
+data(penguins)
+```
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+
+ggplot(penguins,
+  aes(x=bill_length_mm,
+      y=flipper_length_mm,
+      fill=body_mass_g))+
+  geom_point(size=4,
+             color="white",
+             pch=21)
+```
+
+## Hands-on: Customization  {background-color="#a4c5ff"}
+
+Modifying graphical parameters
+
+:::{style="font-size: 1.5em;"}
+`02_customizing.R`{style="color:orange"}  
+:::
+
+## Themes 
+
+Control multiple visual parameters without altering the underlying data
+
+- 8 themes available with `ggplot2`  
+- packages with additional themes: [`ggthemes`](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/), [`artyfarty`](https://datarootsio.github.io/artyfarty/articles/introduction.html), [`hrbrthemes`](https://github.com/hrbrmstr/hrbrthemes)`  
+- create our own
+
+![](imgs/themesgg.png){width="60%"}
+
+## Color ramps
+
+- More accurate visual perception of central value and increments of the underlying variables
+
+![](imgs/batlow.png){fig-align="center" fig-size="80%"}
+  
+:::{style="text-align:center"}  
+🔗 Fabio Crameri - [Scientific Color Maps](https://www.fabiocrameri.ch/colourmaps/)
+:::
+
+## Perceptually uniform color ramps
+
+::: columns
+::: {.column width="45%"}
+![](imgs/viridis-scales.png){width="65%"}
+![](imgs/scicopals.png){width="65%"}
+:::
+
+::: {.column width="55%"}
+### viridis
+- installed with `ggplot2`
+- call with `scale_x_viridis()`  
+  
+### scico
+- provided by `scico` package
+- divergent & sequential
+:::
+:::
+
+## Hands-on: Color ramps {background-color="#a4c5ff"}
+
+Colors and continuous variables
+
+:::{style="font-size: 1.5em;"}
+`03_ramps.R`{style="color:orange"}  
+:::
+
+
+## Exporting graphics
+
+### Our options
+
+- 'Export' button in RStudio
+- Graphical devices
+- `ggsave()`  (ensure ragg is installed for nicer images)
+- Formats: png, jpg, pdf, etc.
+
+## Exporting
+
+:::{.callout-note}
+## 
+We can asign plots to workspace objects
+:::
+
+```{r}
+#| echo: true
+#| eval: false
+
+my_plot <- 
+ggplot(penguins,
+       aes(x=bill_length_mm,
+          y=flipper_length_mm))+
+  geom_point(size=2,pch=21)
+
+ggsave(my_plot, 
+  filename = "myplotgs.png",
+    width = 10, 
+    height = 10,
+    units ="cm",
+    dpi = 200)
+
+```
+
+
+## Looks off?
+
+![](imgs/exportando.png)
+
+`scale` argument for `ggsave()` and `scaling` in `ragg` devices will adjust points and text with a scaling factor
+
+
+## Facetting
+
+![](imgs/exprgutsoct2021_final.png){fig-align="center"}
+
+## Facet functions
+
+`facet_wrap()`{style="color:orange" size=1.2em} splits by one variable and wraps the resulting subplots
+
+`facet_grid()`{style="color:orange" size=1.2em} splits by combinations of variables
+
+![](imgs/position-facets.png){fig-align="center"}
+
+## Hands-on: Facets {background-color="#a4c5ff"}
+
+`starbucks ` coffee shop data from `openintro`
+
+:::{style="font-size: 1.5em;"}
+`04_facets.R`{style="color:orange"}  
+:::
+
+
+## Factors and plots
+
+Values for categorical variables will be ordered alphabetically unless specified otherwise
+
+```{r}
+#| echo: false
+#| eval: true
+
+data("starbucks",package = "openintro")
+```
+
+
+```{r}
+#| echo: true
+#| eval: true
+ggplot(starbucks,aes(fat,protein))+
+  geom_point()+facet_wrap("type")
+```
+
+
+## Factor levels
+
+We can specify the order of factor levels manually using the `levels` argument
+
+::: columns
+::: {.column width="82%"}
+For more flexible manipulation of categorical factor data:
+`forcats`
+:::
+
+::: {.column width="18%"}
+![](imgs/forcatslogo.png){width="50%"}
+:::
+:::
+
+- reorder according to values in another variable
+- supress alphabetical order
+- reverse level order
+- lump levels
+- much more
+
+## Hands-on: Reordering factor levels {background-color="#a4c5ff"}
+
+`babies_crawl` crawling age data from `openintro`
+
+:::{style="font-size: 1.5em;"}
+`05_reorder.R`{style="color:orange"}  
+:::
+
+:::{.callout-note}
+## 
+Crawling age (weeks) in relation to temperature and birth month. From Benson (1993).
+:::
+
+
+## Composing plots with `patchwork`
+
+::: columns
+::: {.column width="20%"}
+![](imgs/patchworklogo.png)
+:::
+
+::: {.column width="80%"}
+-  `+` to combine plots
+-  `|` side by side
+-  `/` above/below 
+:::
+:::   
+
+Simple algebra for arranging and nesting elements
+
+- `plot_layout()` controls composition
+- `plot_annotation()` tag elements or add labels to composite plot
+
+
+##
+
+```{r}
+library(openintro)
+data("fastfood")
+ggplot(fastfood,aes(calories,sodium))+
+     geom_point()+
+ggplot(fastfood,aes(restaurant,sodium))+
+     geom_jitter(aes(color=restaurant))+
+     theme(axis.text.x = element_text(angle = 90),
+           legend.position = "none")
+
+```
+
+------
+
+Easier to read:
+
+```{r}
+cal_sodium_plt <- ggplot(fastfood,aes(calories,sodium))+
+     geom_point()
+rest_sodium_plt <- ggplot(fastfood,aes(restaurant,sodium))+
+     geom_jitter(aes(color=restaurant))+
+     theme(axis.text.x = element_text(angle = 90),
+           legend.position = "none")
+
+cal_sodium_plt+rest_sodium_plt
+```
+
+##
+
+Three plots:
+
+```{r}
+cal_sodium_plt+rest_sodium_plt+
+  ggplot(msleep,
+       aes(x=log(bodywt),y=sleep_total))+
+   geom_point(size=4,color="white",pch=21)+
+    theme_dark()
+  
+```
+
+--------
+
+Single column
+
+```{r}
+sleepy <- 
+  ggplot(msleep,
+       aes(x=log(bodywt),y=sleep_total))+
+   geom_point(size=4,color="white",pch=21)+
+    theme_dark()
+```
+
+##
+
+:::{.med-code}
+```{r}
+cal_sodium_plt+rest_sodium_plt+sleepy+
+  plot_layout(ncol=1)
+
+```
+:::
+
+## Nesting:
+
+:::{.med-code}
+```{r}
+(cal_sodium_plt+rest_sodium_plt)/sleepy
+```
+:::
+
+##
+
+Nested but note the `|`
+
+:::{.med-code}
+```{r}
+(cal_sodium_plt/rest_sodium_plt)|sleepy
+```
+:::
+
+## Annotations
+
+```{r}
+(cal_sodium_plt+rest_sodium_plt)/sleepy+
+  plot_annotation(title="Three element figure",
+                  subtitle = "Made with patchwork",
+                  tag_levels = "A")
+```
+
+`tag_levels` generates alphabetical or numeric sequences to identify plot elements
+
+
+## Formatting text
+
+We can use _markdown_ syntax to format text in different elements of our plots. Enable formatting with `element_markdown()` from the **`ggtext`** package.
+
+[ggtext documentation](https://wilkelab.org/ggtext/)
+
+  
+##
+
+```{r}
+#| eval: true
+#| echo: true
+library(ggtext)
+
+fastfood %>% mutate(Fats=sat_fat>15) %>% 
+  ggplot(aes(total_fat,sat_fat,color=Fats))+
+geom_point()+
+  scale_color_discrete(labels=c("**Greasy** junk" ,"Low fat"))+
+  theme(legend.text = element_markdown())
+```
+
+
+# Questions?

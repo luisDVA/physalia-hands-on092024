@@ -16,7 +16,7 @@ ggplot(penguins,
   geom_point()
 
 
-# axis labels de los ejes
+# axis labels for the axes
 ggplot(penguins,
        aes(x=bill_length_mm,
            y=flipper_length_mm,

@@ -5,10 +5,6 @@ toc-title: Contents
 
 ## Data
 
-Download all course files (datasets and scripts) used in examples and class exercises:
-
-[️[Download Files](examples/coursefiles.zip)]{style="font-size: 1.6rem; background-color: #b46294; padding: 3px; border-radius: 6px; text-align: center;"}
-
 ## Presentations
 
 These web-based HTML slide decks have an interactive table of contents (button on bottom left corner)
@@ -17,13 +13,20 @@ These web-based HTML slide decks have an interactive table of contents (button o
 
 [Introduction](slides/introduction.qmd)
 
+- Example spreadsheet for import: [petshops.xlsx](examples/petshop.xlsx)
+
 ### Tuesday
 
 [Data preparation](slides/preparation.qmd)
 
+- Example table for Data Preparation exercise [fish gene expression csv file](examples/gene_expression.csv)
+
 ### Wednesday
 
 [Data Visualization](slides/visualization.qmd)
+
+- Plotting scripts [compressed file](examples/course_scripts/plotting_scripts.zip) 
+
 
 ### Thursday
 
