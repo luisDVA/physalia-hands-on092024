@@ -1,0 +1,849 @@
+---
+title: "Programming and reproducibility"
+author: Luis D. Verde Arregoitia
+format:
+  revealjs:
+    theme: course_styles.scss
+    transition: fade
+    progress: true
+    preview-links: true
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+editor: source
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    retina: 3
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  fig-width: 5
+  fig-height: 6
+---
+
+## Today:
+
+– Custom setups
+
+– Shortcuts and tools for increased efficiency  
+
+– Iteration and vectorization to avoid repeating ourselves  
+
+– Lists  
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(gt)
+library(ggplot2)
+```
+
+
+## Customization
+
+-  IDE themes: [tmThemeEditor](https://tmtheme-editor.glitch.me/) by Allen Bargi
+
+::: {style="background-color: #3F3B3B; box-shadow: 10px 10px grey;  padding: 25px"}
+
+:::{.neonText}
+> No one at the coffee shop will know you're serious unless you have a dark background
+:::
+
+::: {style="text-align: right"}
+*-Jared Lander*\
+📼 [R: Then and now](https://www.youtube.com/watch?v=gjpNEVcG1nU)
+:::
+:::
+
+-   Fonts and ligatures - 🔗 [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+
+-   Pane Layouts
+
+
+# Shortcuts and tools for efficient coding
+
+##
+
+
+![](imgs/remote-work-airplane-laptop.jpg)
+
+## Coding tricks
+
+[Ctrl == ⌘ Command , Alt == ⌥ Option]{style="font-size: 1.3em; text-align: center"}
+
+- Multiline cursor (`ctrl`+`alt`+`up`) or (`ctrl`+`alt`+`down`)
+- dismiss with `escape` key
+
+## Shortcuts
+
+-   'pipe' (`ctrl`+`shift`+`m`)
+-   asignment operator (`alt`+`-`)
+-   drag line (`alt`+`up`) or (`alt`+`down`)
+-   run (`ctrl`+`enter`)
+-   convert to comment (`ctrl` + `shift` + `c`)
+
+::::{.rightref}
+:::{.refbox}
+[RStudio Shortcuts and Tips (2021)](https://appsilon.com/rstudio-shortcuts-and-tips/)
+:::
+:::
+
+## More shortcuts
+
+-   Shift focus
+    -   (`ctrl`+`1` through `8`)
+    -   Maximize panes (`ctrl`+`shift`+`1` through `8`)
+
+![](imgs/movingfocus.gif){width="48%"}
+
+## 
+
+
+See help [?]{style="color: orange"} o [F1]{style="color: orange"}
+
+Open object in viewer
+
+[`ctrl` + click]{style="color: orange"}
+
+### Open working directory 
+[`shell.exec(getwd())`]{style="color: orange"} Windows  [`browseURL(getwd())`]{style="color: orange"} Linux
+
+
+# Iteration 
+
+## Performing a process repeatedly
+
+Any time we copy and paste code, and then edit, we are adding unnecessary steps that add room for errors
+
+</br>
+
+::::{.rightref}
+:::{.refbox}
+Nick Holt (2017)\
+[Function Iterations in R](https://nick-holt.github.io/2017/12/function-iterations-in-r/)
+:::
+::::
+
+## Challenge/brainstorm {background-color="#a4c5ff"}
+
+Load the `possum` dataset from the `openintro` package
+
+> How could we identify the oldest male possums for each of the two populations?
+
+_no code needed for this_
+
+## Grouped data
+
+Most data analysis and manipulations tasks can be approached using the ["split-apply-combine"]{style="color: purple"} paradigm:
+
+-   split the data into groups
+-   apply some analysis to each group
+-   combine the results
+
+::::{.rightref}
+:::{.refbox}
+Data Carpentry (2018)\
+[Aggregating and analyzing data with dplyr](https://datacarpentry.org/R-genomics/04-dplyr.html)
+
+Hadley Wickham (2011)\
+[The split-apply-combine strategy for data analysis](https://doi.org/10.18637/jss.v040.i01)
+:::
+::::
+
+## `dplyr::group_by()`
+
+-   Define groups with one or more variables\
+-   Stratify a data frame
+-   equivalent to `aggregate()` in base R
+
+![image by Ruben Sanchez](imgs/groupby.PNG){width="64%"}\
+
+
+## Aggregating or manipulating grouped data
+
+Once `group_by()` creates a "grouped" version of a table, `dplyr` functions will manipulate each "group" separately and then combine the results.
+
+::::{.rightref}
+:::{.refbox}
+RStudio (2021)\
+[Data transformation with dplyr cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+:::
+:::
+
+## Within groups, we can:
+
+-   summarize group values (mean, median)
+
+-   extract the first or last *n* rows from each group
+
+-   find the minimum or maximum values
+
+-   remove duplicated rows
+
+-   count records, etc.
+
+## mammal sleep data
+
+Traits for 83 species of mammals in relation to their sleeping habits. From Savage & West (2007), bundled with `ggplot2`
+
+
+```{r, echo=FALSE}
+msleep %>% head %>% gt() %>% 
+  tab_style(
+    cell_text(size = '20px'),
+    locations = list(cells_body(),
+                     cells_column_labels(everything()),
+                     cells_title()))
+```
+
+
+## maximum `brainwt` for each order
+
+
+```{r}
+#| eval: true
+#| echo: true
+#| output-location: fragment
+
+msleep %>% group_by(order) %>% 
+  slice_max(brainwt,n=1)
+```
+
+
+## One row sampled randomly from each order
+
+```{r}
+#| eval: true
+#| echo: true
+#| output-location: fragment
+
+msleep %>% group_by(order) %>% 
+  slice_sample(n=1)
+```
+
+## summarize values
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+#| output-location: fragment
+
+msleep %>% group_by(order) %>% 
+  summarize(median_slp = median(sleep_total),
+            mean_brainwt=mean(brainwt))
+```
+:::
+
+## Loops (_for loops_)
+
+- Still useful 
+- most of the time we do not have to write them ourselves 
+
+::: columns
+::: {.column width="40%"}
+![](imgs/Homer.png)
+:::
+
+::: {.column width="60%"}
+::::{.rightref}
+:::{.refbox}
+Jenny Bryan\
+[purrr tutorial](https://jennybc.github.io/purrr-tutorial/index.html)\
+[Data Rectangling](https://speakerdeck.com/jennybc/data-rectangling)\
+[purrr workshop](https://speakerdeck.com/jennybc/purrr-workshop)
+:::
+:::
+
+:::
+:::
+
+## Loops
+
+::: columns
+::: {.column width="58%"}
+
+:::{.med-code}
+```{r}
+#| echo: true
+#| eval: false
+
+for (value in sequence){
+   statement(s)
+}
+
+```
+:::
+
+Execute a set of *statements*, once for each item in a vector, array, list, etc. and stop when the last element is reached.
+
+:::
+
+::: {.column width="42%"}
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+for (x in 1:7){
+  print(x)
+} 
+```
+:::
+:::
+:::
+
+## Practice {background-color="#a4c5ff"}
+
+Write a for loop to print every letter in the alphabet in lowercase and in reverse alphabetical order (e.g. z,y,x,w...) </br>
+
+**Hints:**
+
+-   What is the length of the built-in `letters` vector?
+-   Which function "prints" text to the console?
+
+
+## Loops and groups
+
+:::{.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+msleep %>% 
+  group_by(order) %>% # for each order
+  slice_sample(1) # statement to execute 
+                        
+```
+:::
+
+Everything happens within the data frame
+
+## Vectorization is our friend
+
+Operations occur in parallel on all elements, rather than on individual components in sequence
+
+#### What will be the result here?
+
+:::{.big-code}
+```{r}
+#| eval: false
+#| echo: true
+
+x <- c(1,3,12,4,7,8)
+x > 5
+```
+:::
+
+
+## Logical operators are vectorized (many other fns too!)
+
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+
+x <- c(1,3,12,4,7,8)
+x > 5
+```
+:::
+
+We don't need to type all of this out or a loop
+
+:::{.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+x[1]>5 ; x[2]>5
+x[3]>5 ; x[4]>5
+x[5]>5 ; x[6]>5
+```
+:::
+
+
+------------------------------------------------------------------------
+
+![American Greetings](imgs/dogscopy.jpg){width="36%" fig-align="center"}
+
+# Functions
+
+## Functions make things happen in R
+
+- Functions have arguments and always return something
+- Operators such as `+`, `*`, and even `<-` are functions
+
+
+## Why write our own functions
+
+-   Avoids repetition
+
+-   Brevity
+
+-   Less room for errors
+
+-   Take advantage of tools that help us apply functions to many things at once
+
+
+## Functions
+
+![](imgs/r-function-syntax.png)
+
+
+## Function Definition
+
+The '`function()`' function
+
+`function( arglist ) expr`{style="font-size: 1.5em; text-align: center; font-family: monospace; font-weight: bold"}
+
+</br>
+
+**arguments** (`arglist`): values passed to the function
+
+**expression** `(expr)`: an object that represents an action that can be performed by R. 
+
+:::{.callout-note}
+##
+Expressions contain one or more statements
+:::
+
+## Defining a function
+
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+ 
+my_custom_function <- function(my_arg){
+  my_arg+1 # statement
+}
+
+my_vector <- c(3,5,6,7)
+
+my_custom_function(my_arg = my_vector)
+
+```
+:::
+
+##
+
+The body of the function --the statements that are executed when it runs-- is grouped with curly braces (`{}`)
+
+:::{.med-code}
+```{r}
+#| eval: true
+#| echo: true
+ 
+myfun <- function(x) {
+  x + 4 # statement
+}
+```
+:::
+
+## 
+
+:::{.big-code}
+```{r}
+#| echo: true
+#| eval: true
+f <- function(x) {mean(x)/2}   
+f(c(6,43,12,5,7))
+```
+:::
+
+## Function with two statements
+
+```{r}
+#| echo: true
+#| eval: true
+f <- function(x) {
+  y <- (x*0.2885) # this is a statement
+  log(y)          # this is another statement
+}
+
+f(5)
+```
+
+
+::::{.rightref}
+:::{.refbox}
+Jenny Bryan - Stat545\
+[Write your own R functions](https://stat545.com/functions-part1.html)
+:::
+:::
+
+## Anonymous functions
+
+**Functions on the go** (created and used but never given a name)
+
+### Anonymous function syntax
+
+:::{.big-code}
+```{r}
+#| echo: true
+#| eval: true
+(function(x) x * x + 3)(10)
+```
+:::
+
+> we use parentheses to separate function and arguments
+
+
+
+------------------------------------------------------------------------
+
+:::{.big-code}
+```{r}
+#| eval: false
+#| echo: true
+
+(function(x) x + 3)(10)
+```
+:::
+
+Behaves exactly the same as
+
+:::{.big-code}
+```{r}
+#| eval: false
+#| echo: true
+
+f <- function(x) {x + 3}
+f(10)
+
+```
+:::
+
+## Shorthand notation (since R v4.1.0)
+
+Replaces "`function(x) {}`" with "`\(x){}`"
+
+:::{.big-code}
+```{r}
+#| eval: true
+#| echo: true
+
+(\(x) x + 3)(10)
+
+(\(x) x / 2)(10)
+```
+:::
+
+
+::::{.rightref}
+:::{.refbox}
+Russ Hyde (2021)\
+[New features in R 4.1.0](https://www.jumpingrivers.com/blog/new-features-r410-pipe-anonymous-functions/)
+:::
+:::
+
+:::{.callout-note}
+## 
+`tidyverse` devlopers and R users in general are gradually shifting to this notation
+:::
+
+
+## Anonymous functions
+
+-   Handy when we want to apply a user-defined operation to many things at once
+
+-   Also known as *lambda expressions*
+
+-   Self-contained
+
+-   Comparable with similar approaches in Python
+
+
+# Lists
+
+## Lists 
+
+Objects which contain elements of different types, such as numbers, strings, vectors, data frames, or even other lists
+
+
+:::{.med-code}
+```{r}
+#| echo: true
+#| eval: true 
+ 
+my_list <- list(
+  a_number = 7,
+  a_vector = c("mouse", "cat", "dog"),
+  a_dataframe = data.frame(
+    a = 1:3, b = c("K", "L", "M")))
+```
+:::
+
+::::{.rightref}
+:::{.refbox}
+Rebecca Barter (2019)\
+[Learn to purrr](https://www.rebeccabarter.com/blog/2019-08-19_purrr/)
+:::
+:::
+
+------------------------------------------------------------------------
+
+:::{.med-code}
+```{r}
+my_list
+```
+:::
+
+
+## 
+
+We can also create lists by splitting other objects
+
+Group and split with `dplyr` into a list of data frames, one for each group
+
+```{r}
+
+guilds <- 
+  msleep %>% group_by(vore) %>%
+  group_split()
+```
+
+
+## 
+
+`group_keys()` retrieves the grouping data
+
+:::{.med-code}
+```{r}
+msleep %>% group_by(vore) %>%
+  group_keys()
+```
+:::
+
+## List indexing
+
+![](imgs/listspepper.png){width="76%"}
+
+## Working with list elements
+
+First element in our list (`[[1]]`)
+
+```{r}
+#| eval: true
+#| echo: true
+ 
+guilds[[1]] %>% 
+  select(name,genus) %>% head
+
+```
+
+
+## Second element
+
+```{r}
+#| eval: true
+#| echo: true
+
+guilds[[2]] %>% 
+  select(name,genus, vore, conservation) %>% 
+  head
+
+```
+
+##
+
+![](imgs/purrrPost.png)
+
+
+::: {style="text-align: right"}
+Luis (2017)\
+[Export Iteratively](https://luisdva.github.io/rstats/export-iteratively/)
+:::
+
+## Why lists?
+
+-   Flexible, can store many kinds of objects
+
+-   We can easily create lists by splitting existing objects
+
+-   List elements can be named
+
+## For efficient iteration
+
+::: columns
+::: {.column width="25%"}
+![](imgs/purrr.jpeg)
+:::
+
+::: {.column width="70%"}
+📦 **`purrr`** - Functional programming tools
+
+-   map functions to data\
+-   work efficiently with **lists**
+-   readable code
+:::
+:::
+
+::::{.rightref}
+:::{.refbox}
+Thomas Mock (2018)\
+[Functional Programming in R with purrr](https://towardsdatascience.com/functional-programming-in-r-with-purrr-469e597d0229)
+:::
+:::
+
+##
+::: {style="text-align: center"}
+[map(]{style="color:blue; font-family: monospace; font-weight: bold"}[.x]{style="color: red; font-family: Liberation Mono; font-weight: bold"}, [.f]{style="color: green; font-family: Liberation Mono; font-weight: bold"}[, ...)]{style="color:blue; font-family: Liberation Mono; font-weight: bold"}
+
+for every element of [.x]{style="color: red; font-family: Liberation Mono; font-weight: bold"}
+
+apply [.f]{style="color: green; font-family: Liberation Mono; font-weight: bold"}
+
+`...` arguments for [.f]{style="color: green; font-family: Liberation Mono; font-weight: bold"}
+:::
+
+
+## Mapping functions to data
+
+`map(.x,`[.f]{style="color: green; font-family: monospace; font-weight: bold"}`)`
+
+We can specify [.f]{style="color: green; font-family: monospace; font-weight: bold"} as:
+
+:::{.incremental}
+
+-   an existing function
+
+-   an anonymous function, defined on-the-fly
+
+-   a shorthand anonymous function (in more recent versions of R)
+:::
+
+
+
+## Mapping functions to data
+
+-   Apply functions to many things at once
+
+-   Reading many files at once
+
+-   Modifying and exporting multiple objects
+
+## Apply functions to many things at once
+
+```{r}
+#| eval: true
+#| echo: true
+
+library(palmerpenguins)
+library(purrr)
+# numeric vectors
+mass <- penguins$body_mass_g
+bill <- penguins$bill_length_mm
+flipper <- penguins$flipper_length_mm
+# together in a list
+traits <- list(mass, bill , flipper)
+# apply "mean" to each list element
+map(traits,mean)
+```
+
+## 
+
+### additional arguments
+
+```{r}
+# "mean" of each list element
+map(traits,mean,na.rm=TRUE)
+```
+
+## Apply custom functions 
+
+:::{.med-code}
+```{r}
+
+# min, max, and range
+MMR <- function(x){
+  min_x <- min(x,na.rm = TRUE)
+  max_x <- max(x,na.rm = TRUE)
+  maxmin <- max_x - min_x
+  c(min_x, max_x, maxmin)
+}
+
+```
+:::
+
+## Try out with vectors
+
+:::{.med-code}
+```{r}
+MMR(mass)
+MMR(flipper)
+```
+:::
+
+## `map()` our function to a list
+
+
+:::{.med-code}
+```{r}
+map(.x = traits, .f = MMR)
+```
+:::
+
+
+## Type-specific `map()`
+
+`map()` always returns lists
+
+`map_lgl()` returns a logical
+
+`map_int()` returns an integer vector
+
+`map_dbl()` returns a double vector
+
+`map_chr()` returns a character vector
+
+`map_df()` returns a data frame
+
+##
+
+:::{.med-code}
+```{r}
+
+# returns a list
+map(traits, median, na.rm = TRUE)
+# flattens the output into a numeric vector
+map_dbl(traits, median, na.rm = TRUE)
+
+```
+:::
+
+## `map()` with anonymous functions
+
+Same behavior
+
+:::{.med-code}
+```{r}
+#| eval: false
+#| echo: true
+
+list_of_numbers <- list(c(5:10),c(20:27))
+# anonymous fn
+map(list_of_numbers, function(x) x+2)
+
+# shorthand notation
+map(list_of_numbers,\(x) x+2)
+```
+:::
+
+::::{.rightref}
+:::{.refbox}
+Mike Cheng (2019)\
+[Anonymous Functions in R - Part 1](https://coolbutuseless.github.io/2019/03/13/anonymous-functions-in-r-part-1/)
+:::
+:::
+
+
+# Done!
+
+
+
+

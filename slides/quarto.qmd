@@ -1,0 +1,306 @@
+---
+title: "Creating documents with Quarto"
+author: Luis D. Verde Arregoitia
+format:
+  revealjs:
+    theme: course_styles.scss
+    chalkboard: true
+    transition: fade
+    progress: true
+    preview-links: true
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+editor: source
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    retina: 3
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  fig-width: 5
+  fig-height: 6
+---
+
+```{r setups}
+#| include: false
+library(fontawesome)
+```
+
+## 
+
+### Combining text, code, and much more
+
+</br>
+</br>
+R 🔁 Word ➡️ Outpt to PDF, HTML, etc.     
+</br>
+R ➡️ Output to PDF, HTML, etc
+
+## Markdown `r fontawesome::fa("markdown")`
+
+-   Tools and language to add formatting to simple documents
+-   Readable and lightweight
+-   Portable, convenient
+
+## Rmarkdown?
+
+::: columns
+::: {.column width="83%"}
+-   File format and package ecosystem to combine `r fontawesome::fa("markdown")` markdown-formatted text with R code
+-   Compatible with HTML
+-   Produces an intermediate `.md` file that can be processed to render multiple outputs (PDF, HTML, Word, etc.)
+:::
+
+::: {.column width="16%"}
+![](https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png) ![](https://raw.githubusercontent.com/rstudio/hex-stickers/main/PNG/knitr.png)
+:::
+:::
+
+## Quarto
+
+::: {style="text-align: right"}
+![](https://quarto.org/quarto.png){width="22%"}
+:::
+
+. . .
+
+-   Open Source technical and scientific publishing system
+-   The new generation of rmarkdown
+-   Multi-language
+-   Multi-format
+-   Well [documented](https://quarto.org/docs/guide/)
+
+## 
+
+![rmarkdown](https://d33wubrfki0l68.cloudfront.net/61d189fd9cdf955058415d3e1b28dd60e1bd7c9b/b739c/lesson-images/rmarkdownflow.png)
+
+![Quarto](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
+
+## What you see is what you get (WYSIWYG)
+
+::: columns
+::: {.column width="50%"}
+![](imgs/word.JPG){width="650px"}
+:::
+
+::: {.column width="50%"}
+![](imgs/word.JPG){width="650px"}
+:::
+:::
+
+## Separate source and output
+
+::: columns
+::: {.column width="50%"}
+```         
+---
+title: "geom_point demonstration"
+author: "Luis"
+format: 
+  html:
+  theme: pulse
+highlight-style: breeze  
+---
+
+## Scatterplot with `geom_point`
+Flipper vs. body mass
+```
+
+````         
+``` {{r}}
+#| warning: false 
+library(palmerpenguins)
+library(ggplot2)
+ggplot(penguins,aes(flipper_length_mm,body_mass_g))+geom_point()
+```
+````
+:::
+
+::: {.column width="50%"}
+![](imgs/quartooutputeng.png)
+:::
+:::
+
+## Dynamic documents
+
+Combine text, code, code output, images, and results 
+
+![Douglas et al. (2022) - An Introduction to R](https://intro2r.com/images/workflow1.png)
+
+## Output formats
+
+<br>
+
+::: {style="font-size: 3em; text-align: center; color: #4194c5"}
+`r fontawesome::fa("blog")` `r fontawesome::fa("file-pdf")` `r fontawesome::fa("file-code")` `r fontawesome::fa("file-powerpoint")` `r fontawesome::fa("book")` `r fontawesome::fa("book-open")` `r fontawesome::fa("python")`
+:::
+
+::: columns
+::: {.column width="50%"}
+Blogs\
+PDF\
+Reports\
+Manuscripts\
+:::
+
+::: {.column width="50%"}
+Presentations\
+Books\
+Courses\
+Notebooks
+:::
+:::
+
+## Do I have Quarto?
+
+-   Installed automatically with RStudio since version v2022.07
+-   Install from the official [download page](https://quarto.org/docs/download/)
+
+Current version is: v1.4.540
+
+`quarto --version` in your terminal to check for installed version
+
+# New Qmd files {background-color="black"}
+
+-   Create with the 'File' dropdown menu in RStudio
+-   Create with any text editor
+
+## Formatting text
+
+Certain charcters take on special meanings in `r fontawesome::fa("markdown")` so we use them to define formatting<br><br>
+
+::: columns
+::: {.column width="50%"}
+\*italic\* and \*\*bold\*\*\
+superscript\^2\^\
+subscript\~2\
+\~\~crossed out\~\~\
+\`code\`
+:::
+
+::: {.column width="50%"}
+*italic* and **bold**\
+superscript^2^\
+subscript~2~\
+~~crosset out~~\
+`code`
+:::
+:::
+
+## Headings
+
+Define sections and subsections, and are parsed to create tables of contents
+
++----------------+---------------+
+| Markdown       | Result        |
++================+===============+
+| ```            | # Level 1     |
+|  # Level 1     |               |
+| ```            |               |
++----------------+---------------+
+| ```            | ## Level 2    |
+| ## Level 2     |               |
+| ```            |               |
++----------------+---------------+
+| ```            | ### Level 3   |
+| ### Level 3    |               |
+| ```            |               |
++----------------+---------------+
+| ```            | #### Level 4  |
+| #### Level 4   |               |
+| ```            |               |
++----------------+---------------+
+
+## Images
+
+Add from a local path or from the web
+
+`![](imgs/Mila.jpeg)`
+
+![](imgs/Mila.jpeg)
+
+# Images
+
+Label, resize, align  
+
+`![Mila the dog](imgs/Mila.jpeg){width="30%" fig-align="right"}`
+
+![Mila](imgs/Mila.jpeg){width="30%" fig-align="right"}
+
+## Code
+
+#### Code chunks
+
+Insert with `ctrl + shift + I` or the ![](imgs/boton.png) button
+
+Chunk content will be executed
+
+```{r}
+#| echo: fenced
+sqrt(64)
+log(1000)
+25*12
+```
+
+> The result of the code execution appears in the output
+
+
+We can control if the code is shown, executed, or hidden.
+
+
+## YAML preamble
+
+Contains document metadata to specify:
+
+-   Visual options to be applied throughout  
+
+-   Author and date information
+
+-   Output format
+
+-   `---` befor and after the preamble
+
+-   Flimsy, be careful with indentations here
+
+## Example 1: Possums report {background-color="black"}
+
+-   change [theme](https://quarto.org/docs/output-formats/html-themes.html#overview) (`theme`)
+-   change code [highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting) (`highlight style`)
+-   hide or show [code](https://quarto.org/docs/output-formats/html-code.html#folding-code) (`code-fold`, `code-tools`, `code-summary`)
+
+## Presentations
+
+Quarto uses the `reveal.js` framework to create HTML presentations
+
+-   Includes presenter tools
+
+-   New slides delimited with `---` or created with headings
+
+## Example 2: Presentation about pets {background-color="black"}
+
+-   Gradual [reveal](https://quarto.org/docs/presentations/#incremental-lists) of lists and bullet points
+-   Change slide background `{background-color}`
+-   Export to PDF (`E` key toggles print preview)
+
+## Publishing Quarto documents
+
+### On Quartopub
+1.  Create account on [Quartopub](https://quartopub.com/sign-up)
+2.  Publish from the Quarto command line
+
+::: {style="text-align: center"}
+`quarto publish quarto-pub mi-documento.qmd`
+:::
+
+## Useful reading resources
+
+📃 Meghan Hall - [Making Slides in Quarto with reveal.js](https://meghan.rbind.io/blog/quarto-slides/)
+
+📒 Thomas Mock - [Getting Started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)
+
+# Thanks!
+

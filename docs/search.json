@@ -18,7 +18,7 @@
     "href": "materials.html#presentations",
     "title": "Course materials",
     "section": "Presentations",
-    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\nExample spreadsheet for import: petshops.xlsx\n\n\n\nTuesday\nData preparation\n\nExample table for Data Preparation exercise fish gene expression csv file\n\n\n\nWednesday\nData Visualization\n\nPlotting scripts compressed file\n\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents"
+    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\nExample spreadsheet for import: petshops.xlsx\n\n\n\nTuesday\nData preparation\n\nExample table for Data Preparation exercise fish gene expression csv file\n\n\n\nWednesday\nData Visualization\n\nPlotting scripts compressed file\n\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents\n\nexample report\nexample presentation"
   },
   {
     "objectID": "slides/preparation.html#pipes",
@@ -1328,5 +1328,789 @@
     "title": "Data visualization",
     "section": "",
     "text": "library(ggtext)\n\nfastfood %&gt;% mutate(Fats=sat_fat&gt;15) %&gt;% \n  ggplot(aes(total_fat,sat_fat,color=Fats))+\ngeom_point()+\n  scale_color_discrete(labels=c(\"**Greasy** junk\" ,\"Low fat\"))+\n  theme(legend.text = element_markdown())"
+  },
+  {
+    "objectID": "slides/programming.html#today",
+    "href": "slides/programming.html#today",
+    "title": "Programming and reproducibility",
+    "section": "Today:",
+    "text": "Today:\n– Custom setups\n– Shortcuts and tools for increased efficiency\n– Iteration and vectorization to avoid repeating ourselves\n– Lists"
+  },
+  {
+    "objectID": "slides/programming.html#customization",
+    "href": "slides/programming.html#customization",
+    "title": "Programming and reproducibility",
+    "section": "Customization",
+    "text": "Customization\n\nIDE themes: tmThemeEditor by Allen Bargi\n\n\n\n\nNo one at the coffee shop will know you’re serious unless you have a dark background\n\n\n\n-Jared Lander\n📼 R: Then and now\n\n\n\nFonts and ligatures - 🔗 Nerd Fonts\nPane Layouts"
+  },
+  {
+    "objectID": "slides/programming.html#coding-tricks",
+    "href": "slides/programming.html#coding-tricks",
+    "title": "Programming and reproducibility",
+    "section": "Coding tricks",
+    "text": "Coding tricks\nCtrl == ⌘ Command , Alt == ⌥ Option\n\nMultiline cursor (ctrl+alt+up) or (ctrl+alt+down)\ndismiss with escape key"
+  },
+  {
+    "objectID": "slides/programming.html#shortcuts",
+    "href": "slides/programming.html#shortcuts",
+    "title": "Programming and reproducibility",
+    "section": "Shortcuts",
+    "text": "Shortcuts\n\n‘pipe’ (ctrl+shift+m)\nasignment operator (alt+-)\ndrag line (alt+up) or (alt+down)\nrun (ctrl+enter)\nconvert to comment (ctrl + shift + c)\n\n\n\nRStudio Shortcuts and Tips (2021)"
+  },
+  {
+    "objectID": "slides/programming.html#more-shortcuts",
+    "href": "slides/programming.html#more-shortcuts",
+    "title": "Programming and reproducibility",
+    "section": "More shortcuts",
+    "text": "More shortcuts\n\nShift focus\n\n(ctrl+1 through 8)\nMaximize panes (ctrl+shift+1 through 8)"
+  },
+  {
+    "objectID": "slides/programming.html#section-1",
+    "href": "slides/programming.html#section-1",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "See help ? o F1\nOpen object in viewer\nctrl + click\nOpen working directory\nshell.exec(getwd()) Windows browseURL(getwd()) Linux"
+  },
+  {
+    "objectID": "slides/programming.html#performing-a-process-repeatedly",
+    "href": "slides/programming.html#performing-a-process-repeatedly",
+    "title": "Programming and reproducibility",
+    "section": "Performing a process repeatedly",
+    "text": "Performing a process repeatedly\nAny time we copy and paste code, and then edit, we are adding unnecessary steps that add room for errors\n\n\n\nNick Holt (2017)\nFunction Iterations in R"
+  },
+  {
+    "objectID": "slides/programming.html#challengebrainstorm",
+    "href": "slides/programming.html#challengebrainstorm",
+    "title": "Programming and reproducibility",
+    "section": "Challenge/brainstorm",
+    "text": "Challenge/brainstorm\nLoad the possum dataset from the openintro package\n\nHow could we identify the oldest male possums for each of the two populations?\n\nno code needed for this"
+  },
+  {
+    "objectID": "slides/programming.html#grouped-data",
+    "href": "slides/programming.html#grouped-data",
+    "title": "Programming and reproducibility",
+    "section": "Grouped data",
+    "text": "Grouped data\nMost data analysis and manipulations tasks can be approached using the “split-apply-combine” paradigm:\n\nsplit the data into groups\napply some analysis to each group\ncombine the results\n\n\n\nData Carpentry (2018)\nAggregating and analyzing data with dplyr\nHadley Wickham (2011)\nThe split-apply-combine strategy for data analysis"
+  },
+  {
+    "objectID": "slides/programming.html#dplyrgroup_by",
+    "href": "slides/programming.html#dplyrgroup_by",
+    "title": "Programming and reproducibility",
+    "section": "dplyr::group_by()",
+    "text": "dplyr::group_by()\n\nDefine groups with one or more variables\n\nStratify a data frame\nequivalent to aggregate() in base R"
+  },
+  {
+    "objectID": "slides/programming.html#aggregating-or-manipulating-grouped-data",
+    "href": "slides/programming.html#aggregating-or-manipulating-grouped-data",
+    "title": "Programming and reproducibility",
+    "section": "Aggregating or manipulating grouped data",
+    "text": "Aggregating or manipulating grouped data\nOnce group_by() creates a “grouped” version of a table, dplyr functions will manipulate each “group” separately and then combine the results.\n\n\nRStudio (2021)\nData transformation with dplyr cheatsheet"
+  },
+  {
+    "objectID": "slides/programming.html#within-groups-we-can",
+    "href": "slides/programming.html#within-groups-we-can",
+    "title": "Programming and reproducibility",
+    "section": "Within groups, we can:",
+    "text": "Within groups, we can:\n\nsummarize group values (mean, median)\nextract the first or last n rows from each group\nfind the minimum or maximum values\nremove duplicated rows\ncount records, etc."
+  },
+  {
+    "objectID": "slides/programming.html#mammal-sleep-data",
+    "href": "slides/programming.html#mammal-sleep-data",
+    "title": "Programming and reproducibility",
+    "section": "mammal sleep data",
+    "text": "mammal sleep data\nTraits for 83 species of mammals in relation to their sleeping habits. From Savage & West (2007), bundled with ggplot2\n\n\n\n\n\n\n  \n    \n    \n      name\n      genus\n      vore\n      order\n      conservation\n      sleep_total\n      sleep_rem\n      sleep_cycle\n      awake\n      brainwt\n      bodywt\n    \n  \n  \n    Cheetah\nAcinonyx\ncarni\nCarnivora\nlc\n12.1\nNA\nNA\n11.9\nNA\n50.000\n    Owl monkey\nAotus\nomni\nPrimates\nNA\n17.0\n1.8\nNA\n7.0\n0.01550\n0.480\n    Mountain beaver\nAplodontia\nherbi\nRodentia\nnt\n14.4\n2.4\nNA\n9.6\nNA\n1.350\n    Greater short-tailed shrew\nBlarina\nomni\nSoricomorpha\nlc\n14.9\n2.3\n0.1333333\n9.1\n0.00029\n0.019\n    Cow\nBos\nherbi\nArtiodactyla\ndomesticated\n4.0\n0.7\n0.6666667\n20.0\n0.42300\n600.000\n    Three-toed sloth\nBradypus\nherbi\nPilosa\nNA\n14.4\n2.2\n0.7666667\n9.6\nNA\n3.850"
+  },
+  {
+    "objectID": "slides/programming.html#maximum-brainwt-for-each-order",
+    "href": "slides/programming.html#maximum-brainwt-for-each-order",
+    "title": "Programming and reproducibility",
+    "section": "maximum brainwt for each order",
+    "text": "maximum brainwt for each order\n\nmsleep %&gt;% group_by(order) %&gt;% \n  slice_max(brainwt,n=1)\n\n\n\n# A tibble: 21 × 11\n# Groups:   order [19]\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n 2 Cow    Bos   herbi Arti… domesticated         4         0.7       0.667  20  \n 3 Gray … Hali… carni Carn… lc                   6.2       1.5      NA      17.8\n 4 Pilot… Glob… carni Ceta… cd                   2.7       0.1      NA      21.4\n 5 Commo… Phoc… carni Ceta… vu                   5.6      NA        NA      18.4\n 6 Bottl… Turs… carni Ceta… &lt;NA&gt;                 5.2      NA        NA      18.8\n 7 Big b… Epte… inse… Chir… lc                  19.7       3.9       0.117   4.3\n 8 Giant… Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n 9 North… Dide… omni  Dide… lc                  18         4.9       0.333   6  \n10 Phala… Phal… &lt;NA&gt;  Dipr… &lt;NA&gt;                13.7       1.8      NA      10.3\n# ℹ 11 more rows\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/programming.html#one-row-sampled-randomly-from-each-order",
+    "href": "slides/programming.html#one-row-sampled-randomly-from-each-order",
+    "title": "Programming and reproducibility",
+    "section": "One row sampled randomly from each order",
+    "text": "One row sampled randomly from each order\n\nmsleep %&gt;% group_by(order) %&gt;% \n  slice_sample(n=1)\n\n\n\n# A tibble: 19 × 11\n# Groups:   order [19]\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n 2 Sheep  Ovis  herbi Arti… domesticated         3.8       0.6      NA      20.2\n 3 Lion   Pant… carni Carn… vu                  13.5      NA        NA      10.5\n 4 Pilot… Glob… carni Ceta… cd                   2.7       0.1      NA      21.4\n 5 Littl… Myot… inse… Chir… &lt;NA&gt;                19.9       2         0.2     4.1\n 6 Long-… Dasy… carni Cing… lc                  17.4       3.1       0.383   6.6\n 7 North… Dide… omni  Dide… lc                  18         4.9       0.333   6  \n 8 Phala… Phal… &lt;NA&gt;  Dipr… &lt;NA&gt;                13.7       1.8      NA      10.3\n 9 Deser… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n10 Gray … Hete… herbi Hyra… lc                   6.3       0.6      NA      17.7\n11 Rabbit Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n12 Short… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n13 Brazi… Tapi… herbi Peri… vu                   4.4       1         0.9    19.6\n14 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n15 Squir… Saim… omni  Prim… &lt;NA&gt;                 9.6       1.4      NA      14.4\n16 Afric… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n17 Mount… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6\n18 Tree … Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n19 Musk … Sunc… &lt;NA&gt;  Sori… &lt;NA&gt;                12.8       2         0.183  11.2\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/programming.html#summarize-values",
+    "href": "slides/programming.html#summarize-values",
+    "title": "Programming and reproducibility",
+    "section": "summarize values",
+    "text": "summarize values\n\n\nmsleep %&gt;% group_by(order) %&gt;% \n  summarize(median_slp = median(sleep_total),\n            mean_brainwt=mean(brainwt))\n\n\n\n# A tibble: 19 × 3\n   order           median_slp mean_brainwt\n   &lt;chr&gt;                &lt;dbl&gt;        &lt;dbl&gt;\n 1 Afrosoricida          15.6     0.0026  \n 2 Artiodactyla           3.9    NA       \n 3 Carnivora             10.2    NA       \n 4 Cetacea                5.2    NA       \n 5 Chiroptera            19.8     0.000275\n 6 Cingulata             17.8     0.0459  \n 7 Didelphimorphia       18.7    NA       \n 8 Diprotodontia         12.4    NA       \n 9 Erinaceomorpha        10.2     0.00295 \n10 Hyracoidea             5.4     0.0152  \n11 Lagomorpha             8.4     0.0121  \n12 Monotremata            8.6     0.025   \n13 Perissodactyla         3.1     0.414   \n14 Pilosa                14.4    NA       \n15 Primates               9.9    NA       \n16 Proboscidea            3.6     5.16    \n17 Rodentia              12.9    NA       \n18 Scandentia             8.9     0.0025  \n19 Soricomorpha          10.3     0.000592"
+  },
+  {
+    "objectID": "slides/programming.html#loops-for-loops",
+    "href": "slides/programming.html#loops-for-loops",
+    "title": "Programming and reproducibility",
+    "section": "Loops (for loops)",
+    "text": "Loops (for loops)\n\nStill useful\nmost of the time we do not have to write them ourselves\n\n\n\n\n\n\n\nJenny Bryan\npurrr tutorial\nData Rectangling\npurrr workshop"
+  },
+  {
+    "objectID": "slides/programming.html#loops",
+    "href": "slides/programming.html#loops",
+    "title": "Programming and reproducibility",
+    "section": "Loops",
+    "text": "Loops\n\n\n\n\nfor (value in sequence){\n   statement(s)\n}\n\n\nExecute a set of statements, once for each item in a vector, array, list, etc. and stop when the last element is reached.\n\n\n\nfor (x in 1:7){\n  print(x)\n} \n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7"
+  },
+  {
+    "objectID": "slides/programming.html#practice",
+    "href": "slides/programming.html#practice",
+    "title": "Programming and reproducibility",
+    "section": "Practice",
+    "text": "Practice\nWrite a for loop to print every letter in the alphabet in lowercase and in reverse alphabetical order (e.g. z,y,x,w…) \nHints:\n\nWhat is the length of the built-in letters vector?\nWhich function “prints” text to the console?"
+  },
+  {
+    "objectID": "slides/programming.html#loops-and-groups",
+    "href": "slides/programming.html#loops-and-groups",
+    "title": "Programming and reproducibility",
+    "section": "Loops and groups",
+    "text": "Loops and groups\n\n\nmsleep %&gt;% \n  group_by(order) %&gt;% # for each order\n  slice_sample(1) # statement to execute \n\n\nEverything happens within the data frame"
+  },
+  {
+    "objectID": "slides/programming.html#vectorization-is-our-friend",
+    "href": "slides/programming.html#vectorization-is-our-friend",
+    "title": "Programming and reproducibility",
+    "section": "Vectorization is our friend",
+    "text": "Vectorization is our friend\nOperations occur in parallel on all elements, rather than on individual components in sequence\nWhat will be the result here?\n\n\nx &lt;- c(1,3,12,4,7,8)\nx &gt; 5"
+  },
+  {
+    "objectID": "slides/programming.html#logical-operators-are-vectorized-many-other-fns-too",
+    "href": "slides/programming.html#logical-operators-are-vectorized-many-other-fns-too",
+    "title": "Programming and reproducibility",
+    "section": "Logical operators are vectorized (many other fns too!)",
+    "text": "Logical operators are vectorized (many other fns too!)\n\n\nx &lt;- c(1,3,12,4,7,8)\nx &gt; 5\n\n[1] FALSE FALSE  TRUE FALSE  TRUE  TRUE\n\n\n\nWe don’t need to type all of this out or a loop\n\n\nx[1]&gt;5 ; x[2]&gt;5\nx[3]&gt;5 ; x[4]&gt;5\nx[5]&gt;5 ; x[6]&gt;5"
+  },
+  {
+    "objectID": "slides/programming.html#if-we-really-need-to-iterate",
+    "href": "slides/programming.html#if-we-really-need-to-iterate",
+    "title": "Programming and reproducibility",
+    "section": "If we really need to iterate",
+    "text": "If we really need to iterate\n\n\n\n\n📦 purrr - Functional programming tools\n\nmap functions to data\n\nwork efficiently with lists\nreadable code\n\n\n\n\n\nThomas Mock (2018)\nFunctional Programming in R with purrr"
+  },
+  {
+    "objectID": "slides/programming.html#section-2",
+    "href": "slides/programming.html#section-2",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "map(.x, .f, …)\nfor every element of .x\napply .f\n... arguments for .f"
+  },
+  {
+    "objectID": "slides/programming.html#mapping-functions-to-data",
+    "href": "slides/programming.html#mapping-functions-to-data",
+    "title": "Programming and reproducibility",
+    "section": "Mapping functions to data",
+    "text": "Mapping functions to data\nmap(.x,.f)\nWe can specify .f as:\n\n\nan existing function\nan anonymous function, defined on-the-fly\na shorthand anonymous function (in more recent versions of R)"
+  },
+  {
+    "objectID": "slides/programming.html#functions",
+    "href": "slides/programming.html#functions",
+    "title": "Programming and reproducibility",
+    "section": "Functions",
+    "text": "Functions"
+  },
+  {
+    "objectID": "slides/programming.html#function-definition",
+    "href": "slides/programming.html#function-definition",
+    "title": "Programming and reproducibility",
+    "section": "Function Definition",
+    "text": "Function Definition\nThe ‘function()’ function\nfunction( arglist ) expr\n\narguments (arglist): values passed to the function\nexpression (expr): an object that represents an action that can be performed by R.\n\n\n\n\n\n\n\n\n\nExpressions contain one or more statements"
+  },
+  {
+    "objectID": "slides/programming.html#defining-a-function",
+    "href": "slides/programming.html#defining-a-function",
+    "title": "Programming and reproducibility",
+    "section": "Defining a function",
+    "text": "Defining a function\n\n\nmy_custom_function &lt;- function(my_arg){\n  my_arg+1 # statement\n}\n\nmy_vector &lt;- c(3,5,6,7)\n\nmy_custom_function(my_arg = my_vector)\n\n[1] 4 6 7 8"
+  },
+  {
+    "objectID": "slides/programming.html#section-4",
+    "href": "slides/programming.html#section-4",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "f &lt;- function(x) {mean(x)/2}   \nf(c(6,43,12,5,7))\n\n[1] 7.3"
+  },
+  {
+    "objectID": "slides/programming.html#section-5",
+    "href": "slides/programming.html#section-5",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "f &lt;- function(x) mean(x)/2   \nf(c(6,43,12,5,7))\n\n[1] 7.3"
+  },
+  {
+    "objectID": "slides/programming.html#anonymous-functions",
+    "href": "slides/programming.html#anonymous-functions",
+    "title": "Programming and reproducibility",
+    "section": "Anonymous functions",
+    "text": "Anonymous functions\nFunctions on the go (created and used but never given a name)\nAnonymous function syntax\n\n\n(function(x) x * x + 3)(10)\n\n[1] 103\n\n\n\n\nwe use parentheses to separate function and arguments"
+  },
+  {
+    "objectID": "slides/programming.html#shorthand-notation-since-r-v4.1.0",
+    "href": "slides/programming.html#shorthand-notation-since-r-v4.1.0",
+    "title": "Programming and reproducibility",
+    "section": "Shorthand notation (since R v4.1.0)",
+    "text": "Shorthand notation (since R v4.1.0)\nReplaces “function(x) {}” with “\\(x){}”\n\n\n(\\(x) x + 3)(10)\n\n[1] 13\n\n(\\(x) x / 2)(10)\n\n[1] 5\n\n\n\n\n\nRuss Hyde (2021)\nNew features in R 4.1.0\n\n\n\n\n\n\n\n\n\n\n\ntidyverse devlopers and R users in general are gradually shifting to this notation"
+  },
+  {
+    "objectID": "slides/programming.html#anonymous-functions-1",
+    "href": "slides/programming.html#anonymous-functions-1",
+    "title": "Programming and reproducibility",
+    "section": "Anonymous functions",
+    "text": "Anonymous functions\n\nHandy when we want to apply a user-defined operation to many things at once\nAlso known as lambda expressions\nSelf-contained\nComparable with similar approaches in Python"
+  },
+  {
+    "objectID": "slides/programming.html#why-write-our-own-functions",
+    "href": "slides/programming.html#why-write-our-own-functions",
+    "title": "Programming and reproducibility",
+    "section": "Why write our own functions",
+    "text": "Why write our own functions\n\nAvoids repetition\nBrevity\nLess room for errors\nTake advantage of tools that help us apply functions to many things at once"
+  },
+  {
+    "objectID": "slides/programming.html#listas",
+    "href": "slides/programming.html#listas",
+    "title": "Programming and reproducibility",
+    "section": "Listas",
+    "text": "Listas\nObjects which contain elements of different types, such as numbers, strings, vectors, data frames, or even other lists\n\n\nmy_list &lt;- list(\n  a_number = 7,\n  a_vector = c(\"mouse\", \"cat\", \"dog\"),\n  a_dataframe = data.frame(\n    a = 1:3, b = c(\"K\", \"L\", \"M\")))\n\n\n\n\nRebecca Barter (2019)\nLearn to purrr"
+  },
+  {
+    "objectID": "slides/programming.html#section-7",
+    "href": "slides/programming.html#section-7",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "group_keys() retrieves the grouping data\n\n\nmsleep %&gt;% group_by(vore) %&gt;%\n  group_keys()\n\n# A tibble: 5 × 1\n  vore   \n  &lt;chr&gt;  \n1 carni  \n2 herbi  \n3 insecti\n4 omni   \n5 &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/programming.html#section-8",
+    "href": "slides/programming.html#section-8",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "Luis (2017)\nExport Iteratively"
+  },
+  {
+    "objectID": "slides/programming.html#section-9",
+    "href": "slides/programming.html#section-9",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "map(.x, .f, …)\nfor every element of .x\napply .f\n... arguments for .f"
+  },
+  {
+    "objectID": "slides/programming.html#section-10",
+    "href": "slides/programming.html#section-10",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "additional arguments\n\n# \"mean\" of each list element\nmap(traits,mean,na.rm=TRUE)\n\n[[1]]\n[1] 4201.754\n\n[[2]]\n[1] 43.92193\n\n[[3]]\n[1] 200.9152"
+  },
+  {
+    "objectID": "slides/programming.html#list-indexing",
+    "href": "slides/programming.html#list-indexing",
+    "title": "Programming and reproducibility",
+    "section": "List indexing",
+    "text": "List indexing"
+  },
+  {
+    "objectID": "slides/programming.html#working-with-list-elements",
+    "href": "slides/programming.html#working-with-list-elements",
+    "title": "Programming and reproducibility",
+    "section": "Working with list elements",
+    "text": "Working with list elements\nFirst element in our list ([[1]])\n\nguilds[[1]] %&gt;% \n  select(name,genus) %&gt;% head\n\n# A tibble: 6 × 2\n  name                 genus        \n  &lt;chr&gt;                &lt;chr&gt;        \n1 Cheetah              Acinonyx     \n2 Northern fur seal    Callorhinus  \n3 Dog                  Canis        \n4 Long-nosed armadillo Dasypus      \n5 Domestic cat         Felis        \n6 Pilot whale          Globicephalus"
+  },
+  {
+    "objectID": "slides/programming.html#second-elemento",
+    "href": "slides/programming.html#second-elemento",
+    "title": "Programming and reproducibility",
+    "section": "Second elemento",
+    "text": "Second elemento\n\nguilds[[2]] %&gt;% \n  select(name,genus, vore, conservation) %&gt;% \n  head\n\n# A tibble: 6 × 4\n  name             genus      vore  conservation\n  &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;       \n1 Mountain beaver  Aplodontia herbi nt          \n2 Cow              Bos        herbi domesticated\n3 Three-toed sloth Bradypus   herbi &lt;NA&gt;        \n4 Roe deer         Capreolus  herbi lc          \n5 Goat             Capri      herbi lc          \n6 Guinea pig       Cavis      herbi domesticated"
+  },
+  {
+    "objectID": "slides/programming.html#section-11",
+    "href": "slides/programming.html#section-11",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "# returns a list\nmap(traits, median, na.rm = TRUE)\n\n[[1]]\n[1] 4050\n\n[[2]]\n[1] 44.45\n\n[[3]]\n[1] 197\n\n# flattens the output into a numeric vector\nmap_dbl(traits, median, na.rm = TRUE)\n\n[1] 4050.00   44.45  197.00"
+  },
+  {
+    "objectID": "slides/programming.html#why-lists",
+    "href": "slides/programming.html#why-lists",
+    "title": "Programming and reproducibility",
+    "section": "Why lists?",
+    "text": "Why lists?\n\nFlexible, can store many kinds of objects\nWe can easily create lists by splitting existing objects\nList elements can be named"
+  },
+  {
+    "objectID": "slides/programming.html#mapping-functions-to-data-1",
+    "href": "slides/programming.html#mapping-functions-to-data-1",
+    "title": "Programming and reproducibility",
+    "section": "Mapping functions to data",
+    "text": "Mapping functions to data\n\nApply functions to many things at once\nReading many files at once\nModifying and exporting multiple objects"
+  },
+  {
+    "objectID": "slides/programming.html#apply-functions-to-many-things-at-once",
+    "href": "slides/programming.html#apply-functions-to-many-things-at-once",
+    "title": "Programming and reproducibility",
+    "section": "Apply functions to many things at once",
+    "text": "Apply functions to many things at once\n\nlibrary(palmerpenguins)\nlibrary(purrr)\n# numeric vectors\nmass &lt;- penguins$body_mass_g\nbill &lt;- penguins$bill_length_mm\nflipper &lt;- penguins$flipper_length_mm\n# together in a list\ntraits &lt;- list(mass, bill , flipper)\n# apply \"mean\" to each list element\nmap(traits,mean)\n\n[[1]]\n[1] NA\n\n[[2]]\n[1] NA\n\n[[3]]\n[1] NA"
+  },
+  {
+    "objectID": "slides/programming.html#section-12",
+    "href": "slides/programming.html#section-12",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "# returns a list\nmap(traits, median, na.rm = TRUE)\n\n[[1]]\n[1] 4050\n\n[[2]]\n[1] 44.45\n\n[[3]]\n[1] 197\n\n# flattens the output into a numeric vector\nmap_dbl(traits, median, na.rm = TRUE)\n\n[1] 4050.00   44.45  197.00"
+  },
+  {
+    "objectID": "slides/programming.html#apply-custom-functions",
+    "href": "slides/programming.html#apply-custom-functions",
+    "title": "Programming and reproducibility",
+    "section": "Apply custom functions",
+    "text": "Apply custom functions\n\n\n# min, max, and range\nMMR &lt;- function(x){\n  min_x &lt;- min(x,na.rm = TRUE)\n  max_x &lt;- max(x,na.rm = TRUE)\n  maxmin &lt;- max_x - min_x\n  c(min_x, max_x, maxmin)\n}"
+  },
+  {
+    "objectID": "slides/programming.html#try-out-with-vectors",
+    "href": "slides/programming.html#try-out-with-vectors",
+    "title": "Programming and reproducibility",
+    "section": "Try out with vectors",
+    "text": "Try out with vectors\n\n\nMMR(mass)\n\n[1] 2700 6300 3600\n\nMMR(flipper)\n\n[1] 172 231  59"
+  },
+  {
+    "objectID": "slides/programming.html#map-our-function-to-a-list",
+    "href": "slides/programming.html#map-our-function-to-a-list",
+    "title": "Programming and reproducibility",
+    "section": "map() our function to a list",
+    "text": "map() our function to a list\n\n\nmap(.x = traits, .f = MMR)\n\n[[1]]\n[1] 2700 6300 3600\n\n[[2]]\n[1] 32.1 59.6 27.5\n\n[[3]]\n[1] 172 231  59"
+  },
+  {
+    "objectID": "slides/programming.html#type-specific-map",
+    "href": "slides/programming.html#type-specific-map",
+    "title": "Programming and reproducibility",
+    "section": "Type-specific map()",
+    "text": "Type-specific map()\nmap() always returns lists\nmap_lgl() returns a logical\nmap_int() returns an integer vector\nmap_dbl() returns a double vector\nmap_chr() returns a character vector\nmap_df() returns a data frame"
+  },
+  {
+    "objectID": "slides/programming.html#section-13",
+    "href": "slides/programming.html#section-13",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "Mismo comportamiento\n\n\nlistaNums &lt;- list(c(5:10),c(20:27))\n# función anónima\nmap(listaNums, function(x) x+2)\n\n# notación 'nueva'\nmap(listaNums,\\(x) x+2)"
+  },
+  {
+    "objectID": "slides/programming.html#map-with-anonymous-functions",
+    "href": "slides/programming.html#map-with-anonymous-functions",
+    "title": "Programming and reproducibility",
+    "section": "map() with anonymous functions",
+    "text": "map() with anonymous functions\nSame behavior\n\n\nlist_of_numbers &lt;- list(c(5:10),c(20:27))\n# anonymous fn\nmap(list_of_numbers, function(x) x+2)\n\n# shorthand notation\nmap(list_of_numbers,\\(x) x+2)\n\n\n\n\nMike Cheng (2019)\nAnonymous Functions in R - Part 1"
+  },
+  {
+    "objectID": "slides/programming.html#section-14",
+    "href": "slides/programming.html#section-14",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "Mismo comportamiento\n\n\nlistaNums &lt;- list(c(5:10),c(20:27))\n# función anónima\nmap(listaNums, function(x) x+2)\n\n# notación 'nueva'\nmap(listaNums,\\(x) x+2)"
+  },
+  {
+    "objectID": "slides/programming.html#importando-o-escribiendo-muchos-archivos",
+    "href": "slides/programming.html#importando-o-escribiendo-muchos-archivos",
+    "title": "Programming and reproducibility",
+    "section": "Importando o escribiendo muchos archivos",
+    "text": "Importando o escribiendo muchos archivos\n\n\nAltman et al. (2021)\nMap with multiple inputs"
+  },
+  {
+    "objectID": "slides/programming.html#ejercicio",
+    "href": "slides/programming.html#ejercicio",
+    "title": "Programming and reproducibility",
+    "section": "Ejercicio",
+    "text": "Ejercicio\nCrear una carpeta llena de archivos de texto\n\ncargar el archivo resultados_21k.csv\nagrupar los datos por localidad y crear una lista de data frames con una para cada localidad\ncrear un vector con los nombres de las localidades\n\n\n\n\n\n\n\n\n\n\n😲 es posible iterar con dos inputs en paralelo"
+  },
+  {
+    "objectID": "slides/programming.html#map-con-dos-inputs",
+    "href": "slides/programming.html#map-con-dos-inputs",
+    "title": "Programming and reproducibility",
+    "section": "map() con dos inputs",
+    "text": "map() con dos inputs\nmap2(.x, .y, .f)\nAmbas listas of vectores de entrada se le pasan como argumentos a la función .f\n\n\n\nAltman et al. (2021)\nMap with multiple inputs"
+  },
+  {
+    "objectID": "slides/programming.html#ejercicio---carpeta-con-archivos",
+    "href": "slides/programming.html#ejercicio---carpeta-con-archivos",
+    "title": "Programming and reproducibility",
+    "section": "Ejercicio - Carpeta con archivos",
+    "text": "Ejercicio - Carpeta con archivos"
+  },
+  {
+    "objectID": "slides/programming.html#ejercicio---importando-varios-archivos-a-la-vez",
+    "href": "slides/programming.html#ejercicio---importando-varios-archivos-a-la-vez",
+    "title": "Programming and reproducibility",
+    "section": "Ejercicio - Importando varios archivos a la vez",
+    "text": "Ejercicio - Importando varios archivos a la vez\n\nusar dir_ls() para crear un vector con las rutas de los archivos creados en el paso anterior\nimportar cada elemento de este vector con map() y read_csv() de readr\nusar funciones con regresos específicos para terminar con la tabla inicial"
+  },
+  {
+    "objectID": "slides/programming.html#function-with-two-statements",
+    "href": "slides/programming.html#function-with-two-statements",
+    "title": "Programming and reproducibility",
+    "section": "Function with two statements",
+    "text": "Function with two statements\n\nf &lt;- function(x) {\n  y &lt;- (x*0.2885) # this is a statement\n  log(y)          # this is another statement\n}\n\nf(5)\n\n[1] 0.3663777\n\n\n\n\nJenny Bryan - Stat545\nWrite your own R functions"
+  },
+  {
+    "objectID": "slides/programming.html#lists-1",
+    "href": "slides/programming.html#lists-1",
+    "title": "Programming and reproducibility",
+    "section": "Lists",
+    "text": "Lists\nObjects which contain elements of different types, such as numbers, strings, vectors, data frames, or even other lists\n\n\nmy_list &lt;- list(\n  a_number = 7,\n  a_vector = c(\"mouse\", \"cat\", \"dog\"),\n  a_dataframe = data.frame(\n    a = 1:3, b = c(\"K\", \"L\", \"M\")))\n\n\n\n\nRebecca Barter (2019)\nLearn to purrr"
+  },
+  {
+    "objectID": "slides/programming.html#second-element",
+    "href": "slides/programming.html#second-element",
+    "title": "Programming and reproducibility",
+    "section": "Second element",
+    "text": "Second element\n\nguilds[[2]] %&gt;% \n  select(name,genus, vore, conservation) %&gt;% \n  head\n\n# A tibble: 6 × 4\n  name             genus      vore  conservation\n  &lt;chr&gt;            &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;       \n1 Mountain beaver  Aplodontia herbi nt          \n2 Cow              Bos        herbi domesticated\n3 Three-toed sloth Bradypus   herbi &lt;NA&gt;        \n4 Roe deer         Capreolus  herbi lc          \n5 Goat             Capri      herbi lc          \n6 Guinea pig       Cavis      herbi domesticated"
+  },
+  {
+    "objectID": "slides/programming.html#functions-make-things-happen-in-r",
+    "href": "slides/programming.html#functions-make-things-happen-in-r",
+    "title": "Programming and reproducibility",
+    "section": "Functions make things happen in R",
+    "text": "Functions make things happen in R\n\nFunctions have arguments and always return something\nOperators such as +, *, and even &lt;- are functions"
+  },
+  {
+    "objectID": "slides/programming.html#functions-1",
+    "href": "slides/programming.html#functions-1",
+    "title": "Programming and reproducibility",
+    "section": "Functions",
+    "text": "Functions"
+  },
+  {
+    "objectID": "slides/programming.html#section-3",
+    "href": "slides/programming.html#section-3",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "The body of the function –the statements that are executed when it runs– is grouped with curly braces ({})\n\n\nmyfun &lt;- function(x) {\n  x + 4 # statement\n}"
+  },
+  {
+    "objectID": "slides/programming.html#section-6",
+    "href": "slides/programming.html#section-6",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "We can also create lists by splitting other objects\nGroup and split with dplyr into a list of data frames, one for each group\n\nguilds &lt;- \n  msleep %&gt;% group_by(vore) %&gt;%\n  group_split()"
+  },
+  {
+    "objectID": "slides/programming.html#for-efficient-iteration",
+    "href": "slides/programming.html#for-efficient-iteration",
+    "title": "Programming and reproducibility",
+    "section": "For efficient iteration",
+    "text": "For efficient iteration\n\n\n\n\n📦 purrr - Functional programming tools\n\nmap functions to data\n\nwork efficiently with lists\nreadable code\n\n\n\n\n\nThomas Mock (2018)\nFunctional Programming in R with purrr"
+  },
+  {
+    "objectID": "examples/possumreport.html",
+    "href": "examples/possumreport.html",
+    "title": "Possum measurements report",
+    "section": "",
+    "text": "Do larger possums have longer tails?\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\nlibrary(ggplot2)\nggplot(possum,aes(head_l,tail_l))+geom_point()\n\n\n\n\nNow an image of a possum and a link to information about possums.\n\n\n\na possum\n\n\nRead about the species here"
+  },
+  {
+    "objectID": "examples/possumreport.html#a-scatterplot-produced-with-geom_point",
+    "href": "examples/possumreport.html#a-scatterplot-produced-with-geom_point",
+    "title": "Possum measurements report",
+    "section": "",
+    "text": "Do larger possums have longer tails?\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\nlibrary(ggplot2)\nggplot(possum,aes(head_l,tail_l))+geom_point()\n\n\n\n\nNow an image of a possum and a link to information about possums.\n\n\n\na possum\n\n\nRead about the species here"
+  },
+  {
+    "objectID": "slides/quarto.html",
+    "href": "slides/quarto.html",
+    "title": "Creación de documentos con Quarto",
+    "section": "",
+    "text": "R 🔁 Word ➡️ Salida a PDF, HTML, etc.\n R ➡️ Salida a PDF, HTML, etc"
+  },
+  {
+    "objectID": "slides/quarto.html#section",
+    "href": "slides/quarto.html#section",
+    "title": "Creating documents with Quarto",
+    "section": "",
+    "text": "Combining text, code, and much more\n  R 🔁 Word ➡️ Outpt to PDF, HTML, etc.\n R ➡️ Output to PDF, HTML, etc"
+  },
+  {
+    "objectID": "slides/quarto.html#qué-es-markdown",
+    "href": "slides/quarto.html#qué-es-markdown",
+    "title": "Creación de documentos con Quarto",
+    "section": "Qué es Markdown ",
+    "text": "Qué es Markdown \n\nHerramienta/lenguaje para agregar elementos de formato a documentos de texto sin formato\nLegible y sencillo\nTransportable y conveniente"
+  },
+  {
+    "objectID": "slides/quarto.html#y-rmarkdown",
+    "href": "slides/quarto.html#y-rmarkdown",
+    "title": "Creación de documentos con Quarto",
+    "section": "¿… y rmarkdown?",
+    "text": "¿… y rmarkdown?\n\n\n\nFormato de archivo y conjunto de paquetes de apoyo para combinar texto con sintaxis de  con código de R\nCompatible con HTML\nGenera un archivo .md intermedio que se puede procesar para generar archivos en diferentes formatos (PDF, HTML, Word, etc.)"
+  },
+  {
+    "objectID": "slides/quarto.html#quarto",
+    "href": "slides/quarto.html#quarto",
+    "title": "Creating documents with Quarto",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\n\n\nOpen Source technical and scientific publishing system\nThe new generation of rmarkdown\nMulti-language\nMulti-format\nWell documented"
+  },
+  {
+    "objectID": "slides/quarto.html#section-1",
+    "href": "slides/quarto.html#section-1",
+    "title": "Creating documents with Quarto",
+    "section": "",
+    "text": "rmarkdown\n\n\n\n\n\nQuarto"
+  },
+  {
+    "objectID": "slides/quarto.html#lo-que-ves-es-lo-que-obtienes-wysiwyg",
+    "href": "slides/quarto.html#lo-que-ves-es-lo-que-obtienes-wysiwyg",
+    "title": "Creación de documentos con Quarto",
+    "section": "Lo que ves es lo que obtienes (WYSIWYG)",
+    "text": "Lo que ves es lo que obtienes (WYSIWYG)"
+  },
+  {
+    "objectID": "slides/quarto.html#separemos-fuente-y-producto",
+    "href": "slides/quarto.html#separemos-fuente-y-producto",
+    "title": "Creación de documentos con Quarto",
+    "section": "Separemos fuente y producto",
+    "text": "Separemos fuente y producto\n\n\n---\ntitle: \"Demostración de geom_point\"\nauthor: \"Luis\"\nformat: \n  html:\n  theme: pulse\nhighlight-style: breeze  \n---\n\n## Figura con `geom_point`\nLargo de aleta vs masa corporal\n``` {{r}}\n#| warning: false \nlibrary(datos)\nlibrary(ggplot2)\nggplot(pinguinos,aes(largo_aleta_mm,masa_corporal_g))+geom_point()\n```"
+  },
+  {
+    "objectID": "slides/quarto.html#documentos-dinámicos",
+    "href": "slides/quarto.html#documentos-dinámicos",
+    "title": "Creación de documentos con Quarto",
+    "section": "Documentos dinámicos",
+    "text": "Documentos dinámicos\nPermiten combinar texto, código, imágenes y resultados en un mismo archivo\n\n\n\nDouglas et al. (2022) - An Introduction to R"
+  },
+  {
+    "objectID": "slides/quarto.html#formatos-de-salida",
+    "href": "slides/quarto.html#formatos-de-salida",
+    "title": "Creación de documentos con Quarto",
+    "section": "Formatos de salida",
+    "text": "Formatos de salida\n\n\n      \n\n\n\nBlogs\nPDF\nInformes\nArtículos científicos\n\nPresentaciones\nLibros\nCursos\nNotebooks"
+  },
+  {
+    "objectID": "slides/quarto.html#tengo-quarto",
+    "href": "slides/quarto.html#tengo-quarto",
+    "title": "Creación de documentos con Quarto",
+    "section": "¿Tengo Quarto?",
+    "text": "¿Tengo Quarto?\n\nSe instala automáticamente con RStudio desde la versión v2022.07\nInstalar por separado desde la página de descargas\n\nVersión actual (agosto 2023): v1.3.450\nquarto --version en la terminal para consultar versión instalada"
+  },
+  {
+    "objectID": "slides/quarto.html#formatos-para-texto",
+    "href": "slides/quarto.html#formatos-para-texto",
+    "title": "Creación de documentos con Quarto",
+    "section": "Formatos para texto",
+    "text": "Formatos para texto\nCiertos caracteres se interpretan de manera especial en  y los usamos para especificar formato \n\n\n*cursiva* y **negritas**\nsuperíndices^2^\nsubíndices~2\n~~tachado~~\n`código`\n\ncursiva y negritas\nsuperíndices2\nsubíndices2\ntachado\ncódigo"
+  },
+  {
+    "objectID": "slides/quarto.html#encabezados",
+    "href": "slides/quarto.html#encabezados",
+    "title": "Creación de documentos con Quarto",
+    "section": "Encabezados",
+    "text": "Encabezados\nDelimitan secciones y subsecciones, se interpretan automáticamente para generar tablas de contenidos.\n\n\n\n\n\n\n\nMarkdown\nResultado\n\n\n\n\n # Nivel 1\nNivel 1\n\n\n## Nivel 2\nNivel 2\n\n\n### Nivel 3\nNivel 3\n\n\n#### Nivel 4\nNivel 4"
+  },
+  {
+    "objectID": "slides/quarto.html#imágenes",
+    "href": "slides/quarto.html#imágenes",
+    "title": "Creación de documentos con Quarto",
+    "section": "Imágenes",
+    "text": "Imágenes\nAgregar desde ruta local o desde URL\n![](imagenes/Mila.jpeg)"
+  },
+  {
+    "objectID": "slides/quarto.html#código",
+    "href": "slides/quarto.html#código",
+    "title": "Creación de documentos con Quarto",
+    "section": "Código",
+    "text": "Código\n\nBloques de código\nInsertar con ctrl + shift + I o con el botón \nLo que está dentro de esta ‘celda’ se ejecuta\n\n```{r}\nsqrt(64)\nlog(1000)\n25*12\n```\n\n[1] 8\n[1] 6.907755\n[1] 300\n\n\n\nEl resultado del código evaluado aparece en el documento de salida"
+  },
+  {
+    "objectID": "slides/quarto.html#bloque-yaml",
+    "href": "slides/quarto.html#bloque-yaml",
+    "title": "Creación de documentos con Quarto",
+    "section": "Bloque YAML",
+    "text": "Bloque YAML\nPreámbulo con los metadatos del documento, para especificar:\n\nOpciones visuales que aplican a todo el documento\nInformación sobre autor, fecha, etc.\nFormato de salida\nSe delimita con --- antes y después\nRelativamente frágil, escribir con atención a espacios"
+  },
+  {
+    "objectID": "slides/quarto.html#ejemplo-1-informe-pingüinos",
+    "href": "slides/quarto.html#ejemplo-1-informe-pingüinos",
+    "title": "Creación de documentos con Quarto",
+    "section": "Ejemplo 1: Informe pingüinos",
+    "text": "Ejemplo 1: Informe pingüinos\n\ncambiar apariencia (theme)\ncambiar resaltado de sintaxis (highlight style)\nesconder código (code-fold, code-tools, code-summary)\nagregar imágenes https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_(Pygoscelis_antarctica)04.jpg/1200px-South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin(Pygoscelis_antarctica)_04.jpg"
+  },
+  {
+    "objectID": "slides/quarto.html#presentaciones",
+    "href": "slides/quarto.html#presentaciones",
+    "title": "Creación de documentos con Quarto",
+    "section": "Presentaciones",
+    "text": "Presentaciones\nQuarto aprovecha el esquema reveal.js para crear presentaciones en formato HTML.\n\nIncluye herramientas para presentar\nDelimitamos diapositivas con --- o con encabezados"
+  },
+  {
+    "objectID": "slides/quarto.html#ejemplo-2-presentación-mascotas-mx",
+    "href": "slides/quarto.html#ejemplo-2-presentación-mascotas-mx",
+    "title": "Creación de documentos con Quarto",
+    "section": "Ejemplo 2: Presentación mascotas MX",
+    "text": "Ejemplo 2: Presentación mascotas MX\n\nRevelar gradualmente listas numeradas y viñetas\nCambiar fondo de diapositivas con atributo {background-color}\nExportar a PDF (E para cambiar a vista de impresión)"
+  },
+  {
+    "objectID": "slides/quarto.html#publicar-documentos",
+    "href": "slides/quarto.html#publicar-documentos",
+    "title": "Creación de documentos con Quarto",
+    "section": "Publicar documentos",
+    "text": "Publicar documentos\n\nCrear cuenta en Quartopub\nPublicar desde la línea de comandos con:\n\n\nquarto publish quarto-pub mi-documento.qmd\n\n\nAdministrar documentos publicados desde el panel de control de Quartopub"
+  },
+  {
+    "objectID": "slides/quarto.html#recursos-útiles",
+    "href": "slides/quarto.html#recursos-útiles",
+    "title": "Creación de documentos con Quarto",
+    "section": "Recursos útiles",
+    "text": "Recursos útiles\n🗐 Pedro Albarrán - Introducción a Quarto\n📃 Meghan Hall - Making Slides in Quarto with reveal.js\n📒 Thomas Mock - Getting Started with Quarto"
+  },
+  {
+    "objectID": "slides/programming.html",
+    "href": "slides/programming.html",
+    "title": "Programming and reproducibility",
+    "section": "",
+    "text": "– Custom setups\n– Shortcuts and tools for increased efficiency\n– Iteration and vectorization to avoid repeating ourselves\n– Lists"
+  },
+  {
+    "objectID": "examples/petpresentation.html#a-new-slide",
+    "href": "examples/petpresentation.html#a-new-slide",
+    "title": "My pet",
+    "section": "",
+    "text": "Introduce your pet\n\n\ndog? cat? other?"
+  },
+  {
+    "objectID": "examples/petpresentation.html#my-pet-likes",
+    "href": "examples/petpresentation.html#my-pet-likes",
+    "title": "My pet",
+    "section": "",
+    "text": "food\nplay\nsleep -friends"
+  },
+  {
+    "objectID": "examples/petpresentation.html#some-code",
+    "href": "examples/petpresentation.html#some-code",
+    "title": "My pet",
+    "section": "",
+    "text": "sum(c(10,20,12,3)) \n\n[1] 45"
+  },
+  {
+    "objectID": "slides/quarto.html#markdown",
+    "href": "slides/quarto.html#markdown",
+    "title": "Creating documents with Quarto",
+    "section": "Markdown ",
+    "text": "Markdown \n\nTools and language to add formatting to simple documents\nReadable and lightweight\nPortable, convenient"
+  },
+  {
+    "objectID": "slides/quarto.html#rmarkdown",
+    "href": "slides/quarto.html#rmarkdown",
+    "title": "Creating documents with Quarto",
+    "section": "Rmarkdown?",
+    "text": "Rmarkdown?\n\n\n\nFile format and package ecosystem to combine  markdown-formatted text with R code\nCompatible with HTML\nProduces an intermediate .md file that can be processed to render multiple outputs (PDF, HTML, Word, etc.)"
+  },
+  {
+    "objectID": "slides/quarto.html#what-you-see-is-what-you-get-wysiwyg",
+    "href": "slides/quarto.html#what-you-see-is-what-you-get-wysiwyg",
+    "title": "Creating documents with Quarto",
+    "section": "What you see is what you get (WYSIWYG)",
+    "text": "What you see is what you get (WYSIWYG)"
+  },
+  {
+    "objectID": "slides/quarto.html#separate-source-and-output",
+    "href": "slides/quarto.html#separate-source-and-output",
+    "title": "Creating documents with Quarto",
+    "section": "Separate source and output",
+    "text": "Separate source and output\n\n\n---\ntitle: \"geom_point demonstration\"\nauthor: \"Luis\"\nformat: \n  html:\n  theme: pulse\nhighlight-style: breeze  \n---\n\n## Scatterplot with `geom_point`\nFlipper vs. body mass\n``` {{r}}\n#| warning: false \nlibrary(palmerpenguins)\nlibrary(ggplot2)\nggplot(penguins,aes(flipper_length_mm,body_mass_g))+geom_point()\n```"
+  },
+  {
+    "objectID": "slides/quarto.html#dynamic-documents",
+    "href": "slides/quarto.html#dynamic-documents",
+    "title": "Creating documents with Quarto",
+    "section": "Dynamic documents",
+    "text": "Dynamic documents\nCombine text, code, code output, images, and results\n\nDouglas et al. (2022) - An Introduction to R"
+  },
+  {
+    "objectID": "slides/quarto.html#output-formats",
+    "href": "slides/quarto.html#output-formats",
+    "title": "Creating documents with Quarto",
+    "section": "Output formats",
+    "text": "Output formats\n\n\n      \n\n\n\nBlogs\nPDF\nReports\nManuscripts\n\n\nPresentations\nBooks\nCourses\nNotebooks"
+  },
+  {
+    "objectID": "slides/quarto.html#do-i-have-quarto",
+    "href": "slides/quarto.html#do-i-have-quarto",
+    "title": "Creating documents with Quarto",
+    "section": "Do I have Quarto?",
+    "text": "Do I have Quarto?\n\nInstalled automatically with RStudio since version v2022.07\nInstall from the official download page\n\nCurrent version is: v1.4.540\nquarto --version in your terminal to check for installed version"
+  },
+  {
+    "objectID": "slides/quarto.html#formatting-text",
+    "href": "slides/quarto.html#formatting-text",
+    "title": "Creating documents with Quarto",
+    "section": "Formatting text",
+    "text": "Formatting text\nCertain charcters take on special meanings in  so we use them to define formatting\n\n\n*italic* and **bold**\nsuperscript^2^\nsubscript~2\n~~crossed out~~\n`code`\n\nitalic and bold\nsuperscript2\nsubscript2\ncrosset out\ncode"
+  },
+  {
+    "objectID": "slides/quarto.html#headings",
+    "href": "slides/quarto.html#headings",
+    "title": "Creating documents with Quarto",
+    "section": "Headings",
+    "text": "Headings\nDefine sections and subsections, and are parsed to create tables of contents\n\n\n\n\n\n\n\nMarkdown\nResult\n\n\n\n\n # Level 1\nLevel 1\n\n\n## Level 2\nLevel 2\n\n\n### Level 3\nLevel 3\n\n\n#### Level 4\nLevel 4"
+  },
+  {
+    "objectID": "slides/quarto.html#images",
+    "href": "slides/quarto.html#images",
+    "title": "Creating documents with Quarto",
+    "section": "Images",
+    "text": "Images\nAdd from a local path or from the web\n![](imgs/Mila.jpeg)"
+  },
+  {
+    "objectID": "slides/quarto.html#code",
+    "href": "slides/quarto.html#code",
+    "title": "Creating documents with Quarto",
+    "section": "Code",
+    "text": "Code\nCode chunks\nInsert with ctrl + shift + I or the  button\nChunk content will be executed\n\n```{r}\nsqrt(64)\nlog(1000)\n25*12\n```\n\n[1] 8\n[1] 6.907755\n[1] 300\n\n\n\nThe result of the code execution appears in the output\n\nWe can control if the code is shown, executed, or hidden."
+  },
+  {
+    "objectID": "slides/quarto.html#yaml-preamble",
+    "href": "slides/quarto.html#yaml-preamble",
+    "title": "Creating documents with Quarto",
+    "section": "YAML preamble",
+    "text": "YAML preamble\nContains document metadata to specify:\n\nVisual options to be applied throughout\nAuthor and date information\nOutput format\n--- befor and after the preamble\nFlimsy, be careful with indentations here"
+  },
+  {
+    "objectID": "slides/quarto.html#example-1-possums-report",
+    "href": "slides/quarto.html#example-1-possums-report",
+    "title": "Creating documents with Quarto",
+    "section": "Example 1: Possums report",
+    "text": "Example 1: Possums report\n\nchange theme (theme)\nchange code highlighting (highlight style)\nhide or show code (code-fold, code-tools, code-summary)"
+  },
+  {
+    "objectID": "slides/quarto.html#presentations",
+    "href": "slides/quarto.html#presentations",
+    "title": "Creating documents with Quarto",
+    "section": "Presentations",
+    "text": "Presentations\nQuarto uses the reveal.js framework to create HTML presentations\n\nIncludes presenter tools\nNew slides delimited with --- or created with headings"
+  },
+  {
+    "objectID": "slides/quarto.html#example-2-presentation-about-pets",
+    "href": "slides/quarto.html#example-2-presentation-about-pets",
+    "title": "Creating documents with Quarto",
+    "section": "Example 2: Presentation about pets",
+    "text": "Example 2: Presentation about pets\n\nGradual reveal of lists and bullet points\nChange slide background {background-color}\nExport to PDF (E key toggles print preview)"
+  },
+  {
+    "objectID": "slides/quarto.html#publishing-quarto-documents",
+    "href": "slides/quarto.html#publishing-quarto-documents",
+    "title": "Creating documents with Quarto",
+    "section": "Publishing Quarto documents",
+    "text": "Publishing Quarto documents\nOn Quartopub\n\nCreate account on Quartopub\nPublish from the Quarto command line\n\n\nquarto publish quarto-pub mi-documento.qmd"
+  },
+  {
+    "objectID": "slides/quarto.html#useful-reading-resources",
+    "href": "slides/quarto.html#useful-reading-resources",
+    "title": "Creating documents with Quarto",
+    "section": "Useful reading resources",
+    "text": "Useful reading resources\n📃 Meghan Hall - Making Slides in Quarto with reveal.js\n📒 Thomas Mock - Getting Started with Quarto"
+  },
+  {
+    "objectID": "examples/petpresentation.html",
+    "href": "examples/petpresentation.html",
+    "title": "My pet",
+    "section": "",
+    "text": "Introduce your pet\n\n\ndog? cat? other?\n\n\n\n\n\n\n\n\n\nfood\nplay\nsleep -friends\n\n\n\n\n\n\nsum(c(10,20,12,3)) \n\n[1] 45"
   }
 ]

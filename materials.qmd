@@ -33,3 +33,7 @@ These web-based HTML slide decks have an interactive table of contents (button o
 [Programming and reproducibility](slides/programming.qmd)
 
 [Quarto Documents](slides/quarto.qmd)
+
+- example [report](examples/possumreport.qmd)
+- example [presentation](examples/petpresentation.qmd)
+

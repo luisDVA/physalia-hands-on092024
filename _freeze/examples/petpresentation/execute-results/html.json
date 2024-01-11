@@ -1,0 +1,16 @@
+{
+  "hash": "791b643c9ae9858c2b652c6510e88f72",
+  "result": {
+    "markdown": "---\ntitle: \"My pet\"\nauthor: \"Your name here\"\nformat: revealjs\neditor: visual\n---\n\n\n\n# My pet _______\n\n## A new slide\n\nIntroduce your pet\n\n### Heading\n\ndog? cat? other?\n\n#### Level 4 heading\n\n## My pet likes\n\n:::{.incremental}\n- food\n- play\n- sleep\n-friends\n:::\n\n## Some code\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsum(c(10,20,12,3)) \n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 45\n```\n:::\n:::\n\n\n\n\n# Changing topics {background-color=\"yellow\"}\n",
+    "supporting": [
+      "petpresentation_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

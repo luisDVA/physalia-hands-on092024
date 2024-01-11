@@ -1,0 +1,16 @@
+{
+  "hash": "f640b63e2bce650d80fe9708d5a0e668",
+  "result": {
+    "markdown": "---\ntitle: \"Possum measurements report\"\nauthor: \"Your Name Here\"\nformat: \n  html:\n    theme: solar\nhighlight-style: dracula\n---\n\n\n## A scatterplot produced with `geom_point`\n\nDo larger possums have longer tails?\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(openintro)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nLoading required package: airports\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nLoading required package: cherryblossom\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nLoading required package: usdata\n```\n:::\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(possum,aes(head_l,tail_l))+geom_point()\n```\n\n::: {.cell-output-display}\n![](possumreport_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\nNow an image of a possum and a link to information about possums.\n\n![a possum](https://media.australian.museum/media/dd/images/Screen_Shot_2018-11-29_at_4.37.29_pm.16c0b9d.width-800.a419962.png)\n\n\nRead about the species [here](https://australian.museum/learn/animals/mammals/mammology-collection-mountain-brushtail-possum/)",
+    "supporting": [
+      "possumreport_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
