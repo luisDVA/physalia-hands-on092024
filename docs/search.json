@@ -49,7 +49,7 @@
     "href": "slides/preparation.html#pipes-1",
     "title": "Data preparation",
     "section": "Pipes",
-    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;% or |&gt;\n\nRight Hand Side\n(RHS)\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
+    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;% or |&gt;\n\nRight Hand Side\n(RHS)\n\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
   },
   {
     "objectID": "slides/preparation.html#pipes-2",
@@ -70,7 +70,7 @@
     "href": "slides/preparation.html#tidyverse",
     "title": "Data preparation",
     "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
+    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
   },
   {
     "objectID": "slides/preparation.html#tidyverse-1",
@@ -112,7 +112,7 @@
     "href": "slides/preparation.html#indexing-and-subsetting-with",
     "title": "Data preparation",
     "section": "Indexing and subsetting with $",
-    "text": "Indexing and subsetting with $\n\n\nmy_df &lt;- data.frame(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_df$let\n\n[1] \"A\" \"B\" \"C\"\n\nmy_tib &lt;- tibble(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_tib$let\n\nNULL\n\nmy_tib$letters \n\n[1] \"A\" \"B\" \"C\""
+    "text": "Indexing and subsetting with $\n\n\nmy_df &lt;- data.frame(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_df$let\n\n[1] \"A\" \"B\" \"C\"\n\nmy_tib &lt;- tibble(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_tib$let\n\nWarning: Unknown or uninitialised column: `let`.\n\n\nNULL\n\nmy_tib$letters \n\n[1] \"A\" \"B\" \"C\""
   },
   {
     "objectID": "slides/preparation.html#tibble-printing",
@@ -161,7 +161,7 @@
     "href": "slides/preparation.html#data-rectangles",
     "title": "Data preparation",
     "section": "Data rectangles",
-    "text": "Data rectangles\n\nData Organization - Crystal Lewis\nEach row has the same number of columns\nEach column has the same number of rows\n\nEqual-height columns give a rectangular shape to the data frame"
+    "text": "Data rectangles\n\n\n\nData Organization - Crystal Lewis\n\n\n\nEach row has the same number of columns\nEach column has the same number of rows\n\nEqual-height columns give a rectangular shape to the data frame"
   },
   {
     "objectID": "slides/preparation.html#section-1",
@@ -175,7 +175,7 @@
     "href": "slides/preparation.html#ready-for-immediate-use",
     "title": "Data preparation",
     "section": "Ready for immediate use?",
-    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share\n\n\nR4DS 2nd ed"
+    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share\n\n\n\n\nR4DS 2nd ed"
   },
   {
     "objectID": "slides/preparation.html#not-ready",
@@ -252,7 +252,7 @@
     "href": "slides/preparation.html#make-reasonable-headers-column-names",
     "title": "Data preparation",
     "section": "Make reasonable headers (column names)",
-    "text": "Make reasonable headers (column names)\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin_Score\nAVERAGE.SCORE\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
+    "text": "Make reasonable headers (column names)\n\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin_Score\nAVERAGE.SCORE\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
   },
   {
     "objectID": "slides/preparation.html#section-7",
@@ -308,28 +308,28 @@
     "href": "slides/preparation.html#select",
     "title": "Data preparation",
     "section": "select()",
-    "text": "select()\n\n\nSubset variables\n\nby name\n\nby position\n\nby type\n\n\n\n\n\nmcountries %&gt;% \n  select(cntry,\n         threatened) %&gt;% \n  head(4)\n\n# A tibble: 4 × 2\n  cntry     threatened\n  &lt;chr&gt;          &lt;int&gt;\n1 Indonesia        191\n2 Brasil            80\n3 China             73\n4 Mexico            96"
+    "text": "select()\n\n\n\nSubset variables\n\nby name\n\nby position\n\nby type\n\n\n\n\n\n\nmcountries %&gt;% \n  select(cntry,\n         threatened) %&gt;% \n  head(4)\n\n# A tibble: 4 × 2\n  cntry     threatened\n  &lt;chr&gt;          &lt;int&gt;\n1 Indonesia        191\n2 Brasil            80\n3 China             73\n4 Mexico            96"
   },
   {
     "objectID": "slides/preparation.html#mutate",
     "href": "slides/preparation.html#mutate",
     "title": "Data preparation",
     "section": "mutate()",
-    "text": "mutate()\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\nWe can control where the new column will appear with .before and .after"
+    "text": "mutate()\n\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\n\nWe can control where the new column will appear with .before and .after"
   },
   {
     "objectID": "slides/preparation.html#filter",
     "href": "slides/preparation.html#filter",
     "title": "Data preparation",
     "section": "filter()",
-    "text": "filter()\nSubset rows\nKeep only the rows that meet a condition\n\n\nmcountries %&gt;% \n  select(cntry, species, threatened) %&gt;% \n  filter(threatened &gt; 75)\n\n# A tibble: 4 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 Mexico        523         96\n4 India         412         93"
+    "text": "filter()\n\nSubset rows\nKeep only the rows that meet a condition\n\n\nmcountries %&gt;% \n  select(cntry, species, threatened) %&gt;% \n  filter(threatened &gt; 75)\n\n# A tibble: 4 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 Mexico        523         96\n4 India         412         93"
   },
   {
     "objectID": "slides/preparation.html#rename",
     "href": "slides/preparation.html#rename",
     "title": "Data preparation",
     "section": "rename()",
-    "text": "rename()\nModify column names\nNew name first then target column\n\n\nmcountries %&gt;% \n  rename(pais=cntry,\n         especies=species,\n         amenazadas=threatened) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  pais      especies amenazadas region \n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Indonesia      670        191 Asia   \n2 Brasil         648         80 America\n3 China          551         73 Asia"
+    "text": "rename()\n\nModify column names\nNew name first then target column\n\n\nmcountries %&gt;% \n  rename(pais=cntry,\n         especies=species,\n         amenazadas=threatened) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  pais      especies amenazadas region \n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Indonesia      670        191 Asia   \n2 Brasil         648         80 America\n3 China          551         73 Asia"
   },
   {
     "objectID": "slides/preparation.html#practice---package-datasets-1",
@@ -371,7 +371,7 @@
     "href": "slides/preparation.html#across-arguments",
     "title": "Data preparation",
     "section": "across() arguments:",
-    "text": "across() arguments:\n.cols Columns to transform\n.fns Function to apply to each of the selected columns\n\nExpects a function, so function name and arguments can be passed separately (new preference is for anonymous functions, which we will cover later)"
+    "text": "across() arguments:\n.cols Columns to transform\n.fns Function to apply to each of the selected columns\n\nExpects a function, so function name and arguments can be passed separately (new preference is for anonymous functions, which we will cover later)\n\n\n\n\n\nmcountries %&gt;% \n  mutate(across(c(species, threatened), `*`, 2)) %&gt;% \n  head(3)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `across(c(species, threatened), `*`, 2)`.\nCaused by warning:\n! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.\nSupply arguments directly to `.fns` through an anonymous function instead.\n\n  # Previously\n  across(a:b, mean, na.rm = TRUE)\n\n  # Now\n  across(a:b, \\(x) mean(x, na.rm = TRUE))\n\n\n# A tibble: 3 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n1 Indonesia    1340        382 Asia   \n2 Brasil       1296        160 America\n3 China        1102        146 Asia   \n\n\n\n\n.cols is a vector with the names of the two columns we’re interested in\n* is the function to apply, 2 is the function argument"
   },
   {
     "objectID": "slides/preparation.html#useful-column-selection-helpers",
@@ -412,15 +412,15 @@
     "objectID": "slides/preparation.html#section-10",
     "href": "slides/preparation.html#section-10",
     "title": "Data preparation",
-    "section": "!",
-    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
+    "section": "",
+    "text": "UniversitiesData\n\n\n\n\n\n\n\n\n\n\nID\nInstitution\nyear\nZIP.code\nHighest.degree.offered\nCounty.name\nReligious.affiliation\n\n\n\n\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n100663\nUniversity of Alabama at Birmingham\nNA\n35294-0110\nDoctor's degree\nNA\nNot applicable\n\n\n100690\nAmridge University\nNA\nNA\nDoctor's degree\nNA\nChurches of Christ\n\n\n100706\nUniversity of Alabama in Huntsville\nNA\n35899\nDoctor's degree\nNA\nNot applicable\n\n\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n100751\nThe University of Alabama\nNA\n35487-0166\nDoctor's degree\nNA\nNot applicable\n\n\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n101541\nJudson College\nNA\n36756\nBachelor's degree\nNA\nNA\n\n\n101587\nUniversity of West Alabama\nNA\n35470\nMaster's degree\nNA\nNot applicable\n\n\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\n101693\nUniversity of Mobile\nNA\n36613-2842\nMaster's degree\nNA\nSouthern Baptist\n\n\n\n\n\n\n\n\n\n\nuniversities &lt;- \n  tibble::tribble(\n        ~ID,                          ~Institution, ~year,    ~ZIP.code, ~Highest.degree.offered, ~County.name, ~Religious.affiliation,\n         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,\n    100663L, \"University of Alabama at Birmingham\",    NA, \"35294-0110\",       \"Doctor's degree\",           NA,       \"Not applicable\",\n    100690L,                  \"Amridge University\",    NA, NA,       \"Doctor's degree\",           NA,   \"Churches of Christ\",\n    100706L, \"University of Alabama in Huntsville\",    NA,      \"35899\",       \"Doctor's degree\",           NA,       \"Not applicable\",\n         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,\n    100751L,           \"The University of Alabama\",    NA, \"35487-0166\",       \"Doctor's degree\",           NA,       \"Not applicable\",\n         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,\n         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,\n    101541L,                      \"Judson College\",    NA,      \"36756\",     \"Bachelor's degree\",           NA,              NA,\n    101587L,          \"University of West Alabama\",    NA,      \"35470\",       \"Master's degree\",           NA,       \"Not applicable\",\n         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,\n    101693L,                \"University of Mobile\",    NA, \"36613-2842\",       \"Master's degree\",           NA,     \"Southern Baptist\"\n    )"
   },
   {
     "objectID": "slides/preparation.html#section-11",
     "href": "slides/preparation.html#section-11",
     "title": "Data preparation",
-    "section": ":",
-    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+    "section": "!",
+    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
   },
   {
     "objectID": "slides/preparation.html#no-helpers-multiple-variables",
@@ -447,8 +447,8 @@
     "objectID": "slides/preparation.html#section-12",
     "href": "slides/preparation.html#section-12",
     "title": "Data preparation",
-    "section": "-",
-    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head(3)\n\n# A tibble: 3 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73"
+    "section": ":",
+    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
   },
   {
     "objectID": "slides/preparation.html#reshaping-data-with-tidyr",
@@ -461,8 +461,8 @@
     "objectID": "slides/preparation.html#section-13",
     "href": "slides/preparation.html#section-13",
     "title": "Data preparation",
-    "section": "",
-    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
+    "section": "-",
+    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head(3)\n\n# A tibble: 3 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73"
   },
   {
     "objectID": "slides/preparation.html#wide-to-long",
@@ -476,14 +476,14 @@
     "href": "slides/preparation.html#section-14",
     "title": "Data preparation",
     "section": "",
-    "text": "dining optionsData\n\n\n\n\n\n\n\n\n\n\narea_type\ndistrict\ncoffee_shops\nfast_food\nfish_chips\n\n\n\n\nResidential\nSouth\n2\n3\n1\n\n\nCommercial\nNorth\n12\n6\n4\n\n\nSuburban\nSouth\n2\n4\n3\n\n\nRural\nEast\n0\n2\n0\n\n\n\n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
+    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\n\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
   },
   {
     "objectID": "slides/preparation.html#section-15",
     "href": "slides/preparation.html#section-15",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
+    "text": "dining optionsData\n\n\n\n\n\n\n\n\n\n\narea_type\ndistrict\ncoffee_shops\nfast_food\nfish_chips\n\n\n\n\nResidential\nSouth\n2\n3\n1\n\n\nCommercial\nNorth\n12\n6\n4\n\n\nSuburban\nSouth\n2\n4\n3\n\n\nRural\nEast\n0\n2\n0\n\n\n\n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
   },
   {
     "objectID": "slides/preparation.html#long-to-wide",
@@ -497,7 +497,7 @@
     "href": "slides/preparation.html#section-16",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
   },
   {
     "objectID": "slides/preparation.html#practice---pivoting",
@@ -511,7 +511,7 @@
     "href": "slides/preparation.html#section-17",
     "title": "Data preparation",
     "section": "",
-    "text": "dining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\n# A tibble: 4 × 5\n  area_type   district coffee_shops fast_food fish_chips\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;     &lt;int&gt;      &lt;int&gt;\n1 Residential South               2         3          1\n2 Commercial  North              12         6          4\n3 Suburban    South               2         4          3\n4 Rural       East                0         2          0"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
   },
   {
     "objectID": "slides/preparation.html#dplyrcoalesce",
@@ -611,7 +611,7 @@
     "href": "slides/introduction.html#what-is",
     "title": "A practical introduction to R",
     "section": "What is ?",
-    "text": "What is ?\n✍️Software\n\nDialect of S?\nStatistical package?\nRStudio?\nScripting language?\nGraphical device?"
+    "text": "What is ?\n✍️Software\n. . .\nDialect of S?\nStatistical package?\nRStudio?\nScripting language?\nGraphical device?"
   },
   {
     "objectID": "slides/introduction.html#section-2",
@@ -709,14 +709,14 @@
     "href": "slides/introduction.html#names",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nfix\n'maximum temperature in 2014 in Belize'\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
+    "text": "Names\n\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\n\n\nfix\n'maximum temperature in 2014 in Belize'\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
   },
   {
     "objectID": "slides/introduction.html#names-1",
     "href": "slides/introduction.html#names-1",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nfix\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx"
+    "text": "Names\n\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\n\n\nfix\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx"
   },
   {
     "objectID": "slides/introduction.html#letter-cases",
@@ -737,14 +737,14 @@
     "href": "slides/introduction.html#project-organization",
     "title": "A practical introduction to R",
     "section": "Project organization",
-    "text": "Project organization\nProject: A folder on your computer that holds all the files relevant to a particular piece of work\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
+    "text": "Project organization\nProject: A folder on your computer that holds all the files relevant to a particular piece of work\n\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
   },
   {
     "objectID": "slides/introduction.html#rstudio-projects",
     "href": "slides/introduction.html#rstudio-projects",
     "title": "A practical introduction to R",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory’ button\n\nworking directory set to Project directory\n\npaths become relative to project directory\n\n\n\nIn Positron this works by setting Folders"
+    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory’ button\n\nworking directory set to Project directory\n\npaths become relative to project directory\n\n\n\n\nIn Positron this works by setting Folders"
   },
   {
     "objectID": "slides/introduction.html#practice",
@@ -758,14 +758,14 @@
     "href": "slides/introduction.html#fs",
     "title": "A practical introduction to R",
     "section": "📦 fs",
-    "text": "📦 fs\nWork with the file system (cross-platform)\nNice, clean paths:\n\nAlways use ‘/’ to delimit directories\n\nNever have multiple or trailing ‘/’\n\nfs functions can:\nCreate folders\nMove, copy, list, or rename files"
+    "text": "📦 fs\nWork with the file system (cross-platform)\n\nNice, clean paths:\n\nAlways use ‘/’ to delimit directories\n\nNever have multiple or trailing ‘/’\n\n\n\nfs functions can:\nCreate folders\nMove, copy, list, or rename files"
   },
   {
     "objectID": "slides/introduction.html#practice-1",
     "href": "slides/introduction.html#practice-1",
     "title": "A practical introduction to R",
     "section": "Practice",
-    "text": "Practice\n\nSet up folders in the project directory\n\ndata\nout\nR\n\n\nInstalled packages are loaded with library()\n\nlibrary(fs)"
+    "text": "Practice\n\nSet up folders in the project directory\n\ndata\nout\nR\n\n\n\nInstalled packages are loaded with library()\n\nlibrary(fs)"
   },
   {
     "objectID": "slides/introduction.html#creating-new-folders",
@@ -786,14 +786,14 @@
     "href": "slides/introduction.html#blank-slate",
     "title": "A practical introduction to R",
     "section": "Blank slate",
-    "text": "Blank slate\n\n\n\ndo not save the workspace to an .Rdata file\nat launch, do not reload the workspace from an .Rdata file.\n\n\n\n\n\nThis is the default behavior in Positron"
+    "text": "Blank slate\n\n\n\ndo not save the workspace to an .Rdata file\nat launch, do not reload the workspace from an .Rdata file.\n\n\n\n\n\n\nThis is the default behavior in Positron"
   },
   {
     "objectID": "slides/introduction.html#restarting-r",
     "href": "slides/introduction.html#restarting-r",
     "title": "A practical introduction to R",
     "section": "Restarting R",
-    "text": "Restarting R\nCtrl+Shift+F10\n(Windows & Linux)\nCommand+Shift+F10\n(Mac)"
+    "text": "Restarting R\n\nCtrl+Shift+F10\n(Windows & Linux)\n\n\nCommand+Shift+F10\n(Mac)"
   },
   {
     "objectID": "slides/introduction.html#here-and-relative-paths",
@@ -814,21 +814,21 @@
     "href": "slides/introduction.html#file-import-tabular-data",
     "title": "A practical introduction to R",
     "section": "File import (tabular data)",
-    "text": "File import (tabular data)\n\nWith the “Import Dataset” button\nWith a read function\n\n\nR for Epidemiology - Cannell & Livingstone"
+    "text": "File import (tabular data)\n\nWith the “Import Dataset” button\nWith a read function\n\n\n\n\nR for Epidemiology - Cannell & Livingstone"
   },
   {
     "objectID": "slides/introduction.html#file-import",
     "href": "slides/introduction.html#file-import",
     "title": "A practical introduction to R",
     "section": "File import",
-    "text": "File import\nWe need:\n\na function that reads files from disk (or the web)\nfile path\nname of the object to create from the file\nadditional arguments to control the import process"
+    "text": "File import\n\nWe need:\n\na function that reads files from disk (or the web)\nfile path\nname of the object to create from the file\nadditional arguments to control the import process"
   },
   {
     "objectID": "slides/introduction.html#section-7",
     "href": "slides/introduction.html#section-7",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "Vectors\n\nLists\n\n\nTables"
+    "text": "Vectors\n\n\n\nLists\n\n\n\n\nTables"
   },
   {
     "objectID": "slides/introduction.html#readr-and-readxl",
@@ -947,7 +947,7 @@
     "href": "slides/introduction.html#two-or-more-vectors-of-the-same-length",
     "title": "A practical introduction to R",
     "section": "Two or more vectors of the same length…",
-    "text": "Two or more vectors of the same length…\n\n\n\n\n\nData frame!\n\nTabular object with rows and columns\nColumns may be of different classes\nEach column/variable has a name"
+    "text": "Two or more vectors of the same length…\n\n\n\n\n\n\nData frame!\n\nTabular object with rows and columns\nColumns may be of different classes\nEach column/variable has a name"
   },
   {
     "objectID": "slides/introduction.html#data-frames",
@@ -1037,8 +1037,8 @@
     "objectID": "slides/visualization.html#today",
     "href": "slides/visualization.html#today",
     "title": "Data visualization",
-    "section": "",
-    "text": "Graphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
+    "section": "Today",
+    "text": "Today\n\nGraphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
   },
   {
     "objectID": "slides/visualization.html#packages-for-today",
@@ -1129,14 +1129,14 @@
     "href": "slides/visualization.html#colors-1",
     "title": "Data visualization",
     "section": "Colors",
-    "text": "Colors\nHex codes\n\n\n\n\n\nFree Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)"
+    "text": "Colors\nHex codes\n\nFree Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)"
   },
   {
     "objectID": "slides/visualization.html#color-palettes",
     "href": "slides/visualization.html#color-palettes",
     "title": "Data visualization",
     "section": "Color palettes",
-    "text": "Color palettes\n\n\n\nSpecify a named palette\n\nDefine with a vector\n\n\n\n\n\n\n\n\n\n🔗 Example gallery for paletteer\n🔗 Pokepalettes"
+    "text": "Color palettes\n\n\n\nSpecify a named palette\n\nDefine with a vector\n\n\n\n\n\n\n\n\n🔗 Example gallery for paletteer\n🔗 Pokepalettes"
   },
   {
     "objectID": "slides/visualization.html#legend-titles",
@@ -1150,7 +1150,7 @@
     "href": "slides/visualization.html#quantitative-variables-color",
     "title": "Data visualization",
     "section": "Quantitative variables + color:",
-    "text": "Quantitative variables + color:\n\nDefault color ramp or named gradient\nDefine gradient with scale_x_gradient\n\n\nggplot(penguins,\n  aes(x=bill_length_mm,\n      y=flipper_length_mm,\n      fill=body_mass_g))+\n  geom_point(size=4,\n             color=\"white\",\n             pch=21)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Quantitative variables + color:\n\nDefault color ramp or named gradient\nDefine gradient with scale_x_gradient\n\n\n\nggplot(penguins,\n  aes(x=bill_length_mm,\n      y=flipper_length_mm,\n      fill=body_mass_g))+\n  geom_point(size=4,\n             color=\"white\",\n             pch=21)"
   },
   {
     "objectID": "slides/visualization.html#hands-on-customization",
@@ -1171,14 +1171,14 @@
     "href": "slides/visualization.html#color-ramps",
     "title": "Data visualization",
     "section": "Color ramps",
-    "text": "Color ramps\n\nMore accurate visual perception of central value and increments of the underlying variables\n\n\n\n\n\n\n\n🔗 Fabio Crameri - Scientific Color Maps"
+    "text": "Color ramps\n\nMore accurate visual perception of central value and increments of the underlying variables\n\n\n\n🔗 Fabio Crameri - Scientific Color Maps"
   },
   {
     "objectID": "slides/visualization.html#perceptually-uniform-color-ramps",
     "href": "slides/visualization.html#perceptually-uniform-color-ramps",
     "title": "Data visualization",
     "section": "Perceptually uniform color ramps",
-    "text": "Perceptually uniform color ramps\n\n\n \n\n\nviridis\n\ninstalled with ggplot2\ncall with scale_x_viridis()\n\n\n\nscico\n\nprovided by scico package\ndivergent & sequential"
+    "text": "Perceptually uniform color ramps\n\n\n \n\nviridis\n\ninstalled with ggplot2\ncall with scale_x_viridis()\n\nscico\n\nprovided by scico package\ndivergent & sequential"
   },
   {
     "objectID": "slides/visualization.html#hands-on-color-ramps",
@@ -1192,7 +1192,7 @@
     "href": "slides/visualization.html#exporting-graphics",
     "title": "Data visualization",
     "section": "Exporting graphics",
-    "text": "Exporting graphics\n\nOur options\n\n‘Export’ button in RStudio\nGraphical devices\nggsave() (ensure ragg is installed for nicer images)\nFormats: png, jpg, pdf, etc."
+    "text": "Exporting graphics\nOur options\n\n‘Export’ button in RStudio\nGraphical devices\nggsave() (ensure ragg is installed for nicer images)\nFormats: png, jpg, pdf, etc."
   },
   {
     "objectID": "slides/visualization.html#export-with-graphical-device",
@@ -1255,21 +1255,21 @@
     "href": "slides/visualization.html#hands-on-reordering-factor-levels",
     "title": "Data visualization",
     "section": "Hands-on: Reordering factor levels",
-    "text": "Hands-on: Reordering factor levels\nbabies_crawl crawling age data from openintro\n\n05_reorder.R\n\n\n\n\n\n\n\nNote\n\n\n\nCrawling age (weeks) in relation to temperature and birth month. From Benson (1993)."
+    "text": "Hands-on: Reordering factor levels\nbabies_crawl crawling age data from openintro\n\n05_reorder.R\n\n\n\n\n\n\n\nNote\n\n\nCrawling age (weeks) in relation to temperature and birth month. From Benson (1993)."
   },
   {
     "objectID": "slides/visualization.html#composing-plots-with-patchwork",
     "href": "slides/visualization.html#composing-plots-with-patchwork",
     "title": "Data visualization",
     "section": "Composing plots with patchwork",
-    "text": "Composing plots with patchwork\n\n\n\n\n\n+ to combine plots\n| side by side\n/ above/below\n\n\n\nSimple algebra for arranging and nesting elements\n\nplot_layout() controls composition\nplot_annotation() tag elements or add labels to composite plot"
+    "text": "Composing plots with patchwork\n\n\n\n\n\n+ to combine plots\n| side by side\n/ above/below\n\n\nSimple algebra for arranging and nesting elements\n\nplot_layout() controls composition\nplot_annotation() tag elements or add labels to composite plot"
   },
   {
     "objectID": "slides/visualization.html#section-10",
     "href": "slides/visualization.html#section-10",
     "title": "Data visualization",
     "section": "",
-    "text": "Three plots:\n\ncal_sodium_plt+rest_sodium_plt+\n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()\n\n\n\n\n\n\n\n\n\nSingle column\n\nsleepy &lt;- \n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()"
+    "text": "Three plots:\n\ncal_sodium_plt+rest_sodium_plt+\n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()"
   },
   {
     "objectID": "slides/visualization.html#section-11",
@@ -1290,7 +1290,7 @@
     "href": "slides/visualization.html#annotations",
     "title": "Data visualization",
     "section": "Annotations",
-    "text": "Annotations\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy+\n  plot_annotation(title=\"Three element figure\",\n                  subtitle = \"Made with patchwork\",\n                  tag_levels = \"A\")\n\n\n\n\n\n\n\n\ntag_levels generates alphabetical or numeric sequences to identify plot elements"
+    "text": "Annotations\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy+\n  plot_annotation(title=\"Three element figure\",\n                  subtitle = \"Made with patchwork\",\n                  tag_levels = \"A\")\n\n\ntag_levels generates alphabetical or numeric sequences to identify plot elements"
   },
   {
     "objectID": "slides/visualization.html#formatting-text",
@@ -1304,28 +1304,28 @@
     "href": "slides/visualization.html#section-4",
     "title": "Data visualization",
     "section": "",
-    "text": "lizardsData\n\n\n\n\n\n\n\n\n\n\nlength\nmass\nstage\n\n\n\n\n9\n20\nadult\n\n\n8\n13\njuvenile\n\n\n7\n15\njuvenile\n\n\n13\n18\nadult\n\n\n11\n21\nadult\n\n\n6\n14\njuvenile\n\n\n\n\n\n\n\n\n\n\nlizards &lt;- \ntibble::tribble(\n  ~length, ~mass,     ~stage,\n       9L,   20L,    \"adult\",\n       8L,   13L, \"juvenile\",\n       7L,   15L, \"juvenile\",\n      13L,   18L,    \"adult\",\n      11L,   21L,    \"adult\",\n       6L,   14L, \"juvenile\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlength\nmass\nstage\n\n\n\n\n9\n20\nadult\n\n\n8\n13\njuvenile\n\n\n7\n15\njuvenile\n\n\n13\n18\nadult\n\n\n11\n21\nadult\n\n\n6\n14\njuvenile\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx\ny\nshape\n\n\n\n\n9\n20\ncircle\n\n\n8\n13\ntriangle\n\n\n7\n15\ntriangle\n\n\n13\n18\ncircle\n\n\n11\n21\ncircle\n\n\n6\n14\ntriangle"
+    "text": "lizardsData\n\n\n\n\n\n\n\n\n\n\nlength\nmass\nstage\n\n\n\n\n9\n20\nadult\n\n\n8\n13\njuvenile\n\n\n7\n15\njuvenile\n\n\n13\n18\nadult\n\n\n11\n21\nadult\n\n\n6\n14\njuvenile\n\n\n\n\n\n\n\n\n\n\nlizards &lt;- \ntibble::tribble(\n  ~length, ~mass,     ~stage,\n       9L,   20L,    \"adult\",\n       8L,   13L, \"juvenile\",\n       7L,   15L, \"juvenile\",\n      13L,   18L,    \"adult\",\n      11L,   21L,    \"adult\",\n       6L,   14L, \"juvenile\"\n  )"
   },
   {
     "objectID": "slides/visualization.html#exporting",
     "href": "slides/visualization.html#exporting",
     "title": "Data visualization",
     "section": "Exporting",
-    "text": "Exporting\n\n\n\n\n\n\nNote\n\n\n\nWe can assign plots as workspace objects\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
+    "text": "Exporting\n\n\n\n\n\n\nNote\n\n\nWe can assign plots as workspace objects\n\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
   },
   {
     "objectID": "slides/visualization.html#section-9",
     "href": "slides/visualization.html#section-9",
     "title": "Data visualization",
     "section": "",
-    "text": "library(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\nAttaching package: 'openintro'\n\n\nThe following object is masked from 'package:gt':\n\n    sp500\n\ndata(\"fastfood\")\nggplot(fastfood,aes(calories,sodium))+\n     geom_point()+\nggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nEasier to read:\n\ncal_sodium_plt &lt;- ggplot(fastfood,aes(calories,sodium))+\n     geom_point()\nrest_sodium_plt &lt;- ggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")\n\ncal_sodium_plt+rest_sodium_plt"
+    "text": "library(openintro)\ndata(\"fastfood\")\nggplot(fastfood,aes(calories,sodium))+\n     geom_point()+\nggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")"
   },
   {
     "objectID": "slides/visualization.html#factor-levels",
     "href": "slides/visualization.html#factor-levels",
     "title": "Data visualization",
     "section": "Factor levels",
-    "text": "Factor levels\nWe can specify the order of factor levels manually using the levels argument\n\n\nFor more flexible manipulation of categorical factor data: forcats\n\n\n\n\n\nreorder according to values in another variable\nsupress alphabetical order\nreverse level order\nmuch more"
+    "text": "Factor levels\nWe can specify the order of factor levels manually using the levels argument\n\n\nFor more flexible manipulation of categorical factor data: forcats\n\n\n\n\nreorder according to values in another variable\nsupress alphabetical order\nreverse level order\nmuch more"
   },
   {
     "objectID": "slides/visualization.html#nesting",
@@ -1493,7 +1493,7 @@
     "href": "slides/programming.html#logical-operators-are-vectorized-many-other-fns-too",
     "title": "Programming and reproducibility",
     "section": "Logical operators are vectorized (many other fns too!)",
-    "text": "Logical operators are vectorized (many other fns too!)\n\n\nx &lt;- c(1,3,12,4,7,8)\nx &gt; 5\n\n[1] FALSE FALSE  TRUE FALSE  TRUE  TRUE\n\n\n\nWe don’t need to type all of this out or a loop\n\n\nx[1]&gt;5 ; x[2]&gt;5\nx[3]&gt;5 ; x[4]&gt;5\nx[5]&gt;5 ; x[6]&gt;5"
+    "text": "Logical operators are vectorized (many other fns too!)\n\n\nx &lt;- c(1,3,12,4,7,8)\nx &gt; 5\n\n[1] FALSE FALSE  TRUE FALSE  TRUE  TRUE\n\n\n\nWe don’t need to compare each element"
   },
   {
     "objectID": "slides/programming.html#if-we-really-need-to-iterate",
@@ -2137,7 +2137,7 @@
     "href": "slides/preparation.html",
     "title": "Data preparation",
     "section": "",
-    "text": "‘pipes’ and the tidyverse \nData organization\n\nTidy data principles\ntools for data wrangling\n\nSubsetting and pivoting data"
+    "text": "The tidyverse \npipes\nData organization\n\nTidy data principles\ntools for data wrangling\n\nSubsetting and pivoting data"
   },
   {
     "objectID": "slides/introduction.html#relative-paths",
@@ -2151,21 +2151,21 @@
     "href": "slides/introduction.html#practice---file-import",
     "title": "A practical introduction to R",
     "section": "Practice - File Import",
-    "text": "Practice - File Import\nwith readxl:\nImport the sheets from the petshop.xlsx file\nUseful arguments\n\npath\nsheet\nskip"
+    "text": "Practice - File Import\nwith readxl:\nImport the sheets from the petshop.xlsx file\n\nUseful arguments\n\npath\nsheet\nskip"
   },
   {
     "objectID": "slides/introduction.html#creating-objects-1",
     "href": "slides/introduction.html#creating-objects-1",
     "title": "A practical introduction to R",
     "section": "Creating objects",
-    "text": "Creating objects\n&lt;-\nAssignment operator in R\n\nassociates names and values\n\n\n2*3\n\n[1] 6\n\nresult &lt;- 2*3\nresult\n\n[1] 6"
+    "text": "Creating objects\n\n&lt;-\nAssignment operator in R\n\nassociates names and values\n\n\n2*3\n\n[1] 6\n\nresult &lt;- 2*3\nresult\n\n[1] 6"
   },
   {
     "objectID": "slides/programming.html#new-notation",
     "href": "slides/programming.html#new-notation",
     "title": "Programming and reproducibility",
     "section": "New notation",
-    "text": "New notation\nEliminate the need for group_by() and then ungroup() with .by\n\nmsleep %&gt;% slice_sample(n=1,by=order)\n\n# A tibble: 19 × 11\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Domes… Felis carni Carn… domesticated        12.5       3.2       0.417  11.5\n 2 Patas… Eryt… omni  Prim… lc                  10.9       1.1      NA      13.1\n 3 Vespe… Calo… &lt;NA&gt;  Rode… &lt;NA&gt;                 7        NA        NA      17  \n 4 Star-… Cond… omni  Sori… lc                  10.3       2.2      NA      13.7\n 5 Pig    Sus   omni  Arti… domesticated         9.1       2.4       0.5    14.9\n 6 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n 7 Giant… Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n 8 Tree … Dend… herbi Hyra… lc                   5.3       0.5      NA      18.7\n 9 Thick… Lutr… carni Dide… lc                  19.4       6.6      NA       4.6\n10 Afric… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n11 Big b… Epte… inse… Chir… lc                  19.7       3.9       0.117   4.3\n12 Horse  Equus herbi Peri… domesticated         2.9       0.6       1      21.1\n13 Deser… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n14 Commo… Phoc… carni Ceta… vu                   5.6      NA        NA      18.4\n15 Rabbit Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n16 Potor… Poto… herbi Dipr… &lt;NA&gt;                11.1       1.5      NA      12.9\n17 Short… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n18 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n19 Tree … Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
+    "text": "New notation\nEliminate the need for group_by() and then ungroup() with by\n\nmsleep %&gt;% slice_sample(n=1,by=order)\n\n# A tibble: 19 × 11\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Domes… Felis carni Carn… domesticated        12.5       3.2       0.417  11.5\n 2 Patas… Eryt… omni  Prim… lc                  10.9       1.1      NA      13.1\n 3 Vespe… Calo… &lt;NA&gt;  Rode… &lt;NA&gt;                 7        NA        NA      17  \n 4 Star-… Cond… omni  Sori… lc                  10.3       2.2      NA      13.7\n 5 Pig    Sus   omni  Arti… domesticated         9.1       2.4       0.5    14.9\n 6 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n 7 Giant… Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n 8 Tree … Dend… herbi Hyra… lc                   5.3       0.5      NA      18.7\n 9 Thick… Lutr… carni Dide… lc                  19.4       6.6      NA       4.6\n10 Afric… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n11 Big b… Epte… inse… Chir… lc                  19.7       3.9       0.117   4.3\n12 Horse  Equus herbi Peri… domesticated         2.9       0.6       1      21.1\n13 Deser… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n14 Commo… Phoc… carni Ceta… vu                   5.6      NA        NA      18.4\n15 Rabbit Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n16 Potor… Poto… herbi Dipr… &lt;NA&gt;                11.1       1.5      NA      12.9\n17 Short… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n18 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n19 Tree … Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
   },
   {
     "objectID": "slides/programming.html#across-and-anonymous-fns",
@@ -2187,5 +2187,61 @@
     "title": "Data visualization",
     "section": "",
     "text": "Graphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
+  },
+  {
+    "objectID": "slides/preparation.html#relocate",
+    "href": "slides/preparation.html#relocate",
+    "title": "Data preparation",
+    "section": "relocate()",
+    "text": "relocate()\n\nMove variables to new locations\nUse .before or .after to define placement\n\n\nmcountries %&gt;% \n  relocate(region, .after=cntry) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  cntry     region  species threatened\n  &lt;chr&gt;     &lt;chr&gt;     &lt;int&gt;      &lt;int&gt;\n1 Indonesia Asia        670        191\n2 Brasil    America     648         80\n3 China     Asia        551         73\n\n\n\n.after can also refer to positions"
+  },
+  {
+    "objectID": "slides/preparation.html#exporting-tables",
+    "href": "slides/preparation.html#exporting-tables",
+    "title": "Data preparation",
+    "section": "Exporting tables",
+    "text": "Exporting tables\n\n\nrelocatedAf &lt;- \n mcountries %&gt;% \n  relocate(region, .after=cntry) %&gt;% \n  filter(region==\"Africa\")\n\n\nExport with a write function, providing an object and a file path e.g., write.csv(relocatedAf,\"Africa.csv\")"
+  },
+  {
+    "objectID": "slides/preparation.html#useful-functions-and-packages-for-missing-data",
+    "href": "slides/preparation.html#useful-functions-and-packages-for-missing-data",
+    "title": "Data preparation",
+    "section": "Useful functions and packages for missing data",
+    "text": "Useful functions and packages for missing data\n\n\nlibrary(janitor)\nlibrary(naniar) # useful but not used in today's session"
+  },
+  {
+    "objectID": "slides/preparation.html#remove-empty-rows-or-columns",
+    "href": "slides/preparation.html#remove-empty-rows-or-columns",
+    "title": "Data preparation",
+    "section": "Remove empty rows or columns",
+    "text": "Remove empty rows or columns\nRemove rows or columns with all NA\n\nlibrary(janitor)\nuniversities %&gt;% \n  remove_empty(c(\"rows\",\"cols\"))\n\n# A tibble: 7 × 5\n      ID Institution       ZIP.code Highest.degree.offered Religious.affiliation\n   &lt;int&gt; &lt;chr&gt;             &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;                \n1 100663 University of Al… 35294-0… Doctor's degree        Not applicable       \n2 100690 Amridge Universi… &lt;NA&gt;     Doctor's degree        Churches of Christ   \n3 100706 University of Al… 35899    Doctor's degree        Not applicable       \n4 100751 The University o… 35487-0… Doctor's degree        Not applicable       \n5 101541 Judson College    36756    Bachelor's degree      &lt;NA&gt;                 \n6 101587 University of We… 35470    Master's degree        Not applicable       \n7 101693 University of Mo… 36613-2… Master's degree        Southern Baptist"
+  },
+  {
+    "objectID": "slides/preparation.html#filtering-rows-with-missing-data",
+    "href": "slides/preparation.html#filtering-rows-with-missing-data",
+    "title": "Data preparation",
+    "section": "Filtering rows with missing data",
+    "text": "Filtering rows with missing data\nFind rows in column that are NA\n\nuniversities %&gt;% filter(is.na(ZIP.code))\n\n# A tibble: 6 × 7\n      ID Institution        year  ZIP.code Highest.degree.offered County.name\n   &lt;int&gt; &lt;chr&gt;              &lt;lgl&gt; &lt;chr&gt;    &lt;chr&gt;                  &lt;lgl&gt;      \n1     NA &lt;NA&gt;               NA    &lt;NA&gt;     &lt;NA&gt;                   NA         \n2 100690 Amridge University NA    &lt;NA&gt;     Doctor's degree        NA         \n3     NA &lt;NA&gt;               NA    &lt;NA&gt;     &lt;NA&gt;                   NA         \n4     NA &lt;NA&gt;               NA    &lt;NA&gt;     &lt;NA&gt;                   NA         \n5     NA &lt;NA&gt;               NA    &lt;NA&gt;     &lt;NA&gt;                   NA         \n6     NA &lt;NA&gt;               NA    &lt;NA&gt;     &lt;NA&gt;                   NA         \n# ℹ 1 more variable: Religious.affiliation &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/preparation.html#replace-nas-with-something-else",
+    "href": "slides/preparation.html#replace-nas-with-something-else",
+    "title": "Data preparation",
+    "section": "Replace NAs with something else",
+    "text": "Replace NAs with something else\nreplace_na() from tidyr\n\nuniversities %&gt;% \n  mutate(ZIP.code=\n           replace_na(ZIP.code,\"pending\")) %&gt;% head(4)\n\n# A tibble: 4 × 7\n      ID Institution           year  ZIP.code Highest.degree.offered County.name\n   &lt;int&gt; &lt;chr&gt;                 &lt;lgl&gt; &lt;chr&gt;    &lt;chr&gt;                  &lt;lgl&gt;      \n1     NA &lt;NA&gt;                  NA    pending  &lt;NA&gt;                   NA         \n2 100663 University of Alabam… NA    35294-0… Doctor's degree        NA         \n3 100690 Amridge University    NA    pending  Doctor's degree        NA         \n4 100706 University of Alabam… NA    35899    Doctor's degree        NA         \n# ℹ 1 more variable: Religious.affiliation &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/preparation.html#drop-rows-that-include-at-least-1-na",
+    "href": "slides/preparation.html#drop-rows-that-include-at-least-1-na",
+    "title": "Data preparation",
+    "section": "Drop rows that include at least 1 NA",
+    "text": "Drop rows that include at least 1 NA\n\nuniversities %&gt;% \n  remove_empty(\"cols\") %&gt;% \n  na.omit()\n\n# A tibble: 5 × 5\n      ID Institution       ZIP.code Highest.degree.offered Religious.affiliation\n   &lt;int&gt; &lt;chr&gt;             &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;                \n1 100663 University of Al… 35294-0… Doctor's degree        Not applicable       \n2 100706 University of Al… 35899    Doctor's degree        Not applicable       \n3 100751 The University o… 35487-0… Doctor's degree        Not applicable       \n4 101587 University of We… 35470    Master's degree        Not applicable       \n5 101693 University of Mo… 36613-2… Master's degree        Southern Baptist"
+  },
+  {
+    "objectID": "slides/preparation.html#filtering-rows-with-missing-data-1",
+    "href": "slides/preparation.html#filtering-rows-with-missing-data-1",
+    "title": "Data preparation",
+    "section": "Filtering rows with missing data",
+    "text": "Filtering rows with missing data\nNegate condition and discard NAs in variable\n\nuniversities %&gt;% filter(!is.na(ZIP.code))\n\n# A tibble: 6 × 7\n      ID Institution           year  ZIP.code Highest.degree.offered County.name\n   &lt;int&gt; &lt;chr&gt;                 &lt;lgl&gt; &lt;chr&gt;    &lt;chr&gt;                  &lt;lgl&gt;      \n1 100663 University of Alabam… NA    35294-0… Doctor's degree        NA         \n2 100706 University of Alabam… NA    35899    Doctor's degree        NA         \n3 100751 The University of Al… NA    35487-0… Doctor's degree        NA         \n4 101541 Judson College        NA    36756    Bachelor's degree      NA         \n5 101587 University of West A… NA    35470    Master's degree        NA         \n6 101693 University of Mobile  NA    36613-2… Master's degree        NA         \n# ℹ 1 more variable: Religious.affiliation &lt;chr&gt;"
   }
 ]

@@ -241,6 +241,16 @@ msleep %>% group_by(order) %>%
 ```
 :::
 
+## New notation
+
+Eliminate the need for `group_by()` and then `ungroup()` with `by`
+
+
+```{r}
+msleep %>% slice_sample(n=1,by=order)
+```
+
+
 ## Loops (_for loops_)
 
 - Still useful 
@@ -264,14 +274,6 @@ Jenny Bryan\
 :::
 :::
 
-## New notation
-
-Eliminate the need for `group_by()` and then `ungroup()` with `.by`
-
-
-```{r}
-msleep %>% slice_sample(n=1,by=order)
-```
 
 
 ## Loops
@@ -363,18 +365,9 @@ x > 5
 ```
 :::
 
-We don't need to type all of this out or a loop
+We don't need to compare each element 
 
-:::{.med-code}
-```{r}
-#| eval: false
-#| echo: true
 
-x[1]>5 ; x[2]>5
-x[3]>5 ; x[4]>5
-x[5]>5 ; x[6]>5
-```
-:::
 
 
 ------------------------------------------------------------------------
@@ -802,34 +795,6 @@ MMR(flipper)
 :::{.med-code}
 ```{r}
 map(.x = traits, .f = MMR)
-```
-:::
-
-
-## Type-specific `map()`
-
-`map()` always returns lists
-
-`map_lgl()` returns a logical
-
-`map_int()` returns an integer vector
-
-`map_dbl()` returns a double vector
-
-`map_chr()` returns a character vector
-
-`map_df()` returns a data frame
-
-##
-
-:::{.med-code}
-```{r}
-
-# returns a list
-map(traits, median, na.rm = TRUE)
-# flattens the output into a numeric vector
-map_dbl(traits, median, na.rm = TRUE)
-
 ```
 :::
 

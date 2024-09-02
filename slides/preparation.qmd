@@ -798,6 +798,167 @@ mcountries %>%
 ```
 :::
 
+## `relocate()`
+
+
+#### Move variables to new locations
+
+Use `.before` or `.after` to define placement
+
+:::{.med-code}
+```{r}
+mcountries %>% 
+  relocate(region, .after=cntry) %>% 
+  head(3)
+
+```
+:::
+
+_`.after` can also refer to positions_
+
+## Exporting tables
+
+:::{.med-code}
+```{r}
+relocatedAf <- 
+ mcountries %>% 
+  relocate(region, .after=cntry) %>% 
+  filter(region=="Africa")
+```
+:::
+
+Export with a `write` function, providing an object and a file path e.g., `write.csv(relocatedAf,"Africa.csv")`
+
+# Wrangling `NA` values
+
+## 
+
+```{r unis}
+#| echo: false 
+#| eval: true
+
+universities <- 
+  tibble::tribble(
+        ~ID,                          ~Institution, ~year,    ~ZIP.code, ~Highest.degree.offered, ~County.name, ~Religious.affiliation,
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    100663L, "University of Alabama at Birmingham",    NA, "35294-0110",       "Doctor's degree",           NA,       "Not applicable",
+    100690L,                  "Amridge University",    NA, NA,       "Doctor's degree",           NA,   "Churches of Christ",
+    100706L, "University of Alabama in Huntsville",    NA,      "35899",       "Doctor's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    100751L,           "The University of Alabama",    NA, "35487-0166",       "Doctor's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    101541L,                      "Judson College",    NA,      "36756",     "Bachelor's degree",           NA,              NA,
+    101587L,          "University of West Alabama",    NA,      "35470",       "Master's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    101693L,                "University of Mobile",    NA, "36613-2842",       "Master's degree",           NA,     "Southern Baptist"
+    )
+
+
+```
+
+::: panel-tabset
+###  Universities
+
+```{r}
+#| echo: false 
+#| eval: true
+universities %>% gt() %>% 
+  tab_style(
+    cell_text(size = '14px'),
+    locations = list(cells_body(),
+                     cells_column_labels(everything()),
+                     cells_title()))
+```
+
+### Data
+
+```{r}
+#| eval: false
+
+universities <- 
+  tibble::tribble(
+        ~ID,                          ~Institution, ~year,    ~ZIP.code, ~Highest.degree.offered, ~County.name, ~Religious.affiliation,
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    100663L, "University of Alabama at Birmingham",    NA, "35294-0110",       "Doctor's degree",           NA,       "Not applicable",
+    100690L,                  "Amridge University",    NA, NA,       "Doctor's degree",           NA,   "Churches of Christ",
+    100706L, "University of Alabama in Huntsville",    NA,      "35899",       "Doctor's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    100751L,           "The University of Alabama",    NA, "35487-0166",       "Doctor's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    101541L,                      "Judson College",    NA,      "36756",     "Bachelor's degree",           NA,              NA,
+    101587L,          "University of West Alabama",    NA,      "35470",       "Master's degree",           NA,       "Not applicable",
+         NA,                                    NA,    NA,           NA,                      NA,           NA,                     NA,
+    101693L,                "University of Mobile",    NA, "36613-2842",       "Master's degree",           NA,     "Southern Baptist"
+    )
+
+```
+
+:::
+
+
+## Useful functions and packages for missing data
+
+:::{.med-code}
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(janitor)
+library(naniar) # useful but not used in today's session
+```
+
+:::
+
+
+## Remove empty rows or columns
+
+Remove rows or columns with all `NA`
+
+```{r}
+library(janitor)
+universities %>% 
+  remove_empty(c("rows","cols"))
+```
+
+## Filtering rows with missing data
+
+Find rows in column that are NA
+
+```{r}
+universities %>% filter(is.na(ZIP.code))
+```
+
+## Filtering rows with missing data
+
+Negate condition and discard NAs in variable
+```{r}
+universities %>% filter(!is.na(ZIP.code))
+```
+
+
+## Replace NAs with something else
+
+`replace_na()` from `tidyr`
+
+```{r}
+universities %>% 
+  mutate(ZIP.code=
+           replace_na(ZIP.code,"pending")) %>% head(4)
+```
+
+## Drop rows that include at least 1 `NA`
+
+```{r}
+universities %>% 
+  remove_empty("cols") %>% 
+  na.omit()
+```
+
+
+
 ## Practice - Package datasets (1) {background-color="#a4c5ff"}
 
 </br>

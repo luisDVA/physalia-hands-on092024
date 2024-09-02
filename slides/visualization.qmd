@@ -115,7 +115,7 @@ Hadley Wickham (2007)
 
 # Plot gallery
 
-Compiled by Cédric Scherer
+[Showcase](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/materials/01_introduction.html#/3/1) Compiled by Cédric Scherer
 
 :::{style="text-align:center"}  
 [Graphic design with ggplot2 - 2022](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/)
