@@ -21,19 +21,17 @@ These web-based HTML slide decks have an interactive table of contents (button o
 
 - Example table for Data Preparation exercise [fish gene expression csv file](examples/gene_expression.csv)
 
-### Wednesday
-
 [Data Visualization](slides/visualization.qmd)
 
 - Plotting scripts [compressed file](examples/course_scripts/plotting_scripts.zip) 
 
 
-### Thursday
+### Wednesday
 
 [Programming and reproducibility](slides/programming.qmd)
 
 [Quarto Documents](slides/quarto.qmd)
 
-- example [report](examples/possumreport.qmd)
-- example [presentation](examples/petpresentation.qmd)
+- example [report](examples/_possumreport.qmd)
+- example [presentation](examples/_petpresentation.qmd)
 

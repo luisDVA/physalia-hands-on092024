@@ -8,6 +8,10 @@ website:
     background: primary
     pinned: true
     align: center
+    tools:
+      - icon: github
+        href: https://github.com/luisDVA/physalia-hands-on092024
+        text: Site Source Code
     style: docked
     contents: 
       - href: index.qmd
@@ -20,7 +24,7 @@ website:
 
 format:
   html:
-    theme: darkly
+    theme: [cyborg,w_styles.scss]
     fontsize: 1.3em
     toc: true
 

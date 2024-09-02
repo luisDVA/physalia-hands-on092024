@@ -18,7 +18,10 @@
     "href": "materials.html#presentations",
     "title": "Course materials",
     "section": "Presentations",
-    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\nExample spreadsheet for import: petshops.xlsx\n\n\n\nTuesday\nData preparation\n\nExample table for Data Preparation exercise fish gene expression csv file\n\n\n\nWednesday\nData Visualization\n\nPlotting scripts compressed file\n\n\n\nThursday\nProgramming and reproducibility\nQuarto Documents\n\nexample report\nexample presentation"
+    "text": "Presentations\nThese web-based HTML slide decks have an interactive table of contents (button on bottom left corner)\n\nMonday\nIntroduction\n\nExample spreadsheet for import: petshops.xlsx\n\n\n\nTuesday\nData preparation\n\nExample table for Data Preparation exercise fish gene expression csv file\n\nData Visualization\n\nPlotting scripts compressed file\n\n\n\nWednesday\nProgramming and reproducibility\nQuarto Documents\n\nexample report\nexample presentation",
+    "crumbs": [
+      "Course materials"
+    ]
   },
   {
     "objectID": "slides/preparation.html#pipes",
@@ -39,14 +42,14 @@
     "href": "slides/preparation.html#intermediate-objects",
     "title": "Data preparation",
     "section": "Intermediate objects",
-    "text": "Intermediate objects\n\n\n\nmn_scrs &lt;- mean(scores)\n\nrd_mn_scrs &lt;- round(mn_scrs, digits = 2)\n\nrd_mn_scrs\n\n[1] 7.78"
+    "text": "Intermediate objects\n\n\n\nmn_scrs &lt;- mean(scores)\n\nround(mn_scrs, digits = 2)\n\n[1] 7.78"
   },
   {
     "objectID": "slides/preparation.html#pipes-1",
     "href": "slides/preparation.html#pipes-1",
     "title": "Data preparation",
     "section": "Pipes",
-    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;%\nfrom 📦 magrittr\n|&gt; in R v &gt;= 4.1.0\n\nRight Hand Side\n(RHS)\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
+    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;% or |&gt;\n\nRight Hand Side\n(RHS)\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
   },
   {
     "objectID": "slides/preparation.html#pipes-2",
@@ -67,14 +70,14 @@
     "href": "slides/preparation.html#tidyverse",
     "title": "Data preparation",
     "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
+    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
   },
   {
     "objectID": "slides/preparation.html#tidyverse-1",
     "href": "slides/preparation.html#tidyverse-1",
     "title": "Data preparation",
     "section": "tidyverse",
-    "text": "tidyverse\n\nEncompasses the repeated tasks at the heart of every data science project: data import, tidying, manipulation, visualization, and programming\nIntentionally designed to ease the learning process and make it easier for users to learn new functions as they engage with additional pieces of the larger ecosystem\n\n\n\nÇetinkaya-Rundel et al. (2021)\nAn educator’s perspective of the tidyverse"
+    "text": "tidyverse\n\nFor the repeated tasks in of nearly every project: data import, tidying, manipulation, visualization, and programming\nDesigned for easier engagement with additional pieces of the larger ecosystem\n\n\n\nÇetinkaya-Rundel et al. (2021)\nAn educator’s perspective of the tidyverse"
   },
   {
     "objectID": "slides/preparation.html#tibbles",
@@ -137,7 +140,7 @@
     "href": "slides/preparation.html#well-organized-data",
     "title": "Data preparation",
     "section": "Well-organized data",
-    "text": "Well-organized data\n\nEasier to import and manipulate\nLess prone to (non-replicable) errors\n\nomission\nalteration\nduplication\n\n\nGood data organization helps us when we produce data, and also to identify and solve problems in existing data"
+    "text": "Well-organized data\n\nEasier to import and manipulate\nLess prone to (non-replicable) errors\n\nomission\nalteration\nduplication\n\n\nGood data organization helps us when we produce data, and also to identify and solve problems in existing data\n\n\nChapter 3. Data Organization\nData Management in Research\nCrystal Lewis"
   },
   {
     "objectID": "slides/preparation.html#data-organization-best-practices",
@@ -158,7 +161,7 @@
     "href": "slides/preparation.html#data-rectangles",
     "title": "Data preparation",
     "section": "Data rectangles",
-    "text": "Data rectangles\n\n\n\n\nObjects with rows and columns, in which:\n\nEach row has the same number of columns\nEach column has the same number of rows\n\nVectors and factors of the same length = all columns must have the same ‘height’\nEqual-height columns give a rectangular shape to the data frame"
+    "text": "Data rectangles\n\nData Organization - Crystal Lewis\nEach row has the same number of columns\nEach column has the same number of rows\n\nEqual-height columns give a rectangular shape to the data frame"
   },
   {
     "objectID": "slides/preparation.html#section-1",
@@ -192,8 +195,8 @@
     "objectID": "slides/preparation.html#tidy-data",
     "href": "slides/preparation.html#tidy-data",
     "title": "Data preparation",
-    "section": "tidy data",
-    "text": "tidy data\nAn accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for maximum usability.\n\n\n\nWickham (2014)\nTidy Data - Journal of Statistical Software"
+    "section": "Tidy data",
+    "text": "Tidy data\nAn accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for usability.\n\n\n\nWickham (2014)\nTidy Data - Journal of Statistical Software"
   },
   {
     "objectID": "slides/preparation.html#why-tidy",
@@ -249,7 +252,7 @@
     "href": "slides/preparation.html#make-reasonable-headers-column-names",
     "title": "Data preparation",
     "section": "Make reasonable headers (column names)",
-    "text": "Make reasonable headers (column names)\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min_Score\n      AVERAGE.SCORE\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
+    "text": "Make reasonable headers (column names)\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin_Score\nAVERAGE.SCORE\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
   },
   {
     "objectID": "slides/preparation.html#section-7",
@@ -263,14 +266,14 @@
     "href": "slides/preparation.html#names-broken-across-rows",
     "title": "Data preparation",
     "section": "Names broken across rows",
-    "text": "Names broken across rows\n\n\n\n\n\n\n\n\n  \n    \n    \n      X\n      X1\n      X2\n      min\n      AVERAGE\n    \n  \n  \n    NA\nNA\nNA\nScore\nSCORE\n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.89\n    UNLV\nEAST\nC\n9.2\n9.199\n  \n  \n  \n\n\n\n\n\nVariable names appear in &gt;1 rows\nHeader fragments mixed with data\nSeparators become implicit\nNAs introduced"
+    "text": "Names broken across rows\n\n\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin\nAVERAGE\n\n\n\n\nNA\nNA\nNA\nScore\nSCORE\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.89\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nVariable names appear in &gt;1 rows\nHeader fragments mixed with data\nSeparators become implicit\nNAs introduced"
   },
   {
     "objectID": "slides/preparation.html#data-can-be-intuitive-easy-to-read-and-machine-readable-if-shared-adequately",
     "href": "slides/preparation.html#data-can-be-intuitive-easy-to-read-and-machine-readable-if-shared-adequately",
     "title": "Data preparation",
     "section": "Data can be intuitive, easy to read AND machine-readable if shared adequately",
-    "text": "Data can be intuitive, easy to read AND machine-readable if shared adequately\n↘ Reduce the need for complex/proprietary software or advanced programming skills for inclusion in future analyses.\n↘ Minimize the amount of interpretation that others (or future you) will need to make to use the data."
+    "text": "Data can be intuitive, easy to read AND machine-readable if shared adequately\n↘ Reduce the need for complex/proprietary software or advanced programming skills for inclusion in future analyses.\n\n↘ Minimize the amount of interpretation needed to use the data."
   },
   {
     "objectID": "slides/preparation.html#file-formats",
@@ -298,7 +301,7 @@
     "href": "slides/preparation.html#handy-dplyr-functions",
     "title": "Data preparation",
     "section": "Handy 📦 dplyr functions",
-    "text": "Handy 📦 dplyr functions\n\nIndividual functions for the most common operations\nEach function does one only thing, but does it well\nIntuitive, user-friendly functions for common data manipulation tasks:\n\nSubset columns\nSubset rows\nCreate or modify columns"
+    "text": "Handy 📦 dplyr functions\n\nIntuitive, user-friendly functions for common data manipulation tasks:\n\nSubset columns\nSubset rows\nCreate or modify columns\n\nEach function does one only thing, but does it well"
   },
   {
     "objectID": "slides/preparation.html#select",
@@ -312,7 +315,7 @@
     "href": "slides/preparation.html#mutate",
     "title": "Data preparation",
     "section": "mutate()",
-    "text": "mutate()\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\n\nWe can control where the new column will appear with .before and .after"
+    "text": "mutate()\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\nWe can control where the new column will appear with .before and .after"
   },
   {
     "objectID": "slides/preparation.html#filter",
@@ -354,7 +357,7 @@
     "href": "slides/preparation.html#practice---data-manipulation",
     "title": "Data preparation",
     "section": "Practice - data manipulation",
-    "text": "Practice - data manipulation\n\nLoad the penguins dataset from the palmerpenguins package\nCreate a subset of data with only species, island, and flipper_length_mm\nHow many individuals have flippers &gt; 195 mm in length?\nCreate a new columns with the flipper length in inches, place it before the column with the length in mm"
+    "text": "Practice - data manipulation\n\nLoad the penguins dataset from the palmerpenguins package\nCreate a subset of the data with only species, island, and flipper_length_mm\nHow many individuals have flippers &gt; 195 mm in length?\nCreate a new column with the flipper length in inches, place it before the column with the length in mm"
   },
   {
     "objectID": "slides/preparation.html#operating-on-multiple-columns",
@@ -389,7 +392,7 @@
     "href": "slides/preparation.html#section-9",
     "title": "Data preparation",
     "section": "",
-    "text": "PDFs are not a suitable file format"
+    "text": "Megadiverse countriesData\n\n\n\n\n\n\n\n\n\n\ncntry\nspecies\nthreatened\nregion\n\n\n\n\nIndonesia\n670\n191\nAsia\n\n\nBrasil\n648\n80\nAmerica\n\n\nChina\n551\n73\nAsia\n\n\nMexico\n523\n96\nAmerica\n\n\nPeru\n467\n53\nAmerica\n\n\nCongo\n430\n15\nAfrica\n\n\nIndia\n412\n93\nAsia\n\n\nKenya\n376\n30\nAfrica\n\n\nArgentina\n374\n38\nAmerica\n\n\nEcuador\n372\n47\nAmerica\n\n\nVenezuela\n363\n35\nAmerica\n\n\nTanzania\n359\n41\nAfrica\n\n\n\n\n\n\n\n\n\n\nmcountries &lt;- \ntibble::tribble(\n      ~cntry,   ~species, ~threatened,   ~region,\n  \"Indonesia\",      670L,        191L,    \"Asia\",\n     \"Brasil\",      648L,         80L, \"America\",\n      \"China\",      551L,         73L,    \"Asia\",\n     \"Mexico\",      523L,         96L, \"America\",\n       \"Peru\",      467L,         53L, \"America\",\n      \"Congo\",      430L,         15L,  \"Africa\",\n      \"India\",      412L,         93L,    \"Asia\",\n      \"Kenya\",      376L,         30L,  \"Africa\",\n  \"Argentina\",      374L,         38L, \"America\",\n    \"Ecuador\",      372L,         47L, \"America\",\n  \"Venezuela\",      363L,         35L, \"America\",\n   \"Tanzania\",      359L,         41L,  \"Africa\"\n  )"
   },
   {
     "objectID": "slides/preparation.html#where",
@@ -409,15 +412,15 @@
     "objectID": "slides/preparation.html#section-10",
     "href": "slides/preparation.html#section-10",
     "title": "Data preparation",
-    "section": "",
-    "text": "Megadiverse countriesData\n\n\n\n\n\n\n\n\n  \n    \n    \n      cntry\n      species\n      threatened\n      region\n    \n  \n  \n    Indonesia\n670\n191\nAsia\n    Brasil\n648\n80\nAmerica\n    China\n551\n73\nAsia\n    Mexico\n523\n96\nAmerica\n    Peru\n467\n53\nAmerica\n    Congo\n430\n15\nAfrica\n    India\n412\n93\nAsia\n    Kenya\n376\n30\nAfrica\n    Argentina\n374\n38\nAmerica\n    Ecuador\n372\n47\nAmerica\n    Venezuela\n363\n35\nAmerica\n    Tanzania\n359\n41\nAfrica\n  \n  \n  \n\n\n\n\n\n\n\nmcountries &lt;- \ntibble::tribble(\n      ~cntry,   ~species, ~threatened,   ~region,\n  \"Indonesia\",      670L,        191L,    \"Asia\",\n     \"Brasil\",      648L,         80L, \"America\",\n      \"China\",      551L,         73L,    \"Asia\",\n     \"Mexico\",      523L,         96L, \"America\",\n       \"Peru\",      467L,         53L, \"America\",\n      \"Congo\",      430L,         15L,  \"Africa\",\n      \"India\",      412L,         93L,    \"Asia\",\n      \"Kenya\",      376L,         30L,  \"Africa\",\n  \"Argentina\",      374L,         38L, \"America\",\n    \"Ecuador\",      372L,         47L, \"America\",\n  \"Venezuela\",      363L,         35L, \"America\",\n   \"Tanzania\",      359L,         41L,  \"Africa\"\n  )"
+    "section": "!",
+    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
   },
   {
     "objectID": "slides/preparation.html#section-11",
     "href": "slides/preparation.html#section-11",
     "title": "Data preparation",
-    "section": "!",
-    "text": "!\nTake the complement of a set of variables (negate a selection)\n\n\nmcountries %&gt;% \n  select(!c(region,threatened)) %&gt;% head()\n\n# A tibble: 6 × 2\n  cntry     species\n  &lt;chr&gt;       &lt;int&gt;\n1 Indonesia     670\n2 Brasil        648\n3 China         551\n4 Mexico        523\n5 Peru          467\n6 Congo         430"
+    "section": ":",
+    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
   },
   {
     "objectID": "slides/preparation.html#no-helpers-multiple-variables",
@@ -444,8 +447,8 @@
     "objectID": "slides/preparation.html#section-12",
     "href": "slides/preparation.html#section-12",
     "title": "Data preparation",
-    "section": ":",
-    "text": ":\nSelect a range of consecutive variables\n\n\nmcountries %&gt;% \n  select(cntry:threatened) %&gt;% head()\n\n# A tibble: 6 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73\n4 Mexico        523         96\n5 Peru          467         53\n6 Congo         430         15"
+    "section": "-",
+    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head(3)\n\n# A tibble: 3 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73"
   },
   {
     "objectID": "slides/preparation.html#reshaping-data-with-tidyr",
@@ -458,8 +461,8 @@
     "objectID": "slides/preparation.html#section-13",
     "href": "slides/preparation.html#section-13",
     "title": "Data preparation",
-    "section": "-",
-    "text": "-\nExclude variables\n(return all elements except the one preceded by the subtraction operator)\n\n\nmcountries %&gt;% \n  select(-region) %&gt;% head(3)\n\n# A tibble: 3 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 China         551         73"
+    "section": "",
+    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
   },
   {
     "objectID": "slides/preparation.html#wide-to-long",
@@ -473,14 +476,14 @@
     "href": "slides/preparation.html#section-14",
     "title": "Data preparation",
     "section": "",
-    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
+    "text": "dining optionsData\n\n\n\n\n\n\n\n\n\n\narea_type\ndistrict\ncoffee_shops\nfast_food\nfish_chips\n\n\n\n\nResidential\nSouth\n2\n3\n1\n\n\nCommercial\nNorth\n12\n6\n4\n\n\nSuburban\nSouth\n2\n4\n3\n\n\nRural\nEast\n0\n2\n0\n\n\n\n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
   },
   {
     "objectID": "slides/preparation.html#section-15",
     "href": "slides/preparation.html#section-15",
     "title": "Data preparation",
     "section": "",
-    "text": "dining optionsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      area_type\n      district\n      coffee_shops\n      fast_food\n      fish_chips\n    \n  \n  \n    Residential\nSouth\n2\n3\n1\n    Commercial\nNorth\n12\n6\n4\n    Suburban\nSouth\n2\n4\n3\n    Rural\nEast\n0\n2\n0\n  \n  \n  \n\n\n\n\n\n\n\ndining &lt;- \ntibble::tribble(\n     ~area_type, ~district, ~coffee_shops, ~fast_food, ~fish_chips,\n  \"Residential\",   \"South\",            2L,         3L,          1L,\n   \"Commercial\",   \"North\",           12L,         6L,          4L,\n     \"Suburban\",   \"South\",            2L,         4L,          3L,\n        \"Rural\",    \"East\",            0L,         2L,          0L\n  )\n\n\n\n\nVariables:\narea type, district, type of restaurant, number of restaurants"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
   },
   {
     "objectID": "slides/preparation.html#long-to-wide",
@@ -494,7 +497,7 @@
     "href": "slides/preparation.html#section-16",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")"
+    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
   },
   {
     "objectID": "slides/preparation.html#practice---pivoting",
@@ -508,7 +511,7 @@
     "href": "slides/preparation.html#section-17",
     "title": "Data preparation",
     "section": "",
-    "text": "dining %&gt;%\n  pivot_longer(\n    cols = c(coffee_shops, fast_food, fish_chips),\n    names_to = \"restaurant_type\",\n    values_to = \"n_restaurants\")\n\n# A tibble: 12 × 4\n   area_type   district restaurant_type n_restaurants\n   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                   &lt;int&gt;\n 1 Residential South    coffee_shops                2\n 2 Residential South    fast_food                   3\n 3 Residential South    fish_chips                  1\n 4 Commercial  North    coffee_shops               12\n 5 Commercial  North    fast_food                   6\n 6 Commercial  North    fish_chips                  4\n 7 Suburban    South    coffee_shops                2\n 8 Suburban    South    fast_food                   4\n 9 Suburban    South    fish_chips                  3\n10 Rural       East     coffee_shops                0\n11 Rural       East     fast_food                   2\n12 Rural       East     fish_chips                  0"
+    "text": "dining_long %&gt;% \n  pivot_wider(names_from = restaurant_type, \n              values_from = n_restaurants)\n\n# A tibble: 4 × 5\n  area_type   district coffee_shops fast_food fish_chips\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;     &lt;int&gt;      &lt;int&gt;\n1 Residential South               2         3          1\n2 Commercial  North              12         6          4\n3 Suburban    South               2         4          3\n4 Rural       East                0         2          0"
   },
   {
     "objectID": "slides/preparation.html#dplyrcoalesce",
@@ -564,35 +567,44 @@
     "href": "index.html",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "This site contains all course materials and presentations."
+    "text": "This site contains all course materials and presentations.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#physalia-courses",
     "href": "index.html#physalia-courses",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "This site contains all course materials and presentations."
+    "text": "This site contains all course materials and presentations.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "index.html#instructor",
     "href": "index.html#instructor",
     "title": "A practical introduction to R",
     "section": "Instructor:",
-    "text": "Instructor:\nDr. Luis D. Verde Arregoitia\n\nCourse program"
+    "text": "Instructor:\nDr. Luis D. Verde Arregoitia\n\nCourse program",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "slides/introduction.html#section",
     "href": "slides/introduction.html#section",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "@LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
+    "text": "@LuisDVerde\n @LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
   },
   {
     "objectID": "slides/introduction.html#today",
     "href": "slides/introduction.html#today",
     "title": "A practical introduction to R",
     "section": "Today",
-    "text": "Today\n\nProject workflow and structure\n\nNaming things\n\nPaths\n\nObjects"
+    "text": "Today\n\nCode-based data analyses\n\nProject workflow and structure\n\nNaming things\n\nPaths\n\nFile import\n\nObjects"
   },
   {
     "objectID": "slides/introduction.html#what-is",
@@ -613,28 +625,28 @@
     "href": "slides/introduction.html#this-course",
     "title": "A practical introduction to R",
     "section": "This course",
-    "text": "This course\n\nLocal installs\nRStudio\ntidyverse dialect\nPipes\nOnline course materials"
+    "text": "This course\n\nLocal installs\nRStudio IDE\ntidyverse dialect\nOnline course materials"
   },
   {
     "objectID": "slides/introduction.html#my-setup",
     "href": "slides/introduction.html#my-setup",
     "title": "A practical introduction to R",
     "section": "My setup",
-    "text": "My setup\n\nR v4.3.2\nRStudio 2023.06.1 “Mountain Hydrangea”\nDefault look\nLinux Mint 20.3"
+    "text": "My setup\n\nR v4.4.1\nRStudio 2024.04.2\nDefault look\nLinux Mint 22"
   },
   {
     "objectID": "slides/introduction.html#is-not-rstudio",
     "href": "slides/introduction.html#is-not-rstudio",
     "title": "A practical introduction to R",
     "section": " is not RStudio",
-    "text": "is not RStudio\nIDE - Integrated Development Environment\nTools to make programming easier\n\nSyntax-aware text editor\nShortcuts and tools to manage and execute code\nPanes and windows to organize code, R console, help, etc."
+    "text": "is not RStudio\nIDE - Integrated Development Environment\nTools to make programming easier\n\nSyntax-aware text editor\nShortcuts and tools to manage and execute code\nPanes and windows to organize code, plots, R console, help, etc."
   },
   {
     "objectID": "slides/introduction.html#alternatives",
     "href": "slides/introduction.html#alternatives",
     "title": "A practical introduction to R",
     "section": "Alternatives",
-    "text": "Alternatives\n\nRStudio (by posit, formerly RStudio PBC)\n\nEmacs + ESS (https://ess.r-project.org)\n\nvim + Nvim-R: (Turn Vim Into an IDE for R)\n\nVisual Studio + RTVS\nAny text editor (sending code to a running instance)"
+    "text": "Alternatives\n\nRStudio (from posit, formerly RStudio PBC)\n\nPositron (new IDE from posit)\nEmacs + ESS (https://ess.r-project.org)\n\nvim + Nvim-R: (Turn Vim Into an IDE for R)\n\nVisual Studio + RTVS\nAny text editor (sending code to a running instance)"
   },
   {
     "objectID": "slides/introduction.html#section-3",
@@ -648,14 +660,14 @@
     "href": "slides/introduction.html#scripts-and-source-code",
     "title": "A practical introduction to R",
     "section": "Scripts and source code",
-    "text": "Scripts and source code\n\n\n\n\n\nReproduce and modify steps in a sequence\nFind mistakes\nDocument a process\nExamine other people’s code"
+    "text": "Scripts and source code\n\n\n\n\n\nReproduce and modify steps in a sequence\nFind mistakes\nDocument a workflow\nExamine other people’s though process"
   },
   {
     "objectID": "slides/introduction.html#packages",
     "href": "slides/introduction.html#packages",
     "title": "A practical introduction to R",
     "section": "📦 Packages",
-    "text": "📦 Packages\n\n\nWhen installing R we install:\nbase: R’s core functions\nsome examples: list()\nlog()\ncat() rm() etc…"
+    "text": "📦 Packages\n\n\nWhen installing R we install:\n\nbase: R’s core functions \nsome examples: list(), log(),cat(), rm() etc…\n\nR uses ~30 base and recommended packages"
   },
   {
     "objectID": "slides/introduction.html#packages-1",
@@ -669,14 +681,14 @@
     "href": "slides/introduction.html#additional-packages",
     "title": "A practical introduction to R",
     "section": "📦 Additional Packages",
-    "text": "📦 Additional Packages\n\n&gt;19,000 on CRAN (The Comprehensive R Archive Network)\nmany more on GitHub, GitLab, Bitbucket, Bioconductor, etc.\n\nInstall in R with:\ninstall.packages() for CRAN packages\n📦 remotes for most other sources"
+    "text": "📦 Additional Packages\nFree libraries of code written by R’s active user community.\n\n&gt;20,000 on CRAN (The Comprehensive R Archive Network)\nmany more on GitHub, GitLab, Bitbucket, Bioconductor, etc.\n\nInstall with:\ninstall.packages() for CRAN packages\n📦 pak for most other sources"
   },
   {
     "objectID": "slides/introduction.html#r-and-rstudio-guided-tour",
     "href": "slides/introduction.html#r-and-rstudio-guided-tour",
     "title": "A practical introduction to R",
     "section": "R and RStudio guided tour",
-    "text": "R and RStudio guided tour\n\nRun R\nRun RStudio\nInstall any missing course packages:\n\n\ninstall.packages(\"readxl\")\ninstall.packages(\"fs\")\ninstall.packages(\"here\")"
+    "text": "R and RStudio guided tour\n\nRun R\nRun RStudio\nInstall any missing course packages:\n\n\ninstall.packages(\"readxl\")\ninstall.packages(\"fs\")\ninstall.packages(\"here\")\ninstall.packages(\"openintro\")"
   },
   {
     "objectID": "slides/introduction.html#file-systems",
@@ -697,21 +709,21 @@
     "href": "slides/introduction.html#names",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nfix\n'maximum temperature in 2014 in Belize'\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
+    "text": "Names\n\n\nOK\nmax_temp \n min_price_usd\nmonthly_temp\n\nfix\n'maximum temperature in 2014 in Belize'\nmax\ntemp\n'Minimum Price ($) USD'\n'Temperature/Month (°F)'\n\n\n\n\nJenny Bryan (2015)\nNaming Things"
   },
   {
     "objectID": "slides/introduction.html#names-1",
     "href": "slides/introduction.html#names-1",
     "title": "A practical introduction to R",
     "section": "Names",
-    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nfix\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx\n\n\n\nValid names in R may only include letters, numbers, dashes, and underscores. Names may not start with a number"
+    "text": "Names\n\n\nOK\n01_invoice-march2023.pdf\n02_invoice-july2023.pdf\nms_ferns_20210412.docx\n\nfix\ndownload462copy.pdf\njulypurchases.pdf\ndraft.docx"
   },
   {
     "objectID": "slides/introduction.html#letter-cases",
     "href": "slides/introduction.html#letter-cases",
     "title": "A practical introduction to R",
     "section": "Letter cases",
-    "text": "Letter cases\n\ncamelCase - after fist word identify different words with uppercase, no spaces\nsnake_case - all lowercase, underscores separate words\nslug-case - all lowercase, dashes separate words"
+    "text": "Letter cases\n reptileDataNew\n reptile_data_new\n reptile-data-new\n reptile.data.new\n REPTILE_DATA_NEW"
   },
   {
     "objectID": "slides/introduction.html#examples",
@@ -725,14 +737,14 @@
     "href": "slides/introduction.html#project-organization",
     "title": "A practical introduction to R",
     "section": "Project organization",
-    "text": "Project organization\nProject: A folder on your computer that holds all the files relevant to that particular piece of work\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
+    "text": "Project organization\nProject: A folder on your computer that holds all the files relevant to a particular piece of work\nSeparate:\n📁 Data (or code to get data from a remote resource)\n📁 Analysis and/or visualization scripts\n📁 Outputs (graphs, reports, intermediate data files, etc.)\n\n\n\n\n\nJenny Bryan (2017)\nProject-oriented workflow\n\nMaëlle Salmon (2021)\nDraw me a project"
   },
   {
     "objectID": "slides/introduction.html#rstudio-projects",
     "href": "slides/introduction.html#rstudio-projects",
     "title": "A practical introduction to R",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory’ button\n\nworking directory set to Project directory\n\npaths become relative to project directory"
+    "text": "RStudio Projects\n\n\n\n\n\ndedicated R process\nfile browser pointed at Project directory\n\nconvenient ‘go-to-project directory’ button\n\nworking directory set to Project directory\n\npaths become relative to project directory\n\n\n\nIn Positron this works by setting Folders"
   },
   {
     "objectID": "slides/introduction.html#practice",
@@ -746,7 +758,7 @@
     "href": "slides/introduction.html#fs",
     "title": "A practical introduction to R",
     "section": "📦 fs",
-    "text": "📦 fs\nWork with the file system (cross-platform)\nfs functions always return ‘tidy’ paths\nTidy paths\n\nAlways use ‘/’ to delimit directories\n\nNever have multiple or trailing ‘/’\n\nCreate folders\nMove, copy, or rename files"
+    "text": "📦 fs\nWork with the file system (cross-platform)\nNice, clean paths:\n\nAlways use ‘/’ to delimit directories\n\nNever have multiple or trailing ‘/’\n\nfs functions can:\nCreate folders\nMove, copy, list, or rename files"
   },
   {
     "objectID": "slides/introduction.html#practice-1",
@@ -774,7 +786,7 @@
     "href": "slides/introduction.html#blank-slate",
     "title": "A practical introduction to R",
     "section": "Blank slate",
-    "text": "Blank slate\n\n\n\ndo not save the workspace to an .Rdata file\nat launch, do not reload the workspace from an .Rdata file."
+    "text": "Blank slate\n\n\n\ndo not save the workspace to an .Rdata file\nat launch, do not reload the workspace from an .Rdata file.\n\n\n\n\n\nThis is the default behavior in Positron"
   },
   {
     "objectID": "slides/introduction.html#restarting-r",
@@ -795,7 +807,7 @@
     "href": "slides/introduction.html#section-6",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "with the project root at my-project\n\n\nhere(\"analysis\",\"script1.R\")\n\n\nwould build:\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R"
+    "text": "my_table &lt;- read.csv(\n  file = \"my_folder/my-file.csv\",\n  header = TRUE\n  ) \n\n\n\nmy_table - object being created in R\nread.csv() - function to read delimited text files\nfile = \"my_folder/my-file.csv\" - file path\nheader = TRUE - additional argument (specify if first row contains the variable names)"
   },
   {
     "objectID": "slides/introduction.html#file-import-tabular-data",
@@ -816,7 +828,7 @@
     "href": "slides/introduction.html#section-7",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "my_table &lt;- read.csv(file = \"my_folder/my-file.csv\",\n                     header = TRUE) \n\n\nmy_table - object being created in R\nread.csv() - function to read delimited text files\nfile = \"my_folder/my-file.csv\" - file path\nheader = TRUE - additional argument (specify if first row contains the variable names)"
+    "text": "Vectors\n\nLists\n\n\nTables"
   },
   {
     "objectID": "slides/introduction.html#readr-and-readxl",
@@ -851,7 +863,7 @@
     "href": "slides/introduction.html#r-programming-principles",
     "title": "A practical introduction to R",
     "section": "R programming principles",
-    "text": "R programming principles\n\nEverything that exists is an object \nEverything that happens is a function call (functions are objects) \nFunctions (generally) live in packages"
+    "text": "R programming principles\n\n\n\nEverything that exists is an object \nEverything that happens is a function call (functions are objects) \nFunctions (generally) live in packages"
   },
   {
     "objectID": "slides/introduction.html#objects",
@@ -864,8 +876,8 @@
     "objectID": "slides/introduction.html#section-8",
     "href": "slides/introduction.html#section-8",
     "title": "A practical introduction to R",
-    "section": "",
-    "text": "Vectors\n\nLists\n\n\nTables"
+    "section": "<-",
+    "text": "&lt;-\nAssignment operator in R\n\nassociates names and values\n\n\n2*3\n\n[1] 6\n\nresult &lt;- 2*3"
   },
   {
     "objectID": "slides/introduction.html#vectors-1",
@@ -914,7 +926,7 @@
     "href": "slides/introduction.html#numeric-vectors",
     "title": "A practical introduction to R",
     "section": "Numeric vectors",
-    "text": "Numeric vectors"
+    "text": "Numeric vectors\n\n7    #a numeric vector with length 1\n\n[1] 7\n\nx1 &lt;- 7     # also a numeric vector with length 1\nx1                    \n\n[1] 7\n\nc(12,3,5,11) # numeric vector with length 4\n\n[1] 12  3  5 11"
   },
   {
     "objectID": "slides/introduction.html#factors",
@@ -977,7 +989,7 @@
     "href": "slides/preparation.html#much-better",
     "title": "Data preparation",
     "section": "Much better",
-    "text": "Much better\n\n\n\n\n\n\n  \n    \n    \n      university\n      coast\n      division\n      min_score\n      avg_score\n    \n  \n  \n    UMN\nEAST\nA\n7.7\n7.701\n    UV\nWEST\nB\n8.9\n8.890\n    UNLV\nEAST\nC\n9.2\n9.199"
+    "text": "Much better\n\n\n\n\n\n\n\n\nuniversity\ncoast\ndivision\nmin_score\navg_score\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199"
   },
   {
     "objectID": "slides/preparation.html#section-23",
@@ -991,7 +1003,7 @@
     "href": "slides/introduction.html",
     "title": "A practical introduction to R",
     "section": "",
-    "text": "@LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
+    "text": "@LuisDVerde\n @LuisDVerde\n @LuisDVA\n liomys.mx\n luis@liomys.mx\n\n\nMammalogy, macroecology, conservation\nBiogeography, using R as a GIS\nData Science with R\nCertified Instructor - Posit(RStudio) & The Carpentries\n\nR user since 2011\n\nR ‘blogger’ since 2015"
   },
   {
     "objectID": "slides/introduction.html#letter-case",
@@ -1025,8 +1037,8 @@
     "objectID": "slides/visualization.html#today",
     "href": "slides/visualization.html#today",
     "title": "Data visualization",
-    "section": "Today",
-    "text": "Today\n\nGraphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
+    "section": "",
+    "text": "Graphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
   },
   {
     "objectID": "slides/visualization.html#packages-for-today",
@@ -1040,7 +1052,7 @@
     "href": "slides/visualization.html#graphics-in-r",
     "title": "Data visualization",
     "section": "Graphics in R",
-    "text": "Graphics in R\nSince its initial release, R has had the ability to produce customizable publication-quality graphics.\n\nBase R plots\nLattice plots (lattice package)\nggplot2\nwrapper packages (highcharter, echarts4r)\n\n\n4. Graphics with base R  An Introduction to R\nAlex Douglas et al. (2023)"
+    "text": "Graphics in R\nSince its first release, R has the ability to produce customizable publication-quality graphics.\n\nBase R plots\nLattice plots (lattice package)\nggplot2\nwrapper packages and interactive elements (highcharter, echarts4r,r2d3)\n\n\n4. Graphics with base R  An Introduction to R\nAlex Douglas et al. (2023)"
   },
   {
     "objectID": "slides/visualization.html#section",
@@ -1054,7 +1066,7 @@
     "href": "slides/visualization.html#section-1",
     "title": "Data visualization",
     "section": "",
-    "text": "Grammar: how words and their component parts combine to form sentences\n\n\nWith a grammar we don’t need to memorize individual sentences to communicate in a language\nIf we learn a grammar for graphics, we can describe and build a wide range of statistical graphics from scratch"
+    "text": "Grammar: how words and their component parts combine to form sentences\n\n\nWith a grammar we don’t need to memorize every possible sentence to communicate in a language\nIf we learn a grammar for graphics, we can describe and build a wide range of graphics from scratch"
   },
   {
     "objectID": "slides/visualization.html#layered-graphics",
@@ -1117,7 +1129,7 @@
     "href": "slides/visualization.html#colors-1",
     "title": "Data visualization",
     "section": "Colors",
-    "text": "Colors\nHex codes\n\nFree Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)"
+    "text": "Colors\nHex codes\n\n\n\n\n\nFree Color Picker (Windows); Gpick (Linux); ColorSlurp (Mac)"
   },
   {
     "objectID": "slides/visualization.html#color-palettes",
@@ -1138,7 +1150,7 @@
     "href": "slides/visualization.html#quantitative-variables-color",
     "title": "Data visualization",
     "section": "Quantitative variables + color:",
-    "text": "Quantitative variables + color:\n\nDefault color ramp or named gradient\nDefine gradient with scale_x_gradient\n\n\n\nggplot(penguins,\n  aes(x=bill_length_mm,\n      y=flipper_length_mm,\n      fill=body_mass_g))+\n  geom_point(size=4,\n             color=\"white\",\n             pch=21)"
+    "text": "Quantitative variables + color:\n\nDefault color ramp or named gradient\nDefine gradient with scale_x_gradient\n\n\nggplot(penguins,\n  aes(x=bill_length_mm,\n      y=flipper_length_mm,\n      fill=body_mass_g))+\n  geom_point(size=4,\n             color=\"white\",\n             pch=21)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "slides/visualization.html#hands-on-customization",
@@ -1159,14 +1171,14 @@
     "href": "slides/visualization.html#color-ramps",
     "title": "Data visualization",
     "section": "Color ramps",
-    "text": "Color ramps\n\nMore accurate visual perception of central value and increments of the underlying variables\n\n\n\n🔗 Fabio Crameri - Scientific Color Maps"
+    "text": "Color ramps\n\nMore accurate visual perception of central value and increments of the underlying variables\n\n\n\n\n\n\n\n🔗 Fabio Crameri - Scientific Color Maps"
   },
   {
     "objectID": "slides/visualization.html#perceptually-uniform-color-ramps",
     "href": "slides/visualization.html#perceptually-uniform-color-ramps",
     "title": "Data visualization",
     "section": "Perceptually uniform color ramps",
-    "text": "Perceptually uniform color ramps\n\n\n \n\nviridis\n\ninstalled with ggplot2\ncall with scale_x_viridis()\n\nscico\n\nprovided by scico package\ndivergent & sequential"
+    "text": "Perceptually uniform color ramps\n\n\n \n\n\nviridis\n\ninstalled with ggplot2\ncall with scale_x_viridis()\n\n\n\nscico\n\nprovided by scico package\ndivergent & sequential"
   },
   {
     "objectID": "slides/visualization.html#hands-on-color-ramps",
@@ -1180,7 +1192,7 @@
     "href": "slides/visualization.html#exporting-graphics",
     "title": "Data visualization",
     "section": "Exporting graphics",
-    "text": "Exporting graphics\nOur options\n\n‘Export’ button in RStudio\nGraphical devices\nggsave() (ensure ragg is installed for nicer images)\nFormats: png, jpg, pdf, etc."
+    "text": "Exporting graphics\n\nOur options\n\n‘Export’ button in RStudio\nGraphical devices\nggsave() (ensure ragg is installed for nicer images)\nFormats: png, jpg, pdf, etc."
   },
   {
     "objectID": "slides/visualization.html#export-with-graphical-device",
@@ -1243,7 +1255,7 @@
     "href": "slides/visualization.html#hands-on-reordering-factor-levels",
     "title": "Data visualization",
     "section": "Hands-on: Reordering factor levels",
-    "text": "Hands-on: Reordering factor levels\nbabies_crawl crawling age data from openintro\n\n05_reorder.R\n\n\n\n\n\n\n\n\n\n\nCrawling age (weeks) in relation to temperature and birth month. From Benson (1993)."
+    "text": "Hands-on: Reordering factor levels\nbabies_crawl crawling age data from openintro\n\n05_reorder.R\n\n\n\n\n\n\n\nNote\n\n\n\nCrawling age (weeks) in relation to temperature and birth month. From Benson (1993)."
   },
   {
     "objectID": "slides/visualization.html#composing-plots-with-patchwork",
@@ -1257,7 +1269,7 @@
     "href": "slides/visualization.html#section-10",
     "title": "Data visualization",
     "section": "",
-    "text": "Three plots:\n\ncal_sodium_plt+rest_sodium_plt+\n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()"
+    "text": "Three plots:\n\ncal_sodium_plt+rest_sodium_plt+\n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()\n\n\n\n\n\n\n\n\n\nSingle column\n\nsleepy &lt;- \n  ggplot(msleep,\n       aes(x=log(bodywt),y=sleep_total))+\n   geom_point(size=4,color=\"white\",pch=21)+\n    theme_dark()"
   },
   {
     "objectID": "slides/visualization.html#section-11",
@@ -1278,7 +1290,7 @@
     "href": "slides/visualization.html#annotations",
     "title": "Data visualization",
     "section": "Annotations",
-    "text": "Annotations\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy+\n  plot_annotation(title=\"Three element figure\",\n                  subtitle = \"Made with patchwork\",\n                  tag_levels = \"A\")\n\n\ntag_levels generates alphabetical or numeric sequences to identify plot elements"
+    "text": "Annotations\n\n(cal_sodium_plt+rest_sodium_plt)/sleepy+\n  plot_annotation(title=\"Three element figure\",\n                  subtitle = \"Made with patchwork\",\n                  tag_levels = \"A\")\n\n\n\n\n\n\n\n\ntag_levels generates alphabetical or numeric sequences to identify plot elements"
   },
   {
     "objectID": "slides/visualization.html#formatting-text",
@@ -1292,28 +1304,28 @@
     "href": "slides/visualization.html#section-4",
     "title": "Data visualization",
     "section": "",
-    "text": "lizardsData\n\n\n\n\n\n\n\n\n  \n    \n    \n      length\n      mass\n      stage\n    \n  \n  \n    9\n20\nadult\n    8\n13\njuvenile\n    7\n15\njuvenile\n    13\n18\nadult\n    11\n21\nadult\n    6\n14\njuvenile\n  \n  \n  \n\n\n\n\n\n\n\nlizards &lt;- \ntibble::tribble(\n  ~length, ~mass,     ~stage,\n       9L,   20L,    \"adult\",\n       8L,   13L, \"juvenile\",\n       7L,   15L, \"juvenile\",\n      13L,   18L,    \"adult\",\n      11L,   21L,    \"adult\",\n       6L,   14L, \"juvenile\"\n  )"
+    "text": "lizardsData\n\n\n\n\n\n\n\n\n\n\nlength\nmass\nstage\n\n\n\n\n9\n20\nadult\n\n\n8\n13\njuvenile\n\n\n7\n15\njuvenile\n\n\n13\n18\nadult\n\n\n11\n21\nadult\n\n\n6\n14\njuvenile\n\n\n\n\n\n\n\n\n\n\nlizards &lt;- \ntibble::tribble(\n  ~length, ~mass,     ~stage,\n       9L,   20L,    \"adult\",\n       8L,   13L, \"juvenile\",\n       7L,   15L, \"juvenile\",\n      13L,   18L,    \"adult\",\n      11L,   21L,    \"adult\",\n       6L,   14L, \"juvenile\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlength\nmass\nstage\n\n\n\n\n9\n20\nadult\n\n\n8\n13\njuvenile\n\n\n7\n15\njuvenile\n\n\n13\n18\nadult\n\n\n11\n21\nadult\n\n\n6\n14\njuvenile\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx\ny\nshape\n\n\n\n\n9\n20\ncircle\n\n\n8\n13\ntriangle\n\n\n7\n15\ntriangle\n\n\n13\n18\ncircle\n\n\n11\n21\ncircle\n\n\n6\n14\ntriangle"
   },
   {
     "objectID": "slides/visualization.html#exporting",
     "href": "slides/visualization.html#exporting",
     "title": "Data visualization",
     "section": "Exporting",
-    "text": "Exporting\n\n\n\n\n\n\n\n\n\nWe can asign plots to workspace objects\n\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
+    "text": "Exporting\n\n\n\n\n\n\nNote\n\n\n\nWe can assign plots as workspace objects\n\n\n\nmy_plot &lt;- \nggplot(penguins,\n       aes(x=bill_length_mm,\n          y=flipper_length_mm))+\n  geom_point(size=2,pch=21)\n\nggsave(my_plot, \n  filename = \"myplotgs.png\",\n    width = 10, \n    height = 10,\n    units =\"cm\",\n    dpi = 200)"
   },
   {
     "objectID": "slides/visualization.html#section-9",
     "href": "slides/visualization.html#section-9",
     "title": "Data visualization",
     "section": "",
-    "text": "library(openintro)\ndata(\"fastfood\")\nggplot(fastfood,aes(calories,sodium))+\n     geom_point()+\nggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")"
+    "text": "library(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\nAttaching package: 'openintro'\n\n\nThe following object is masked from 'package:gt':\n\n    sp500\n\ndata(\"fastfood\")\nggplot(fastfood,aes(calories,sodium))+\n     geom_point()+\nggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")\n\n\n\n\n\n\n\n\n\nEasier to read:\n\ncal_sodium_plt &lt;- ggplot(fastfood,aes(calories,sodium))+\n     geom_point()\nrest_sodium_plt &lt;- ggplot(fastfood,aes(restaurant,sodium))+\n     geom_jitter(aes(color=restaurant))+\n     theme(axis.text.x = element_text(angle = 90),\n           legend.position = \"none\")\n\ncal_sodium_plt+rest_sodium_plt"
   },
   {
     "objectID": "slides/visualization.html#factor-levels",
     "href": "slides/visualization.html#factor-levels",
     "title": "Data visualization",
     "section": "Factor levels",
-    "text": "Factor levels\nWe can specify the order of factor levels manually using the levels argument\n\n\nFor more flexible manipulation of categorical factor data: forcats\n\n\n\n\n\nreorder according to values in another variable\nsupress alphabetical order\nreverse level order\nlump levels\nmuch more"
+    "text": "Factor levels\nWe can specify the order of factor levels manually using the levels argument\n\n\nFor more flexible manipulation of categorical factor data: forcats\n\n\n\n\n\nreorder according to values in another variable\nsupress alphabetical order\nreverse level order\nmuch more"
   },
   {
     "objectID": "slides/visualization.html#nesting",
@@ -1341,7 +1353,7 @@
     "href": "slides/programming.html#customization",
     "title": "Programming and reproducibility",
     "section": "Customization",
-    "text": "Customization\n\nIDE themes: tmThemeEditor by Allen Bargi\n\n\n\n\nNo one at the coffee shop will know you’re serious unless you have a dark background\n\n\n\n-Jared Lander\n📼 R: Then and now\n\n\n\nFonts and ligatures - 🔗 Nerd Fonts\nPane Layouts"
+    "text": "Customization\n\nIDE themes: tmThemeEditor by Allen Bargi\n\n\n\n\nNo one at the coffee shop will know you’re serious unless you have a dark background\n\n\n\nJared Lander\n📼 R: Then and now\n\n\n\nFonts and ligatures - 🔗 Nerd Fonts\nPane Layouts"
   },
   {
     "objectID": "slides/programming.html#coding-tricks",
@@ -1418,7 +1430,7 @@
     "href": "slides/programming.html#mammal-sleep-data",
     "title": "Programming and reproducibility",
     "section": "mammal sleep data",
-    "text": "mammal sleep data\nTraits for 83 species of mammals in relation to their sleeping habits. From Savage & West (2007), bundled with ggplot2\n\n\n\n\n\n\n  \n    \n    \n      name\n      genus\n      vore\n      order\n      conservation\n      sleep_total\n      sleep_rem\n      sleep_cycle\n      awake\n      brainwt\n      bodywt\n    \n  \n  \n    Cheetah\nAcinonyx\ncarni\nCarnivora\nlc\n12.1\nNA\nNA\n11.9\nNA\n50.000\n    Owl monkey\nAotus\nomni\nPrimates\nNA\n17.0\n1.8\nNA\n7.0\n0.01550\n0.480\n    Mountain beaver\nAplodontia\nherbi\nRodentia\nnt\n14.4\n2.4\nNA\n9.6\nNA\n1.350\n    Greater short-tailed shrew\nBlarina\nomni\nSoricomorpha\nlc\n14.9\n2.3\n0.1333333\n9.1\n0.00029\n0.019\n    Cow\nBos\nherbi\nArtiodactyla\ndomesticated\n4.0\n0.7\n0.6666667\n20.0\n0.42300\n600.000\n    Three-toed sloth\nBradypus\nherbi\nPilosa\nNA\n14.4\n2.2\n0.7666667\n9.6\nNA\n3.850"
+    "text": "mammal sleep data\nTraits for 83 species of mammals in relation to their sleeping habits. From Savage & West (2007), bundled with ggplot2\n\n\n\n\n\n\n\n\nname\ngenus\nvore\norder\nconservation\nsleep_total\nsleep_rem\nsleep_cycle\nawake\nbrainwt\nbodywt\n\n\n\n\nCheetah\nAcinonyx\ncarni\nCarnivora\nlc\n12.1\nNA\nNA\n11.9\nNA\n50.000\n\n\nOwl monkey\nAotus\nomni\nPrimates\nNA\n17.0\n1.8\nNA\n7.0\n0.01550\n0.480\n\n\nMountain beaver\nAplodontia\nherbi\nRodentia\nnt\n14.4\n2.4\nNA\n9.6\nNA\n1.350\n\n\nGreater short-tailed shrew\nBlarina\nomni\nSoricomorpha\nlc\n14.9\n2.3\n0.1333333\n9.1\n0.00029\n0.019\n\n\nCow\nBos\nherbi\nArtiodactyla\ndomesticated\n4.0\n0.7\n0.6666667\n20.0\n0.42300\n600.000\n\n\nThree-toed sloth\nBradypus\nherbi\nPilosa\nNA\n14.4\n2.2\n0.7666667\n9.6\nNA\n3.850"
   },
   {
     "objectID": "slides/programming.html#maximum-brainwt-for-each-order",
@@ -1432,7 +1444,7 @@
     "href": "slides/programming.html#one-row-sampled-randomly-from-each-order",
     "title": "Programming and reproducibility",
     "section": "One row sampled randomly from each order",
-    "text": "One row sampled randomly from each order\n\nmsleep %&gt;% group_by(order) %&gt;% \n  slice_sample(n=1)\n\n\n\n# A tibble: 19 × 11\n# Groups:   order [19]\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n 2 Sheep  Ovis  herbi Arti… domesticated         3.8       0.6      NA      20.2\n 3 Lion   Pant… carni Carn… vu                  13.5      NA        NA      10.5\n 4 Pilot… Glob… carni Ceta… cd                   2.7       0.1      NA      21.4\n 5 Littl… Myot… inse… Chir… &lt;NA&gt;                19.9       2         0.2     4.1\n 6 Long-… Dasy… carni Cing… lc                  17.4       3.1       0.383   6.6\n 7 North… Dide… omni  Dide… lc                  18         4.9       0.333   6  \n 8 Phala… Phal… &lt;NA&gt;  Dipr… &lt;NA&gt;                13.7       1.8      NA      10.3\n 9 Deser… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n10 Gray … Hete… herbi Hyra… lc                   6.3       0.6      NA      17.7\n11 Rabbit Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n12 Short… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n13 Brazi… Tapi… herbi Peri… vu                   4.4       1         0.9    19.6\n14 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n15 Squir… Saim… omni  Prim… &lt;NA&gt;                 9.6       1.4      NA      14.4\n16 Afric… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n17 Mount… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6\n18 Tree … Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n19 Musk … Sunc… &lt;NA&gt;  Sori… &lt;NA&gt;                12.8       2         0.183  11.2\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
+    "text": "One row sampled randomly from each order\n\nmsleep %&gt;% group_by(order) %&gt;% \n  slice_sample(n=1)\n\n\n\n# A tibble: 19 × 11\n# Groups:   order [19]\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 \"Tenr… Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n 2 \"Cow\"  Bos   herbi Arti… domesticated         4         0.7       0.667  20  \n 3 \"Chee… Acin… carni Carn… lc                  12.1      NA        NA      11.9\n 4 \"Pilo… Glob… carni Ceta… cd                   2.7       0.1      NA      21.4\n 5 \"Litt… Myot… inse… Chir… &lt;NA&gt;                19.9       2         0.2     4.1\n 6 \"Gian… Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n 7 \"Nort… Dide… omni  Dide… lc                  18         4.9       0.333   6  \n 8 \"Poto… Poto… herbi Dipr… &lt;NA&gt;                11.1       1.5      NA      12.9\n 9 \"Dese… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n10 \"Rock… Proc… &lt;NA&gt;  Hyra… lc                   5.4       0.5      NA      18.6\n11 \"Rabb… Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n12 \"Shor… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n13 \"Hors… Equus herbi Peri… domesticated         2.9       0.6       1      21.1\n14 \"Thre… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n15 \"Babo… Papio omni  Prim… &lt;NA&gt;                 9.4       1         0.667  14.6\n16 \"Afri… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n17 \"Vole… Micr… herbi Rode… &lt;NA&gt;                12.8      NA        NA      11.2\n18 \"Tree… Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n19 \"Less… Cryp… omni  Sori… lc                   9.1       1.4       0.15   14.9\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
   },
   {
     "objectID": "slides/programming.html#summarize-values",
@@ -1502,7 +1514,7 @@
     "href": "slides/programming.html#mapping-functions-to-data",
     "title": "Programming and reproducibility",
     "section": "Mapping functions to data",
-    "text": "Mapping functions to data\nmap(.x,.f)\nWe can specify .f as:\n\n\nan existing function\nan anonymous function, defined on-the-fly\na shorthand anonymous function (in more recent versions of R)"
+    "text": "Mapping functions to data\nmap(.x,.f)\nWe can specify .f as:\n\n\nan existing function\nan anonymous function"
   },
   {
     "objectID": "slides/programming.html#functions",
@@ -1516,7 +1528,7 @@
     "href": "slides/programming.html#function-definition",
     "title": "Programming and reproducibility",
     "section": "Function Definition",
-    "text": "Function Definition\nThe ‘function()’ function\nfunction( arglist ) expr\n\narguments (arglist): values passed to the function\nexpression (expr): an object that represents an action that can be performed by R.\n\n\n\n\n\n\n\n\n\nExpressions contain one or more statements"
+    "text": "Function Definition\nThe ‘function()’ function\nfunction( arglist ) expr\n\narguments (arglist): values passed to the function\nexpression (expr): an object that represents an action that can be performed by R.\n\n\n\n\n\n\nNote\n\n\nExpressions contain one or more statements"
   },
   {
     "objectID": "slides/programming.html#defining-a-function",
@@ -1551,7 +1563,7 @@
     "href": "slides/programming.html#shorthand-notation-since-r-v4.1.0",
     "title": "Programming and reproducibility",
     "section": "Shorthand notation (since R v4.1.0)",
-    "text": "Shorthand notation (since R v4.1.0)\nReplaces “function(x) {}” with “\\(x){}”\n\n\n(\\(x) x + 3)(10)\n\n[1] 13\n\n(\\(x) x / 2)(10)\n\n[1] 5\n\n\n\n\n\nRuss Hyde (2021)\nNew features in R 4.1.0\n\n\n\n\n\n\n\n\n\n\n\ntidyverse devlopers and R users in general are gradually shifting to this notation"
+    "text": "Shorthand notation (since R v4.1.0)\nReplaces “function(x) {}” with “\\(x){}”\n\n\n(\\(x) x + 3)(10)\n\n[1] 13\n\n(\\(x) x / 2)(10)\n\n[1] 5\n\n\n\n\n\nRuss Hyde (2021)\nNew features in R 4.1.0\n\n\n\n\n\n\n\n\nNote\n\n\ntidyverse devlopers and R users in general are gradually shifting to this notation"
   },
   {
     "objectID": "slides/programming.html#anonymous-functions-1",
@@ -1796,7 +1808,7 @@
     "href": "slides/programming.html#for-efficient-iteration",
     "title": "Programming and reproducibility",
     "section": "For efficient iteration",
-    "text": "For efficient iteration\n\n\n\n\n📦 purrr - Functional programming tools\n\nmap functions to data\n\nwork efficiently with lists\nreadable code\n\n\n\n\n\nThomas Mock (2018)\nFunctional Programming in R with purrr"
+    "text": "For efficient iteration\n\n\n\n\n📦 purrr - Functional programming tools\n\nmap functions to data\n\nwork efficiently with lists\nreadable code\n\n\n\n\nThomas Mock (2018)\nFunctional Programming in R with purrr"
   },
   {
     "objectID": "examples/possumreport.html",
@@ -2034,7 +2046,7 @@
     "href": "slides/quarto.html#do-i-have-quarto",
     "title": "Creating documents with Quarto",
     "section": "Do I have Quarto?",
-    "text": "Do I have Quarto?\n\nInstalled automatically with RStudio since version v2022.07\nInstall from the official download page\n\nCurrent version is: v1.4.540\nquarto --version in your terminal to check for installed version"
+    "text": "Do I have Quarto?\n\nInstalled automatically with RStudio since version v2022.07\nInstall from the official download page\n\nCurrent version is: v1.5.57\nquarto --version in your terminal to check for installed version"
   },
   {
     "objectID": "slides/quarto.html#formatting-text",
@@ -2083,7 +2095,7 @@
     "href": "slides/quarto.html#presentations",
     "title": "Creating documents with Quarto",
     "section": "Presentations",
-    "text": "Presentations\nQuarto uses the reveal.js framework to create HTML presentations\n\nIncludes presenter tools\nNew slides delimited with --- or created with headings"
+    "text": "Presentations\nQuarto uses the reveal.js framework to create HTML presentations\n\nIncludes presenter tools\nNew slides delimited with --- or created with level two heading (##)"
   },
   {
     "objectID": "slides/quarto.html#example-2-presentation-about-pets",
@@ -2112,5 +2124,68 @@
     "title": "My pet",
     "section": "",
     "text": "Introduce your pet\n\n\ndog? cat? other?\n\n\n\n\n\n\n\n\n\nfood\nplay\nsleep -friends\n\n\n\n\n\n\nsum(c(10,20,12,3)) \n\n[1] 45"
+  },
+  {
+    "objectID": "slides/introduction.html#course-script-organization-suggested",
+    "href": "slides/introduction.html#course-script-organization-suggested",
+    "title": "A practical introduction to R",
+    "section": "Course script organization (suggested)",
+    "text": "Course script organization (suggested)\n\nCreate scripts for different topics (new R file button or keyboard shortcut)\nUse # for commenting\nOrganize into subfolders"
+  },
+  {
+    "objectID": "slides/preparation.html",
+    "href": "slides/preparation.html",
+    "title": "Data preparation",
+    "section": "",
+    "text": "‘pipes’ and the tidyverse \nData organization\n\nTidy data principles\ntools for data wrangling\n\nSubsetting and pivoting data"
+  },
+  {
+    "objectID": "slides/introduction.html#relative-paths",
+    "href": "slides/introduction.html#relative-paths",
+    "title": "A practical introduction to R",
+    "section": "Relative paths",
+    "text": "Relative paths\nF:\\path\\that\\no one\\else\\has\\my-project\\analysis\\script1.R\n\nPreferably, work relative to your project root using projects\nShare relative file paths (e.g., R/anova.R,\n\ndata/transect1.csv, etc.)\n\n\nOde to the here package (2018)"
+  },
+  {
+    "objectID": "slides/introduction.html#practice---file-import",
+    "href": "slides/introduction.html#practice---file-import",
+    "title": "A practical introduction to R",
+    "section": "Practice - File Import",
+    "text": "Practice - File Import\nwith readxl:\nImport the sheets from the petshop.xlsx file\nUseful arguments\n\npath\nsheet\nskip"
+  },
+  {
+    "objectID": "slides/introduction.html#creating-objects-1",
+    "href": "slides/introduction.html#creating-objects-1",
+    "title": "A practical introduction to R",
+    "section": "Creating objects",
+    "text": "Creating objects\n&lt;-\nAssignment operator in R\n\nassociates names and values\n\n\n2*3\n\n[1] 6\n\nresult &lt;- 2*3\nresult\n\n[1] 6"
+  },
+  {
+    "objectID": "slides/programming.html#new-notation",
+    "href": "slides/programming.html#new-notation",
+    "title": "Programming and reproducibility",
+    "section": "New notation",
+    "text": "New notation\nEliminate the need for group_by() and then ungroup() with .by\n\nmsleep %&gt;% slice_sample(n=1,by=order)\n\n# A tibble: 19 × 11\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Domes… Felis carni Carn… domesticated        12.5       3.2       0.417  11.5\n 2 Patas… Eryt… omni  Prim… lc                  10.9       1.1      NA      13.1\n 3 Vespe… Calo… &lt;NA&gt;  Rode… &lt;NA&gt;                 7        NA        NA      17  \n 4 Star-… Cond… omni  Sori… lc                  10.3       2.2      NA      13.7\n 5 Pig    Sus   omni  Arti… domesticated         9.1       2.4       0.5    14.9\n 6 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n 7 Giant… Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n 8 Tree … Dend… herbi Hyra… lc                   5.3       0.5      NA      18.7\n 9 Thick… Lutr… carni Dide… lc                  19.4       6.6      NA       4.6\n10 Afric… Loxo… herbi Prob… vu                   3.3      NA        NA      20.7\n11 Big b… Epte… inse… Chir… lc                  19.7       3.9       0.117   4.3\n12 Horse  Equus herbi Peri… domesticated         2.9       0.6       1      21.1\n13 Deser… Para… &lt;NA&gt;  Erin… lc                  10.3       2.7      NA      13.7\n14 Commo… Phoc… carni Ceta… vu                   5.6      NA        NA      18.4\n15 Rabbit Oryc… herbi Lago… domesticated         8.4       0.9       0.417  15.6\n16 Potor… Poto… herbi Dipr… &lt;NA&gt;                11.1       1.5      NA      12.9\n17 Short… Tach… inse… Mono… &lt;NA&gt;                 8.6      NA        NA      15.4\n18 Tenrec Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n19 Tree … Tupa… omni  Scan… &lt;NA&gt;                 8.9       2.6       0.233  15.1\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/programming.html#across-and-anonymous-fns",
+    "href": "slides/programming.html#across-and-anonymous-fns",
+    "title": "Programming and reproducibility",
+    "section": "across() and anonymous fns",
+    "text": "across() and anonymous fns\n\nstarwars %&gt;%\n  mutate(across(c(height,mass),\\(x) x/7+2))\n\n# A tibble: 87 × 14\n   name     height  mass hair_color skin_color eye_color birth_year sex   gender\n   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; \n 1 Luke Sk…   26.6 13    blond      fair       blue            19   male  mascu…\n 2 C-3PO      25.9 12.7  &lt;NA&gt;       gold       yellow         112   none  mascu…\n 3 R2-D2      15.7  6.57 &lt;NA&gt;       white, bl… red             33   none  mascu…\n 4 Darth V…   30.9 21.4  none       white      yellow          41.9 male  mascu…\n 5 Leia Or…   23.4  9    brown      light      brown           19   fema… femin…\n 6 Owen La…   27.4 19.1  brown, gr… light      blue            52   male  mascu…\n 7 Beru Wh…   25.6 12.7  brown      light      blue            47   fema… femin…\n 8 R5-D4      15.9  6.57 &lt;NA&gt;       white, red red             NA   none  mascu…\n 9 Biggs D…   28.1 14    black      light      brown           24   male  mascu…\n10 Obi-Wan…   28   13    auburn, w… fair       blue-gray       57   male  mascu…\n# ℹ 77 more rows\n# ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,\n#   vehicles &lt;list&gt;, starships &lt;list&gt;"
+  },
+  {
+    "objectID": "slides/quarto.html#sharing-quarto-documents",
+    "href": "slides/quarto.html#sharing-quarto-documents",
+    "title": "Creating documents with Quarto",
+    "section": "Sharing Quarto documents",
+    "text": "Sharing Quarto documents\nRender and share\n\nas HTML (embed-resources), PDF, PPT, etc.\n\nPublish on Quartopub\n\nCreate account on Quartopub\nPublish from the Quarto command line\n\nDeploy on GitHub pages, netlify, etc."
+  },
+  {
+    "objectID": "slides/visualization.html",
+    "href": "slides/visualization.html",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Graphics in R\nIntroduction to ggplot2\n\nVisual display of information\n\nCustomization (axes, colors, fonts, legends, etc.)\n\nExporting high-res figures\nComposition and complex graphs"
   }
 ]

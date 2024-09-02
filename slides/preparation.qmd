@@ -34,17 +34,51 @@ library(janitor)
 library(tidyr)
 library(stringr)
 library(dplyr)
-library(datos)
 library(gt)
 ```
 
 ### Today:
 
--   'pipes' and the `tidyverse`\  
+-   The `tidyverse`\  
+-   pipes
 -   Data organization\
 -   Tidy data principles
 -   tools for data wrangling\
 -   Subsetting and pivoting data
+
+## tidyverse
+
+::: columns
+::: {.column width="20%"}
+![](imgs/tidyverse_celestial.png)
+:::
+
+::: {.column width="80%"}
+> ... an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data ...
+:::
+:::
+
+::::{.rightref}
+:::{.refbox}
+Wickham et al. (2019)\
+[Welcome to the tidyverse](https://www.theoj.org/joss-papers/joss.01686/10.21105.joss.01686.pdf)\
+https://www.tidyverse.org/
+:::
+::::
+
+## tidyverse
+
+- For the repeated tasks in of nearly every project: data import, tidying, manipulation, visualization, and programming
+
+
+- Designed for easier engagement with additional pieces of the larger ecosystem
+
+::::{.rightref}
+:::{.refbox}
+Çetinkaya-Rundel et al. ([2021](https://arxiv.org/abs/2108.03510))\
+An educator's perspective of the tidyverse
+:::
+::::
 
 ## Pipes 
 
@@ -84,9 +118,7 @@ round(mean(scores), digits = 2)
 #| echo: true
 mn_scrs <- mean(scores)
 
-rd_mn_scrs <- round(mn_scrs, digits = 2)
-
-rd_mn_scrs
+round(mn_scrs, digits = 2)
 
 ```
 :::
@@ -103,10 +135,7 @@ Left Hand Side\
 ::: {.column width="40%"}
 `pipe operator`
 
-`%>%`  
-from 📦 `magrittr`  
-
-`|>` in R v \>= 4.1.0
+`%>%` or  `|>` 
 
 :::
 
@@ -116,6 +145,8 @@ Right Hand Side\
 :::
 :::
 :::
+
+</br>
 
 ::: fragment
 Take an **object** on the **Left Hand Side** of the pipe and insert it into a **function** as an argument on the **Right Hand Side**
@@ -170,41 +201,6 @@ scores %>%
 
 `RHS(LHS, argument = 12)`
 :::
-
-
-## tidyverse
-
-::: columns
-::: {.column width="20%"}
-![](imgs/tidyverse_celestial.png)
-:::
-
-::: {.column width="80%"}
-> ... an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data ...
-:::
-:::
-
-::::{.rightref}
-:::{.refbox}
-Wickham et al. (2019)\
-[Welcome to the tidyverse](https://www.theoj.org/joss-papers/joss.01686/10.21105.joss.01686.pdf)\
-https://www.tidyverse.org/
-:::
-::::
-
-## tidyverse
-
-- Encompasses the repeated tasks at the heart of every data science project: data import, tidying, manipulation, visualization, and programming
-
-
-- Intentionally designed to ease the learning process and make it easier for users to learn new functions as they engage with additional pieces of the larger ecosystem
-
-::::{.rightref}
-:::{.refbox}
-Çetinkaya-Rundel et al. ([2021](https://arxiv.org/abs/2108.03510))\
-An educator's perspective of the tidyverse
-:::
-::::
 
 
 ## tibbles 
@@ -308,6 +304,7 @@ For brevity, _tibbles_ printed on the console show:
 ## A more usable format
 
 ```{r}
+#| echo: false
 tibble::tribble(
             ~Name,     ~Role, ~Year,    ~Travel.Type, ~Trip.Purpose, ~Cost, ~Country,
   "Jane Michaels",      "PI", 2019L,      "National",  "Field Work", 1000L,     "UK",
@@ -331,6 +328,14 @@ tibble::tribble(
     -   duplication
 
 Good data organization helps us when we produce data, and also to identify and solve problems in existing data
+
+::::{.rightref}
+:::{.refbox}
+Chapter 3. Data Organization  
+[Data Management in Research](https://datamgmtinedresearch.com/structure)  
+Crystal Lewis
+:::
+::::
 
 ## Data Organization best practices
 
@@ -370,29 +375,23 @@ Find the inconsistencies
 
 ## Data rectangles
 
-::: columns
-::: {.column width="30%"}
-![](imgs/rectangle1.png)
-:::
 
-::: {.column width="70%"}
-Objects with rows and columns, in which:
+![Data Organization - Crystal Lewis](imgs/fig3-3rectangle.PNG)
+
 
 -   Each row has the same number of columns
 
 -   Each column has the same number of rows
 
-*Vectors and factors of the same length = all columns must have the same 'height'*
 
 Equal-height columns give a rectangular shape to the data frame
-:::
-:::
+
 
 ## 
 
 ::: columns
 ::: {.column width="65%"}
-![](imgs/cashflow.png){width="74%"}
+![](imgs/cashflow.png){width="64%"}
 
 
 :::
@@ -417,9 +416,9 @@ Davis Vaughan (2018)\
 -   Restructure for easier and more effective handling
 
 
-## tidy data
+## Tidy data
 
-An accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for maximum usability.
+An accessible reformulation of existing principles and definitions from statistics and computer science, to ultimately help us structure our data for usability.
 
 </br>
 
@@ -463,15 +462,6 @@ Wickham (2014)\
 Easy to reshape into other structures after cleaning or transforming
 
 ![](imgs/pivotingintro.gif)
-
-
-## Why tidy?
-
-### Row-wise operations
-
-Each value in an observation will be paired with other values that appear in the same row
-
-![](imgs/discounts.png)
 
 
 ## 
@@ -625,20 +615,9 @@ Separators become implicit
 
 ↘ Reduce the need for complex/proprietary software or advanced programming skills for inclusion in future analyses.
 
-↘ Minimize the amount of interpretation that others (or future you) will need to make to use the data.
+</br>
 
-## File formats
-
-
--   The simpler the better (prefer delimited text files such as CSVs)
-
--   Share data-only files, keep calculations and results elsewhere
-
-##
-
-PDFs are not a suitable file format
-
-![](imgs/pdfprision.jpg)
+↘ Minimize the amount of interpretation needed to  use the data.
 
 
 # Tools for data wrangling
@@ -664,10 +643,6 @@ Flexible and powerful
 
 ## Handy 📦 `dplyr` functions
 
--   Individual functions for the most common operations
-
--   Each function does one only thing, but does it well
-
 -   Intuitive, user-friendly functions for common data manipulation tasks:
 
     -   Subset columns
@@ -675,6 +650,8 @@ Flexible and powerful
     -   Subset rows
 
     -   Create or modify columns
+
+-   Each function does one only thing, but does it well
     
 ## 
 
@@ -862,11 +839,11 @@ data(economics)
 
 -   Load the  `penguins` dataset from the `palmerpenguins` package
 
--   Create a subset of data with only `species`, `island`, and `flipper_length_mm`
+-   Create a subset of the data with only `species`, `island`, and `flipper_length_mm`
 
 -   How many individuals have flippers \> 195 mm in length?
 
--   Create a new columns with the flipper length in inches, place it before the column with the length in mm
+-   Create a new column with the flipper length in inches, place it before the column with the length in mm
 
 # Working `across()` multiple columns
 
@@ -1226,183 +1203,5 @@ dining_long %>%
 
 -   Pivot the data (wide to long and back to wide)
 
-# Other useful functions
-
-## 
-
-**`coalesce()`** - combine data, keeping values from one column and filling any missing data with values from other columns
-
-**`fill()`** - fill adjacent values. Helps us avoid unnecessary `NA` values and ambiguity. Similar logic to filling adjacent values in spreadsheets
-
-## `dplyr::coalesce()`
-
--   Find and return the first non-NA value at each position for a set of vectors
-
-  - *columns in rectangular data are also vectors*
-
--   Returns a single vector with the non-NA values that appear first
-
-
-## 
-
-:::{.med-code}
-```{r}
-x <- c(1, 2, NA, NA, 5)
-y <- c(NA, NA, 3, 4, 5)
-z <- c(1, 4, 3, 5, 3)
-```
-:::
-
-Numeric vectors of the same length - some have missing values.
-
-:::{.big-code}
-```{r}
-coalesce(x, y, z)
-```
-:::
-
-> The order of the arguments matters
-
-## 
-
-:::{.big-code}
-```{r}
-x <- c(1, 2, NA, NA, 5)
-y <- c(NA, NA, 3, 4, 5)
-z <- c(1, 4, 3, 5, 3)
-```
-:::
-
-:::{.big-code}
-```{r}
-coalesce(z,x,y)
-```
-:::
-
-## 
-
-```{r}
-#| eval: true
-#| echo: false
-
-hotels <- 
-tibble::tribble(
-        ~location,        ~guest,        ~critic,        ~old,
-         "Lisbon",            NA,            4.9,         2.6,
-          "Porto",           2.2,             NA,         4.3,
-          "Moura",           4.5,              5,         3.4,
-         "Chaves",            NA,            2.7,         3.5,
-        "Coimbra",           2.5,             NA,         2.3
-  )
-
-
-```
-
-::: panel-tabset
-### hotels
-
-```{r}
-#| eval: true
-#| echo: false
-hotels %>% gt() %>% 
-    tab_style(
-    cell_text(size = '25px'),
-    locations = list(cells_body(),
-                     cells_column_labels(everything()),
-                     cells_title())) %>% 
-  tab_options(table.background.color="#f4f4f9")
-```
-
-### Data setup
-
-```{r}
-#| echo: true
-#| eval: false
-
-hotels <- 
-tibble::tribble(
-        ~location,        ~guest,        ~critic,        ~old,
-         "Lisbon",            NA,            4.9,         2.6,
-          "Porto",           2.2,             NA,         4.3,
-          "Moura",           4.5,              5,         3.4,
-         "Chaves",            NA,            2.7,         3.5,
-        "Coimbra",           2.5,             NA,         2.3
-  )
-```
-:::
-
-## 
-
-</br>
-
-:::{.med-code}
-```{r}
-#| eval: true
-#| echo: true
-
-hotels %>% 
-  mutate(new_rating = coalesce(guest, critic, old))
-  
-```
-:::
-
-## `tidyr::fill()`
-
-```{r}
-#| echo: false
-#| eval: true
-
-mammal_carbon <- tibble(mammals=c("cattle",NA,NA,NA,NA,"wild",NA,NA,NA),
-       biomass=c(21,5,7,23,74,23,65,12,5))
-```
-
-::: columns
-::: {.column width="40%"}
-```{r}
-#| echo: false
-#| eval: true
-
-mammal_carbon %>% gt() %>% 
-    tab_style(
-    cell_text(size = '21px'),
-    locations = list(cells_body(),
-                     cells_column_labels(everything()),
-                     cells_title())) %>% 
-  tab_options(table.background.color="#f4f4f9")
-```
-:::
-
-::: {.column width="60%"}
--   Fill missing values in a column (top to bottom by default)
-
--   Contiguous/adjacent values assumed to be the same
-
--   Values only appear when they change along a column
-
--   Stops at the next non-missing value
-:::
-:::
-
-## 
-
-::: columns
-::: {.column width="50%"}
-```{r}
-#| echo: true
-#| eval: true
-mammal_carbon
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| echo: true
-#| eval: true
-
-mammal_carbon %>% 
-  fill(mammals)
-```
-:::
-:::
 
 # Questions and discussion

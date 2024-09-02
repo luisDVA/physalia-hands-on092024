@@ -56,7 +56,8 @@ library(ggplot2)
 :::
 
 ::: {style="text-align: right"}
-*-Jared Lander*\
+[Jared Lander]{style="color:#ef798a"}  
+
 📼 [R: Then and now](https://www.youtube.com/watch?v=gjpNEVcG1nU)
 :::
 :::
@@ -262,6 +263,16 @@ Jenny Bryan\
 
 :::
 :::
+
+## New notation
+
+Eliminate the need for `group_by()` and then `ungroup()` with `.by`
+
+
+```{r}
+msleep %>% slice_sample(n=1,by=order)
+```
+
 
 ## Loops
 
@@ -557,6 +568,13 @@ Russ Hyde (2021)\
 
 -   Comparable with similar approaches in Python
 
+## `across()` and anonymous fns
+
+```{r}
+starwars %>%
+  mutate(across(c(height,mass),\(x) x/7+2))
+```
+
 
 # Lists
 
@@ -712,9 +730,8 @@ We can specify [.f]{style="color: green; font-family: monospace; font-weight: bo
 
 -   an existing function
 
--   an anonymous function, defined on-the-fly
+-   an anonymous function
 
--   a shorthand anonymous function (in more recent versions of R)
 :::
 
 

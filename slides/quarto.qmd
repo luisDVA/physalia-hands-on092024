@@ -160,7 +160,7 @@ Notebooks
 -   Installed automatically with RStudio since version v2022.07
 -   Install from the official [download page](https://quarto.org/docs/download/)
 
-Current version is: v1.4.540
+Current version is: v1.5.57
 
 `quarto --version` in your terminal to check for installed version
 
@@ -229,7 +229,7 @@ Label, resize, align
 
 `![Mila the dog](imgs/Mila.jpeg){width="30%" fig-align="right"}`
 
-![Mila](imgs/Mila.jpeg){width="30%" fig-align="right"}
+![Mila the dog](imgs/Mila.jpeg){width="30%" fig-align="right"}
 
 ## Code
 
@@ -278,7 +278,7 @@ Quarto uses the `reveal.js` framework to create HTML presentations
 
 -   Includes presenter tools
 
--   New slides delimited with `---` or created with headings
+-   New slides delimited with `---` or created with level two heading (`##`)
 
 ## Example 2: Presentation about pets {background-color="black"}
 
@@ -286,15 +286,16 @@ Quarto uses the `reveal.js` framework to create HTML presentations
 -   Change slide background `{background-color}`
 -   Export to PDF (`E` key toggles print preview)
 
-## Publishing Quarto documents
+## Sharing Quarto documents
 
-### On Quartopub
+### Render and share
+- as HTML (embed-resources), PDF, PPT, etc.
+
+### Publish on Quartopub
 1.  Create account on [Quartopub](https://quartopub.com/sign-up)
 2.  Publish from the Quarto command line
 
-::: {style="text-align: center"}
-`quarto publish quarto-pub mi-documento.qmd`
-:::
+### Deploy on GitHub pages, netlify, etc.
 
 ## Useful reading resources
 

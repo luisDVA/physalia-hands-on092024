@@ -67,13 +67,13 @@ install.packages("forcats")
 
 ## Graphics in R
 
-Since its initial release, R has had the ability to produce customizable 
+Since its first release, R has the ability to produce customizable 
 publication-quality graphics.
 
 - Base R plots 
 - Lattice plots (`lattice` package)
 - `ggplot2`
-- wrapper packages (`highcharter`, `echarts4r`)
+- wrapper packages and interactive elements (`highcharter`, `echarts4r`,`r2d3`)
 
 ::: {style="text-align: right"}
 [4. Graphics with base R](https://intro2r.com/graphics_base_r.html])\  
@@ -108,9 +108,9 @@ Hadley Wickham (2007)
 
 <br/>
 
-- With a grammar we don't need to memorize individual sentences to communicate in a language
+- With a grammar we don't need to memorize every possible sentence to communicate in a language
 
-- If we learn a grammar for graphics, we can describe and build a wide range of statistical graphics from scratch
+- If we learn a grammar for graphics, we can describe and build a wide range of graphics from scratch
 
 
 # Plot gallery
@@ -496,7 +496,7 @@ Colors and continuous variables
 
 :::{.callout-note}
 ## 
-We can asign plots to workspace objects
+We can assign plots as workspace objects
 :::
 
 ```{r}
@@ -517,13 +517,6 @@ ggsave(my_plot,
     dpi = 200)
 
 ```
-
-
-## Looks off?
-
-![](imgs/exportando.png)
-
-`scale` argument for `ggsave()` and `scaling` in `ragg` devices will adjust points and text with a scaling factor
 
 
 ## Facetting
@@ -585,7 +578,6 @@ For more flexible manipulation of categorical factor data:
 - reorder according to values in another variable
 - supress alphabetical order
 - reverse level order
-- lump levels
 - much more
 
 ## Hands-on: Reordering factor levels {background-color="#a4c5ff"}
@@ -714,28 +706,6 @@ Nested but note the `|`
 ```
 
 `tag_levels` generates alphabetical or numeric sequences to identify plot elements
-
-
-## Formatting text
-
-We can use _markdown_ syntax to format text in different elements of our plots. Enable formatting with `element_markdown()` from the **`ggtext`** package.
-
-[ggtext documentation](https://wilkelab.org/ggtext/)
-
-  
-##
-
-```{r}
-#| eval: true
-#| echo: true
-library(ggtext)
-
-fastfood %>% mutate(Fats=sat_fat>15) %>% 
-  ggplot(aes(total_fat,sat_fat,color=Fats))+
-geom_point()+
-  scale_color_discrete(labels=c("**Greasy** junk" ,"Low fat"))+
-  theme(legend.text = element_markdown())
-```
 
 
 # Questions?

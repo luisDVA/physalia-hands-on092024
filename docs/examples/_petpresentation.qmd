@@ -1,0 +1,36 @@
+---
+title: "My pet"
+author: "Your name here"
+format: revealjs
+editor: visual
+---
+
+# My pet _______
+
+## A new slide
+
+Introduce your pet
+
+### Heading
+
+dog? cat? other?
+
+#### Level 4 heading
+
+## My pet likes
+
+:::{.incremental}
+- food
+- play
+- sleep
+-friends
+:::
+
+## Some code
+
+```{r}
+sum(c(10,20,12,3)) 
+```
+
+
+# Changing topics {background-color="yellow"}
