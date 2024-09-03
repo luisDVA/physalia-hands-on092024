@@ -49,7 +49,7 @@
     "href": "slides/preparation.html#pipes-1",
     "title": "Data preparation",
     "section": "Pipes",
-    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;% or |&gt;\n\nRight Hand Side\n(RHS)\n\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
+    "text": "Pipes\n\n\n\nLeft Hand Side\n(LHS)\n\npipe operator\n%&gt;% or |&gt;\n\nRight Hand Side\n(RHS)\n\n\n\n\nTake an object on the Left Hand Side of the pipe and insert it into a function as an argument on the Right Hand Side\n* By default, LHS is placed as the first argument in the call"
   },
   {
     "objectID": "slides/preparation.html#pipes-2",
@@ -70,7 +70,7 @@
     "href": "slides/preparation.html#tidyverse",
     "title": "Data preparation",
     "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
+    "text": "tidyverse\n\n\n\n\n\n… an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Its primary goal is to facilitate a conversation between a human and a computer about data …\n\n\n\n\nWickham et al. (2019)\nWelcome to the tidyverse\nhttps://www.tidyverse.org/"
   },
   {
     "objectID": "slides/preparation.html#tidyverse-1",
@@ -112,7 +112,7 @@
     "href": "slides/preparation.html#indexing-and-subsetting-with",
     "title": "Data preparation",
     "section": "Indexing and subsetting with $",
-    "text": "Indexing and subsetting with $\n\n\nmy_df &lt;- data.frame(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_df$let\n\n[1] \"A\" \"B\" \"C\"\n\nmy_tib &lt;- tibble(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_tib$let\n\nWarning: Unknown or uninitialised column: `let`.\n\n\nNULL\n\nmy_tib$letters \n\n[1] \"A\" \"B\" \"C\""
+    "text": "Indexing and subsetting with $\n\n\nmy_df &lt;- data.frame(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_df$let\n\n[1] \"A\" \"B\" \"C\"\n\nmy_tib &lt;- tibble(letters=c(\"A\",\"B\",\"C\"),\n                 numbers=c(4,5,6))\nmy_tib$let\n\nNULL\n\nmy_tib$letters \n\n[1] \"A\" \"B\" \"C\""
   },
   {
     "objectID": "slides/preparation.html#tibble-printing",
@@ -161,7 +161,7 @@
     "href": "slides/preparation.html#data-rectangles",
     "title": "Data preparation",
     "section": "Data rectangles",
-    "text": "Data rectangles\n\n\n\nData Organization - Crystal Lewis\n\n\n\nEach row has the same number of columns\nEach column has the same number of rows\n\nEqual-height columns give a rectangular shape to the data frame"
+    "text": "Data rectangles\n\nData Organization - Crystal Lewis\nEach row has the same number of columns\nEach column has the same number of rows\n\nEqual-height columns give a rectangular shape to the data frame"
   },
   {
     "objectID": "slides/preparation.html#section-1",
@@ -175,7 +175,7 @@
     "href": "slides/preparation.html#ready-for-immediate-use",
     "title": "Data preparation",
     "section": "Ready for immediate use?",
-    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share\n\n\n\n\nR4DS 2nd ed"
+    "text": "Ready for immediate use?\n\nSubset, group, transform, sort, visualize, model, share\n\n\nR4DS 2nd ed"
   },
   {
     "objectID": "slides/preparation.html#not-ready",
@@ -252,7 +252,7 @@
     "href": "slides/preparation.html#make-reasonable-headers-column-names",
     "title": "Data preparation",
     "section": "Make reasonable headers (column names)",
-    "text": "Make reasonable headers (column names)\n\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin_Score\nAVERAGE.SCORE\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
+    "text": "Make reasonable headers (column names)\nUninformative names with inconsistent naming schemes\n\n\n\n\n\n\n\n\nX\nX1\nX2\nmin_Score\nAVERAGE.SCORE\n\n\n\n\nUMN\nEAST\nA\n7.7\n7.701\n\n\nUV\nWEST\nB\n8.9\n8.890\n\n\nUNLV\nEAST\nC\n9.2\n9.199\n\n\n\n\n\n\n\n\nMore difficult to remember and specify\nDo not sort well"
   },
   {
     "objectID": "slides/preparation.html#section-7",
@@ -308,28 +308,28 @@
     "href": "slides/preparation.html#select",
     "title": "Data preparation",
     "section": "select()",
-    "text": "select()\n\n\n\nSubset variables\n\nby name\n\nby position\n\nby type\n\n\n\n\n\n\nmcountries %&gt;% \n  select(cntry,\n         threatened) %&gt;% \n  head(4)\n\n# A tibble: 4 × 2\n  cntry     threatened\n  &lt;chr&gt;          &lt;int&gt;\n1 Indonesia        191\n2 Brasil            80\n3 China             73\n4 Mexico            96"
+    "text": "select()\n\n\nSubset variables\n\nby name\n\nby position\n\nby type\n\n\n\n\n\nmcountries %&gt;% \n  select(cntry,\n         threatened) %&gt;% \n  head(4)\n\n# A tibble: 4 × 2\n  cntry     threatened\n  &lt;chr&gt;          &lt;int&gt;\n1 Indonesia        191\n2 Brasil            80\n3 China             73\n4 Mexico            96"
   },
   {
     "objectID": "slides/preparation.html#mutate",
     "href": "slides/preparation.html#mutate",
     "title": "Data preparation",
     "section": "mutate()",
-    "text": "mutate()\n\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\n\nWe can control where the new column will appear with .before and .after"
+    "text": "mutate()\n\n\nCreate and modify columns\n\ncreate new\n\noverwrite\n\n\n\n\nmcountries %&gt;%\n  select(cntry, threatened) %&gt;% \n  mutate(logthreat = log(threatened)) %&gt;% \n  head(5)\n\n# A tibble: 5 × 3\n  cntry     threatened logthreat\n  &lt;chr&gt;          &lt;int&gt;     &lt;dbl&gt;\n1 Indonesia        191      5.25\n2 Brasil            80      4.38\n3 China             73      4.29\n4 Mexico            96      4.56\n5 Peru              53      3.97\n\n\n\nWe can control where the new column will appear with .before and .after"
   },
   {
     "objectID": "slides/preparation.html#filter",
     "href": "slides/preparation.html#filter",
     "title": "Data preparation",
     "section": "filter()",
-    "text": "filter()\n\nSubset rows\nKeep only the rows that meet a condition\n\n\nmcountries %&gt;% \n  select(cntry, species, threatened) %&gt;% \n  filter(threatened &gt; 75)\n\n# A tibble: 4 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 Mexico        523         96\n4 India         412         93"
+    "text": "filter()\nSubset rows\nKeep only the rows that meet a condition\n\n\nmcountries %&gt;% \n  select(cntry, species, threatened) %&gt;% \n  filter(threatened &gt; 75)\n\n# A tibble: 4 × 3\n  cntry     species threatened\n  &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;\n1 Indonesia     670        191\n2 Brasil        648         80\n3 Mexico        523         96\n4 India         412         93"
   },
   {
     "objectID": "slides/preparation.html#rename",
     "href": "slides/preparation.html#rename",
     "title": "Data preparation",
     "section": "rename()",
-    "text": "rename()\n\nModify column names\nNew name first then target column\n\n\nmcountries %&gt;% \n  rename(pais=cntry,\n         especies=species,\n         amenazadas=threatened) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  pais      especies amenazadas region \n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Indonesia      670        191 Asia   \n2 Brasil         648         80 America\n3 China          551         73 Asia"
+    "text": "rename()\nModify column names\nNew name first then target column\n\n\nmcountries %&gt;% \n  rename(pais=cntry,\n         especies=species,\n         amenazadas=threatened) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  pais      especies amenazadas region \n  &lt;chr&gt;        &lt;int&gt;      &lt;int&gt; &lt;chr&gt;  \n1 Indonesia      670        191 Asia   \n2 Brasil         648         80 America\n3 China          551         73 Asia"
   },
   {
     "objectID": "slides/preparation.html#practice---package-datasets-1",
@@ -371,7 +371,7 @@
     "href": "slides/preparation.html#across-arguments",
     "title": "Data preparation",
     "section": "across() arguments:",
-    "text": "across() arguments:\n.cols Columns to transform\n.fns Function to apply to each of the selected columns\n\nExpects a function, so function name and arguments can be passed separately (new preference is for anonymous functions, which we will cover later)\n\n\n\n\n\nmcountries %&gt;% \n  mutate(across(c(species, threatened), `*`, 2)) %&gt;% \n  head(3)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `across(c(species, threatened), `*`, 2)`.\nCaused by warning:\n! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.\nSupply arguments directly to `.fns` through an anonymous function instead.\n\n  # Previously\n  across(a:b, mean, na.rm = TRUE)\n\n  # Now\n  across(a:b, \\(x) mean(x, na.rm = TRUE))\n\n\n# A tibble: 3 × 4\n  cntry     species threatened region \n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;  \n1 Indonesia    1340        382 Asia   \n2 Brasil       1296        160 America\n3 China        1102        146 Asia   \n\n\n\n\n.cols is a vector with the names of the two columns we’re interested in\n* is the function to apply, 2 is the function argument"
+    "text": "across() arguments:\n.cols Columns to transform\n.fns Function to apply to each of the selected columns\n\nExpects a function, so function name and arguments can be passed separately (new preference is for anonymous functions, which we will cover later)"
   },
   {
     "objectID": "slides/preparation.html#useful-column-selection-helpers",
@@ -476,7 +476,7 @@
     "href": "slides/preparation.html#section-14",
     "title": "Data preparation",
     "section": "",
-    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\n\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
+    "text": "Wide Data\nHuman-readable\nEasier entry\nEasier interactive editing\n\nLong Data\nOften meets Tidy Data principles\nAnalysis-ready\nMaps well to plot axes and aesthetics"
   },
   {
     "objectID": "slides/preparation.html#section-15",
@@ -2193,7 +2193,7 @@
     "href": "slides/preparation.html#relocate",
     "title": "Data preparation",
     "section": "relocate()",
-    "text": "relocate()\n\nMove variables to new locations\nUse .before or .after to define placement\n\n\nmcountries %&gt;% \n  relocate(region, .after=cntry) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  cntry     region  species threatened\n  &lt;chr&gt;     &lt;chr&gt;     &lt;int&gt;      &lt;int&gt;\n1 Indonesia Asia        670        191\n2 Brasil    America     648         80\n3 China     Asia        551         73\n\n\n\n.after can also refer to positions"
+    "text": "relocate()\nMove variables to new locations\nUse .before or .after to define placement\n\n\nmcountries %&gt;% \n  relocate(region, .after=cntry) %&gt;% \n  head(3)\n\n# A tibble: 3 × 4\n  cntry     region  species threatened\n  &lt;chr&gt;     &lt;chr&gt;     &lt;int&gt;      &lt;int&gt;\n1 Indonesia Asia        670        191\n2 Brasil    America     648         80\n3 China     Asia        551         73\n\n\n\n.after can also refer to positions"
   },
   {
     "objectID": "slides/preparation.html#exporting-tables",
